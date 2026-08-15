@@ -25,6 +25,53 @@
 | Consume plugin data programmatically | [data/repositories.json](./data/repositories.json) — daily automated snapshot with stars, license, and activity metadata |
 | List or recommend your own plugin | [Recommend or correct an entry](#-recommend-or-correct-an-entry) / [CONTRIBUTING](./CONTRIBUTING.md) |
 
+## 🗺️ Ecosystem at a glance
+
+As of 2026-08-15 the catalog lists **2,134** repositories. Here is the shape of it:
+
+```mermaid
+mindmap
+  root((DSH ecosystem 2134))
+    Agents automation workflows · 702
+      Scheduled loops and event wakeups
+      Multi-agent teamwork
+      Long-term memory and self-evolution
+      Approval budget and checkpoints
+    UI and experience · 420
+      Desktop clients and terminal TUI
+      Sidebar workbenches
+      Skins and desktop pets
+      Notifications and input
+    Web and browser · 328
+      Browser bridge and page control
+      Web search with citations
+      Archiving and web forensics
+    Design media and vision · 141
+      Image understanding and OCR
+      Design canvas and UI restoration
+    Ecosystem and resources · 138
+      Plugin markets and registries
+      Templates and scaffolds
+      Guides and handbooks
+    Developer tools · 126
+      Git and diff
+      Sandbox and runtimes
+      Debugging and diagnostics
+    Knowledge and research · 110
+      Knowledge bases and cross-session memory
+      Deep research
+      Academia and math
+    Utilities and more · 105
+      Files and encodings
+      Format conversion
+    Integrations and sharing · 64
+      Chat import and sharing
+      Remote access
+      IM and external integrations
+```
+
+To browse every project in a category, see [CATALOG.md](./CATALOG.md).
+
 ## ⭐ Featured picks
 
 **These are not ranked by stars.** We prioritize projects that solve a clear problem, document themselves well, are still maintained, and are representative — so you will find 1k-star projects next to a few-dozen-star one that has no substitute. Start from your problem, find the closest line, and the answer is one click away. Inclusion is not an endorsement of security or compatibility. For the full star-ranked board, see the [Community leaderboard](#-community-leaderboard).
@@ -39,11 +86,11 @@
 - **Want one install that covers common UI needs**: [dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui) — Task board, Git graph, side panel, remote mobile UI, desktop pet, live token stats, and a skin center in one collection.
 - **Want to see what is inside the context window**: [dsh-context](https://github.com/bowenliang123/dsh-context) — A Context tab in the Web UI showing what the model's context window is made of and how it evolves — helps time trimming and token control.
 - **Want to turn the sidebar into a workbench**: [DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) — File rendering/editing, terminal, Git, and subagents built in, with third-party tab extensions.
-- **Want to inspect and operate the current web page from your dev conversation**: [dsh-browser-bridge](https://github.com/ycp424c/dsh-browser-bridge) — Embeds the full DSH Web in a Chrome side panel; grant the current tab per prompt so DSH can read the DOM, styles, and console errors and interact with the page inside your existing conversation instead of a separate browser chat.
+- **Want to inspect and operate the current web page from your dev conversation**: [dsh-browser](https://github.com/Lum1104/dsh-browser) — A Chrome side-panel extension that lets DSH operate your browser directly, with no vision capabilities required: grant the current tab and let DSH read and act on the page inside your existing conversation.
 
 ### 👀 Let the model see and search
 
-- **Want to add visual understanding to DSH**: [modlens](https://github.com/liustack/modlens) · [dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) · [dsh-luna-vision-bridge](https://github.com/ycp424c/dsh-luna-vision-bridge) — modlens turns images into structured OCR/layout/semantics evidence; dsh-vision-toolkit covers image Q&A, long-screenshot OCR, UI restoration, and pixel diffs — or bridge pure-text models to image input via a Luna transcription adapter.
+- **Want to add visual understanding to DSH**: [modlens](https://github.com/liustack/modlens) · [dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) — modlens turns images into structured OCR/layout/semantics evidence; dsh-vision-toolkit covers image Q&A, long-screenshot OCR, UI restoration, and pixel diffs.
 - **Want the agent to search the web and X with citations**: [modsearch](https://github.com/liustack/modsearch) · [anysearch-dsh](https://github.com/anysearch-team/anysearch-dsh) — modsearch searches and fetches from the web/X inline, returning cited structured evidence; anysearch-dsh adds the AnySearch provider and advanced search tools as a complementary backend.
 
 ### 🧠 Memory & unattended runs
@@ -75,7 +122,6 @@
 ### 🔀 Migration & integrations
 
 - **Want to migrate chat histories from other tools into DSH**: [dsh-chat-import](https://github.com/Nwflower/dsh-chat-import) — Full-fidelity import from 13 sources (Claude Code/Codex/ChatGPT/Cursor/Gemini/Reasonix/opencode/ZCode/Grok Build/OpenClaw/Pi/Hermes/Kimi) into resumable DSH sessions, plus reverse export/sync back to Claude Code.
-- **Want to bring your Claude Code setup into DSH**: [dsh-movein](https://github.com/sjh9714/dsh-movein) · [dsh-claude-migrator](https://github.com/huanghouchun/dsh-claude-migrator) — dsh-movein migrates skills, MCP servers, hooks, subagents, and permission rules with one command — dry-run by default, with a migration diff report for permission rules; dsh-claude-migrator auto-discovers `.claude/skills`, `.claude/rules`, `.mcp.json`, and `CLAUDE.md`, wakes skills per workspace, registers MCP servers as live connections, and ships a collapsible "CLAUDE Config Center" dashboard. CLAUDE.md needs no migration — DSH reads it natively.
 
 ### 🔌 Remote & external collaboration
 
@@ -84,7 +130,7 @@
 
 ### 💰 Usage & billing
 
-- **Want to track token usage and costs**: [dsh-web-billing](https://github.com/bpc-oss/dsh-web-billing) · [dsh-cost-meter](https://github.com/Han-1413141/dsh-cost-meter) — Auto-bill per message with official pricing (incl. peak/off-peak hours), keep a persistent cost ledger, show the account balance, and switch ¥/$ with the UI language.
+- **Want to track token usage and costs**: [dsh-usage-stats](https://github.com/Ychris12138/dsh-usage-stats) · [dsh-cost-meter](https://github.com/Han-1413141/dsh-cost-meter) — dsh-usage-stats adds a GitHub-style usage heatmap, per-model breakdowns, and DeepSeek account balance to the Web GUI; dsh-cost-meter tracks per-session and daily costs synced with official pricing.
 
 ### 🌱 Ecosystem entry points
 
@@ -162,53 +208,6 @@ Self-submitted recommendations from plugin authors, following the [contributing 
 - **[dsh-doc-share](https://github.com/dawsondx/dsh-doc-share)** ([@dawsondx](https://github.com/dawsondx) · 2026-08-15) — Turns a DSH conversation into a formatted report with a cover, summary stats and per-turn chapters: turn-selector dialog (search / select-all / load older history), single-turn quick share, gen-UI rich components supported, and one-shot export to PNG / standalone HTML / PDF / Markdown.
 
 [See all 30 showcase entries →](./SHOWCASE.md)
-
-## 🗺️ Ecosystem at a glance
-
-As of 2026-08-15 the catalog lists **2,134** repositories. Here is the shape of it:
-
-```mermaid
-mindmap
-  root((DSH ecosystem 2134))
-    Agents automation workflows · 702
-      Scheduled loops and event wakeups
-      Multi-agent teamwork
-      Long-term memory and self-evolution
-      Approval budget and checkpoints
-    UI and experience · 420
-      Desktop clients and terminal TUI
-      Sidebar workbenches
-      Skins and desktop pets
-      Notifications and input
-    Web and browser · 328
-      Browser bridge and page control
-      Web search with citations
-      Archiving and web forensics
-    Design media and vision · 141
-      Image understanding and OCR
-      Design canvas and UI restoration
-    Ecosystem and resources · 138
-      Plugin markets and registries
-      Templates and scaffolds
-      Guides and handbooks
-    Developer tools · 126
-      Git and diff
-      Sandbox and runtimes
-      Debugging and diagnostics
-    Knowledge and research · 110
-      Knowledge bases and cross-session memory
-      Deep research
-      Academia and math
-    Utilities and more · 105
-      Files and encodings
-      Format conversion
-    Integrations and sharing · 64
-      Chat import and sharing
-      Remote access
-      IM and external integrations
-```
-
-To browse every project in a category, see [CATALOG.md](./CATALOG.md).
 
 ## 🔍 How this list is maintained
 

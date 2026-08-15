@@ -25,6 +25,53 @@
 | 用程序消费插件数据 | [data/repositories.json](./data/repositories.json)——每日自动快照，含星数、许可证、活跃度等元数据 |
 | 收录或推荐你自己的插件 | [推荐或修正插件](#-推荐或修正插件) / [CONTRIBUTING](./CONTRIBUTING.md) |
 
+## 🗺️ 生态全景
+
+截至 2026-08-15 共收录 **2134** 个仓库。它们长这样：
+
+```mermaid
+mindmap
+  root((DSH 插件生态 2134))
+    Agent 自动化与工作流 · 702
+      定时循环与事件唤醒
+      多 Agent 协作
+      长期记忆与自我进化
+      审批、预算与检查点
+    界面与体验 · 420
+      桌面客户端与终端 TUI
+      侧边栏工作台
+      皮肤与桌面宠物
+      通知与输入增强
+    网页与浏览器 · 328
+      浏览器桥接与页面操作
+      网页搜索与引用
+      归档与网页取证
+    设计媒体与视觉 · 141
+      图片理解与 OCR
+      设计画布与 UI 还原
+    生态与资源 · 138
+      插件市场与注册表
+      开发模板与脚手架
+      教程与手册
+    开发者工具 · 126
+      Git 与 diff
+      沙箱与运行时
+      调试与诊断
+    知识与研究 · 110
+      知识库与跨会话记忆
+      深度研究
+      学术与数学
+    实用工具与其他 · 105
+      文件与编码
+      格式转换
+    集成与分享 · 64
+      会话导入与分享
+      远程访问
+      IM 与外部集成
+```
+
+按分类浏览每个分类下的全部项目，见 [CATALOG.md](./CATALOG.md)。
+
 ## ⭐ 精选推荐
 
 **这里不按星数排名。** 我们优先选择解决明确问题、说明完整、仍在维护且具有代表性的社区项目——所以你会看到上千 Star 的项目，也会看到几十 Star 但无可替代的项目。从你的问题出发，找到最接近的一行，点进去就是答案；收录不等于安全或兼容性背书。想看按热度排名的完整榜单，见[社区热度榜](#-社区热度榜)。
@@ -39,11 +86,11 @@
 - **想一次安装补齐常用界面功能**：[dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui) —— 任务看板、Git 关系图、侧边面板、远程移动端界面、桌面宠物、实时 Token 用量统计与皮肤中心，一站式功能合集。
 - **想看清上下文窗口里装了什么**：[dsh-context](https://github.com/bowenliang123/dsh-context) —— 在 Web UI 增加 Context 面板，展示上下文由什么构成、如何演化，辅助把握 token 控制与裁剪时机。
 - **想把侧边栏升级成完整工作台**：[DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) —— 内置文件渲染编辑、终端、Git 与子代理，并支持第三方扩展注册新 Tab。
-- **想在开发对话里直接检查和操作当前网页**：[dsh-browser-bridge](https://github.com/ycp424c/dsh-browser-bridge) —— 把完整 DSH Web 嵌进 Chrome 侧边栏，按 prompt 显式授权当前标签页，DSH 能在同一对话里读取 DOM、样式、console 报错并操作页面，无需另开浏览器专用对话。
+- **想在开发对话里直接检查和操作当前网页**：[dsh-browser](https://github.com/Lum1104/dsh-browser) —— Chrome 侧边栏扩展，让 DSH 直接操作你的浏览器：无需视觉能力，即可在当前对话里授权页面、读取并执行网页操作。
 
 ### 👀 让模型看得见、搜得到
 
-- **想给 DSH 增加视觉理解能力**：[modlens](https://github.com/liustack/modlens) · [dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) · [dsh-luna-vision-bridge](https://github.com/ycp424c/dsh-luna-vision-bridge) —— modlens 把图片转成 OCR/布局/语义结构化证据；dsh-vision-toolkit 覆盖图片问答、长截图 OCR、UI 还原与像素对比；纯文本模型也可经 Luna 转写桥接继续处理图片。
+- **想给 DSH 增加视觉理解能力**：[modlens](https://github.com/liustack/modlens) · [dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) —— modlens 把图片转成 OCR/布局/语义结构化证据；dsh-vision-toolkit 覆盖图片问答、长截图 OCR、UI 还原与像素对比。
 - **想让 Agent 自己搜索网页和 X，答案带引用**：[modsearch](https://github.com/liustack/modsearch) · [anysearch-dsh](https://github.com/anysearch-team/anysearch-dsh) —— modsearch 在对话中直接搜索、抓取并返回带引用的结构化证据；anysearch-dsh 提供 AnySearch 搜索源与高级搜索工具，可作补充搜索后端。
 
 ### 🧠 记忆与无人值守
@@ -75,7 +122,6 @@
 ### 🔀 迁移与集成
 
 - **想把其他工具的历史会话搬进 DSH**：[dsh-chat-import](https://github.com/Nwflower/dsh-chat-import) —— 13 源全保真导入（Claude Code/Codex/ChatGPT/Cursor/Gemini/Reasonix/opencode/ZCode/Grok Build/OpenClaw/Pi/Hermes/Kimi）历史会话为可续聊 DSH 会话，并支持反向导出/同步回 Claude Code。
-- **想把 Claude Code 的配置搬进 DSH**：[dsh-movein](https://github.com/sjh9714/dsh-movein) · [dsh-claude-migrator](https://github.com/huanghouchun/dsh-claude-migrator) —— dsh-movein 一条命令搬完技能、MCP、hooks、子代理与权限规则，默认 dry-run 预演，权限规则带迁移差异报告；dsh-claude-migrator 自动识别 `.claude/skills`、`.claude/rules`、`.mcp.json` 与 `CLAUDE.md`，skill 按工作区隔离唤醒、MCP 动态注册真实连接，内置可折叠「CLAUDE 配置中心」看板。CLAUDE.md 无需搬运，DSH 原生读取。
 
 ### 🔌 远程与外部协作
 
@@ -84,7 +130,7 @@
 
 ### 💰 用量与账单
 
-- **想查看 Token 用量与费用**：[dsh-web-billing](https://github.com/bpc-oss/dsh-web-billing) · [dsh-cost-meter](https://github.com/Han-1413141/dsh-cost-meter) —— 按官方政策自动计价（含峰谷时段），逐条消息记账，显示账号余额；界面语言自动切换人民币/美元。
+- **想查看 Token 用量与费用**：[dsh-usage-stats](https://github.com/Ychris12138/dsh-usage-stats) · [dsh-cost-meter](https://github.com/Han-1413141/dsh-cost-meter) —— dsh-usage-stats 提供 GitHub 风格用量热力图、按模型拆解与 DeepSeek 账户余额；dsh-cost-meter 按官方价格同步统计本会话/当日费用。
 
 ### 🌱 生态入口
 
@@ -162,53 +208,6 @@
 - **[dsh-doc-share](https://github.com/dawsondx/dsh-doc-share)**（[@dawsondx](https://github.com/dawsondx) · 2026-08-15）— 把 DSH 对话重排成带封面、摘要统计与章节排版的正式报告：轮次选择弹窗（搜索/全选/加载更早历史）、单轮快捷分享、兼容 gen-UI 富组件，一次生成 PNG / 单 HTML / PDF / Markdown 四种格式。
 
 [查看全部 30 条自荐 →](./SHOWCASE.md)
-
-## 🗺️ 生态全景
-
-截至 2026-08-15 共收录 **2134** 个仓库。它们长这样：
-
-```mermaid
-mindmap
-  root((DSH 插件生态 2134))
-    Agent 自动化与工作流 · 702
-      定时循环与事件唤醒
-      多 Agent 协作
-      长期记忆与自我进化
-      审批、预算与检查点
-    界面与体验 · 420
-      桌面客户端与终端 TUI
-      侧边栏工作台
-      皮肤与桌面宠物
-      通知与输入增强
-    网页与浏览器 · 328
-      浏览器桥接与页面操作
-      网页搜索与引用
-      归档与网页取证
-    设计媒体与视觉 · 141
-      图片理解与 OCR
-      设计画布与 UI 还原
-    生态与资源 · 138
-      插件市场与注册表
-      开发模板与脚手架
-      教程与手册
-    开发者工具 · 126
-      Git 与 diff
-      沙箱与运行时
-      调试与诊断
-    知识与研究 · 110
-      知识库与跨会话记忆
-      深度研究
-      学术与数学
-    实用工具与其他 · 105
-      文件与编码
-      格式转换
-    集成与分享 · 64
-      会话导入与分享
-      远程访问
-      IM 与外部集成
-```
-
-按分类浏览每个分类下的全部项目，见 [CATALOG.md](./CATALOG.md)。
 
 ## 🔍 我们如何维护这个列表
 
