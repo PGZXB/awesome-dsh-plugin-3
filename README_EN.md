@@ -229,6 +229,7 @@ Self-submitted recommendations from plugin authors, following the [contributing 
 
 - **[dsh-tray](https://github.com/KAIbsb/dsh-tray)** ([@KAIbsb](https://github.com/KAIbsb) · 2026-08-15) — A Windows tray manager for DSH Web: one-click start/restart/stop, crash auto-restart, whale status icon, and autostart — pairs nicely with a browser app-mode window.
 - **[dsh-plugin-guide](https://github.com/PerryLink/dsh-plugin-guide)** ([@PerryLink](https://github.com/PerryLink) · 2026-08-15) — The DSH plugin-development knowledge base as an on-demand agent skill: official constraints, task workflows, API references, and community pitfalls, installed as a bundle.
+- **[dsh-auto-review](https://github.com/PerryLink/dsh-auto-review)** ([@PerryLink](https://github.com/PerryLink) · 2026-08-15) — Second-model AI auto-review on the approval answerer chain: a read-only reviewer subagent returns structured allow/deny verdicts with reasons and risk levels, fail-closed by default, with a full session-log audit trail; /auto-review command + Web review panel, npm-installable, pairs with dsh-permission-rules for a rules-first, AI-backstop loop.
 ## 🔍 How this list is maintained
 
 - **Built for users, not crawlers:** the front page is organized around "what I want to get done", not hundreds of repo names.
