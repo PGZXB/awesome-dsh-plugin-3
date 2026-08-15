@@ -226,6 +226,7 @@ mindmap
 - **[mirage-dsh](https://github.com/strukto-ai/mirage)**（[@zechengz](https://github.com/zechengz) · 2026-08-15）— 把 DSH 的文件系统与 bash 提供者换成 mirage 虚拟工作区：文件工具与 shell 命令作用于挂载的资源（RAM、S3、Redis、Slack、Gmail、Notion、Postgres）而非宿主磁盘，支持按挂载点设置读/写/执行模式、按命令选择沙箱（进程内 monty、pyodide、quickjs；远程 docker、e2b、daytona），并可在虚拟终端中安装 CLI（git、gh、slack、linear、ntn、gws，或自行注册的程序树）作为命令头词。npm 包名 `@struktoai/mirage-dsh`，插件源码在 [typescript/packages/dsh](https://github.com/strukto-ai/mirage/tree/main/typescript/packages/dsh)。
 - **[dsh-output-styles](https://github.com/PerryLink/dsh-output-styles)**（[@PerryLink](https://github.com/PerryLink) · 2026-08-15）— 对标 Claude Code outputStyles 的运行时输出风格切换：/style 命令即时生效、按会话持久化、六个内置风格 + 自定义 Markdown/JSON 风格库与热重载，附 Web 选择器与五语文档。
 - **[dsh-composer-history](https://github.com/PerryLink/dsh-composer-history)**（[@PerryLink](https://github.com/PerryLink) · 2026-08-15）— 作曲器终端风格输入历史：边缘优先方向键召回并精确还原草稿与光标、浏览器本地持久化历史、Ctrl+R 反向搜索与滑动上下文感知；适合每天都在 Web 输入框写提示词的 dsh 用户。
+- **[dsh-config-sync](https://github.com/muyifc/dsh-config-sync)**（[@muyifc](https://github.com/muyifc) · 2026-08-15）— DSH 配置备份与迁移：一键导出/恢复 API 设置、凭据、profile 插件补丁与用户 agent presets；支持口令加密单文件（.dshsync，AES-256-GCM + PBKDF2），导入前先预览、覆盖前自动备份，密钥内容永不进入对话。
 
 - **[dsh-tray](https://github.com/KAIbsb/dsh-tray)**（[@KAIbsb](https://github.com/KAIbsb) · 2026-08-15）— Windows 托盘管家:一键启动/重启/停止 DSH Web、崩溃自动拉起、状态鲸鱼图标与开机自启,配合浏览器 APP 模式窗口更顺手。
 ## 🔍 我们如何维护这个列表
