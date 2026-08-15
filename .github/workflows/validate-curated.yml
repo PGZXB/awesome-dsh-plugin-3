@@ -6,6 +6,7 @@ on:
       - 'data/curated.json'
       - 'README.md'
       - 'README_EN.md'
+      - 'SHOWCASE.md'
       - 'scripts/**'
       - '.github/workflows/validate-curated.yml'
 
@@ -30,3 +31,5 @@ jobs:
         run: node scripts/validate-curated.mjs
       - name: Rebuild the catalog page from the stored snapshot
         run: node scripts/update.mjs --from-snapshot
+      - name: Rebuild the leaderboard from the stored snapshot
+        run: node scripts/top.mjs

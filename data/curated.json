@@ -14,6 +14,9 @@
     "flymysql/dsh-remote": "integrations-sharing",
     "howlma/dsh-desktop": "ui-experience"
   },
+  "leaderboard_exclusions": {
+    "strukto-ai/mirage": "Kept out of the star board: stars come from the generic multi-agent virtual-filesystem product; the DSH plugin (@struktoai/mirage-dsh) is a subpackage of this repo and stays in the catalog."
+  },
   "excluded_repos": {
     "AdamPlatin123/awesome-dsh-plugins": "Not a DSH plugin — a competing/duplicate plugin-catalog site that tags itself with the dsh-plugin topic.",
     "awesome-dsh-plugin/awesome-dsh-plugin": "Not a DSH plugin — a competing plugin-catalog site (a fork of this list).",
@@ -137,6 +140,23 @@
     "Inference1/clarify-intent-and-establish-shared-understanding": "Not a DSH plugin — a generic agent intent-clarification skill.",
     "dqsjqian/Aria": "Not a DSH plugin — a C++20 MVVM framework riding the topic.",
     "phoenixlucky/zerotoken-skill": "Not a DSH plugin — a generic token-discipline skill for Reasonix/Codex/OpenCode/Hermes.",
-    "anywhere-labs/deepseek-harness-desktop": "Blacklisted for editorial reasons — originally forked from the official deepseek-harness source, then detached the fork link; removed from recommendations, the leaderboard, and the catalog."
+    "anywhere-labs/deepseek-harness-desktop": "Blacklisted for editorial reasons — originally forked from the official deepseek-harness source, then detached the fork link; removed from recommendations, the leaderboard, and the catalog.",
+    "GanyuanRan/Aegis": "Not a DSH plugin — a generic architecture-aware coding-agent framework aimed at Claude Code/Codex/OpenCode; rides the dsh-plugin topic.",
+    "text2future/flowix": "Not a DSH plugin — a generic notes/memory product for Claude Code/Codex/Hermes/OpenCode; rides the dsh-plugin topic.",
+    "alibaba/loongsuite-pilot": "Not a DSH plugin — a generic telemetry collector for Claude Code/Codex/Cursor and other CLIs; rides the dsh-plugin topic.",
+    "orziz/odai": "Not a DSH plugin — a generic multi-agent task-governance framework; rides the dsh-plugin topic.",
+    "JingbiaoMei/Tokdash": "Not primarily a DSH plugin — a multi-provider agent dashboard (Claude Code/Codex/OpenCode/Pi/Kimi); DSH is only one of many integrations.",
+    "834063245-creator/HoloGram": "Not a DSH plugin — a language-agnostic 3D code dependency graph generator; rides the dsh-plugin topic.",
+    "upstash/skills": "Not a DSH plugin — Upstash's generic skill collection; rides the dsh-plugin topic.",
+    "the-beating-light-of-the-nail/dsh-meme-hub": "Not an installable plugin — a curated meme-plugin tour/list site (competing curated list).",
+    "zp-home/dsh-recommend": "Not a DSH plugin — a plugin ranking/recommendation static site; rides the dsh-plugin topic.",
+    "isomoes/ikanban": "Not a DSH plugin — a Web interface for the OpenCode coding agent; rides the dsh-plugin topic.",
+    "cosyncing/cosyncing": "Not a DSH plugin — a generic cross-CLI agent orchestration platform (Claude Code/Codex/OpenCode/Pi); rides the dsh-plugin topic.",
+    "creght-dev/skills": "Not a DSH plugin — Codex/agent skills for the Cregh website builder; rides the dsh-plugin topic.",
+    "gusibi/molibot": "Not a DSH plugin — a memory-first personal AI agent (Pi-oriented); rides the dsh-plugin topic.",
+    "imsai-sh/awesome-deepseek-harness-plugins": "Not a DSH plugin — a competing plugin-directory/marketplace site.",
+    "AtlasCloudAI/mcp-server": "Not a DSH plugin — a generic MCP server for the Atlas Cloud API platform; rides the dsh-plugin topic.",
+    "wangshunnn/oh-my-dsh": "Not a DSH plugin — a competing plugin index/curated list.",
+    "YYTbit/awesome-dsh-bridges": "Not a DSH plugin — a competing curated list/directory."
   }
 }

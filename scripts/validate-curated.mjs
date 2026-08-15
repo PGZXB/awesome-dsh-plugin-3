@@ -11,10 +11,12 @@
 // intentionally not checked against the API: entries may be deleted or renamed,
 // and keeping them out of the catalog by name is still correct.
 //
-// The author-showcase (self-promotion) sections in README.md and README_EN.md
-// are parsed straight from the markdown: both pages must carry the section,
-// entries must follow the documented line format, stay within the FIFO cap,
-// list the same repositories in the same order, and every referenced repository
+// The author-showcase (self-promotion) lists are parsed straight from the
+// markdown. SHOWCASE.md carries the complete list for both languages (the
+// source of truth, capped at 30 entries, first in first out); README.md and
+// README_EN.md carry a preview of the 10 most recent entries on the home
+// pages. All four sections must follow the documented line format, the
+// previews must stay in sync with SHOWCASE.md, and every referenced repository
 // is checked against the GitHub API exactly like a category override.
 
 import { readFile } from 'node:fs/promises';
@@ -26,10 +28,6 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const errors = [];
 const validCategories = new Set(categoryKeys);
 const ownerRepoPattern = /^[\w.-]+\/[\w.-]+$/;
-
-const showcaseCap = 30;
-const showcaseEntryPattern =
-  /^-\s+\*\*\[[^\]]+\]\(https:\/\/github\.com\/([\w.-]+\/[\w.-]+)\)\*\*\s*[（(]\[@[\w.-]+\]\(https:\/\/github\.com\/[\w.-]+\)\s*·\s*(\d{4}-\d{2}-\d{2})[)）]\s*[—-]\s*\S/;
 
 let curated;
 try {
@@ -61,31 +59,50 @@ for (const fullName of Object.keys(curated.excluded_repos || {})) {
   }
 }
 
-// --- Author showcase sections ----------------------------------------------
-// Each README carries one showcase section: a header line, an intro paragraph,
-// then one hand-maintained entry per line. The markdown is the source of truth,
-// so it is parsed here rather than duplicated into curated.json.
-const showcaseFiles = [
-  { file: 'README.md', header: '## 📣 作者自荐' },
-  { file: 'README_EN.md', header: '## 📣 Author showcase' },
-];
-const showcaseReposByFile = new Map();
-let showcaseEntriesAreWellFormed = true;
-
-for (const { file, header } of showcaseFiles) {
-  let markdown;
-  try {
-    markdown = await readFile(resolve(root, file), 'utf8');
-  } catch (error) {
-    errors.push(`${file}: could not be read (${error.message})`);
-    continue;
+for (const fullName of Object.keys(curated.leaderboard_exclusions || {})) {
+  if (!ownerRepoPattern.test(fullName)) {
+    errors.push(`leaderboard_exclusions key "${fullName}" is not a valid owner/repo reference`);
   }
+}
 
+// --- Author showcase sections ----------------------------------------------
+// SHOWCASE.md is the source of truth: one full list per language, then a
+// header line and intro paragraph followed by one hand-maintained entry per
+// line. The home pages (README.md / README_EN.md) carry only a preview of the
+// most recent entries, parsed the same way.
+const showcaseCap = 30;
+const showcasePreviewCap = 10;
+const showcaseEntryPattern =
+  /^-\s+\*\*\[[^\]]+\]\(https:\/\/github\.com\/([\w.-]+\/[\w.-]+)\)\*\*\s*[（(]\[@[\w.-]+\]\(https:\/\/github\.com\/[\w.-]+\)\s*·\s*(\d{4}-\d{2}-\d{2})[)）]\s*[—-]\s*\S/;
+
+const showcaseFullFiles = [
+  { file: 'SHOWCASE.md', header: '## 📣 作者自荐', label: 'zh' },
+  { file: 'SHOWCASE.md', header: '## 📣 Author showcase', label: 'en' },
+];
+const showcasePreviewFiles = [
+  { file: 'README.md', header: '## 📣 作者自荐', label: 'zh' },
+  { file: 'README_EN.md', header: '## 📣 Author showcase', label: 'en' },
+];
+const showcaseMarkdowns = new Map();
+
+async function readShowcaseMarkdown(file) {
+  if (!showcaseMarkdowns.has(file)) {
+    try {
+      showcaseMarkdowns.set(file, await readFile(resolve(root, file), 'utf8'));
+    } catch (error) {
+      errors.push(`${file}: could not be read (${error.message})`);
+      showcaseMarkdowns.set(file, '');
+    }
+  }
+  return showcaseMarkdowns.get(file);
+}
+
+function parseShowcaseSection(markdown, file, header) {
   const lines = markdown.split('\n');
   const headerIndex = lines.indexOf(header);
   if (headerIndex === -1) {
     errors.push(`${file}: author-showcase section "${header}" is missing`);
-    continue;
+    return null;
   }
   const sectionEnd = lines.findIndex((line, index) => index > headerIndex && line.startsWith('## '));
   const entries = lines
@@ -93,10 +110,11 @@ for (const { file, header } of showcaseFiles) {
     .filter((line) => line.startsWith('- '));
 
   const repos = [];
+  let wellFormed = true;
   for (const line of entries) {
     const match = line.match(showcaseEntryPattern);
     if (!match) {
-      showcaseEntriesAreWellFormed = false;
+      wellFormed = false;
       errors.push(`${file}: showcase entry does not follow the documented format: ${line.slice(0, 100)}`);
       continue;
     }
@@ -110,20 +128,44 @@ for (const { file, header } of showcaseFiles) {
     repos.push(repo);
     referenced.set(repo, 'author showcase');
   }
-  if (entries.length > showcaseCap) {
-    errors.push(`${file}: showcase holds ${entries.length} entries, cap is ${showcaseCap} — drop the oldest (first in, first out)`);
-  }
-  showcaseReposByFile.set(file, repos);
+  return { entries, repos, wellFormed };
 }
 
-const showcaseRepoLists = showcaseFiles.map(({ file }) => showcaseReposByFile.get(file) ?? []);
-if (showcaseEntriesAreWellFormed && showcaseRepoLists.length === 2) {
-  const [zhRepos, enRepos] = showcaseRepoLists;
-  if (zhRepos.join() !== enRepos.join()) {
-    errors.push('README.md and README_EN.md showcase sections list different repositories or orders — keep both pages in sync');
+const showcaseReposByLabel = new Map();
+for (const { file, header, label } of showcaseFullFiles) {
+  const markdown = await readShowcaseMarkdown(file);
+  const parsed = parseShowcaseSection(markdown, file, header);
+  if (!parsed) continue;
+  showcaseReposByLabel.set(`full:${label}`, parsed.repos);
+  if (parsed.entries.length > showcaseCap) {
+    errors.push(`${file}: showcase holds ${parsed.entries.length} entries, cap is ${showcaseCap} — drop the oldest (first in, first out)`);
   }
 }
-const showcaseCount = new Set(showcaseRepoLists.flat()).size;
+for (const { file, header, label } of showcasePreviewFiles) {
+  const markdown = await readShowcaseMarkdown(file);
+  const parsed = parseShowcaseSection(markdown, file, header);
+  if (parsed) showcaseReposByLabel.set(`preview:${label}`, parsed.repos);
+}
+
+if (showcaseReposByLabel.has('full:zh') && showcaseReposByLabel.has('full:en')) {
+  if (showcaseReposByLabel.get('full:zh').join() !== showcaseReposByLabel.get('full:en').join()) {
+    errors.push('SHOWCASE.md zh/en sections list different repositories or orders — keep both sections in sync');
+  }
+}
+for (const label of ['zh', 'en']) {
+  const fullList = showcaseReposByLabel.get(`full:${label}`);
+  const preview = showcaseReposByLabel.get(`preview:${label}`);
+  if (!fullList || !preview) continue;
+  const expected = fullList.slice(-showcasePreviewCap);
+  if (preview.join() !== expected.join()) {
+    errors.push(
+      `${label === 'zh' ? 'README.md' : 'README_EN.md'}: the home-page showcase preview must show the ${showcasePreviewCap} most recent SHOWCASE.md entries in order — keep it in sync`,
+    );
+  }
+}
+const showcaseCount = new Set(
+  ['zh', 'en'].flatMap((label) => showcaseReposByLabel.get(`full:${label}`) ?? []),
+).size;
 
 const headers = {
   Accept: 'application/vnd.github+json',
@@ -165,4 +207,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`data/curated.json and the README showcase sections are valid — ${overrideCount} category overrides and ${showcaseCount} showcase repositories checked against the GitHub API.`);
+console.log(`data/curated.json and the showcase sections are valid — ${overrideCount} category overrides and ${showcaseCount} showcase repositories checked against the GitHub API.`);

@@ -9,103 +9,88 @@
 [![Refreshed](https://img.shields.io/github/last-commit/bruc3van/awesome-dsh-plugin?label=refreshed&color=10b981)](./CATALOG.md)
 ![License](https://img.shields.io/badge/license-MIT-f59e0b)
 
-[中文](./README.md) · [Full catalog](./CATALOG.md) · [Star Top 100](./TOP100.md) · [Recommend a plugin](./CONTRIBUTING.md) · [Machine-readable data](./data/repositories.json)
+[中文](./README.md) · [Full catalog](./CATALOG.md) · [Star Top 200](./TOP200.md) · [Author showcase](./SHOWCASE.md) · [Recommend a plugin](./CONTRIBUTING.md) · [Machine-readable data](./data/repositories.json)
 
 **If this list helps you discover something useful, consider leaving a Star ⭐ so more DSH users can find the ecosystem.**
 
-## How to use this list
-
-This repository is split into three layers — pick the depth you need:
+## 🧭 Quick index
 
 | You want to… | Go to |
 | --- | --- |
-| Pick a plugin in 30 seconds | Keep reading: [scenario picker](#-what-do-you-want-dsh-to-do) and [starter kits](#-new-to-dsh-plugins) |
-| Browse everything by stars or category | [TOP100.md](./TOP100.md) (leaderboard) · [CATALOG.md](./CATALOG.md) (full catalog) |
+| Pick a plugin in 30 seconds | [Featured picks](#-featured-picks): great community plugins organized around "what do you want DSH to do" |
+| Install your first plugins | [Starter kits](#-starter-kits): pick one combo closest to your current problem |
+| Browse the full ranking by stars | [Community leaderboard](#-community-leaderboard) (home Top 20) · [TOP200.md](./TOP200.md) (full Top 200) |
+| Browse everything by category | [CATALOG.md](./CATALOG.md) (full catalog) · [Ecosystem at a glance](#-ecosystem-at-a-glance) |
+| See what authors are submitting themselves | [Author showcase](#-author-showcase) (10 most recent on the home page) · [SHOWCASE.md](./SHOWCASE.md) (all entries) |
 | Consume plugin data programmatically | [data/repositories.json](./data/repositories.json) — daily automated snapshot with stars, license, and activity metadata |
-| List your own plugin | No PR needed: tag your repo `dsh-plugin` and it enters the catalog automatically — see [Contributing](#-recommend-or-correct-an-entry) |
-| You wrote a plugin and want front-page visibility | [Author showcase](#-author-showcase): submit one self-recommendation per the rules — no editorial review, first in first out |
+| List or recommend your own plugin | [Recommend or correct an entry](#-recommend-or-correct-an-entry) / [CONTRIBUTING](./CONTRIBUTING.md) |
 
-## 🗺️ Ecosystem at a glance
+## ⭐ Featured picks
 
-As of 2026-08-14 the catalog lists **1,761** repositories. Here is the shape of it:
+**These are not ranked by stars.** We prioritize projects that solve a clear problem, document themselves well, are still maintained, and are representative — so you will find 1k-star projects next to a few-dozen-star one that has no substitute. Start from your problem, find the closest line, and the answer is one click away. Inclusion is not an endorsement of security or compatibility. For the full star-ranked board, see the [Community leaderboard](#-community-leaderboard).
 
-```mermaid
-mindmap
-  root((DSH ecosystem 1761))
-    Agents automation workflows · 575
-      Scheduled loops and event wakeups
-      Multi-agent teamwork
-      Long-term memory and self-evolution
-      Approval budget and checkpoints
-    UI and experience · 354
-      Desktop clients and terminal TUI
-      Sidebar workbenches
-      Skins and desktop pets
-      Notifications and input
-    Web and browser · 258
-      Browser bridge and page control
-      Web search with citations
-      Archiving and web forensics
-    Ecosystem and resources · 119
-      Plugin markets and registries
-      Templates and scaffolds
-      Guides and handbooks
-    Design media and vision · 107
-      Image understanding and OCR
-      Design canvas and UI restoration
-    Developer tools · 106
-      Git and diff
-      Sandbox and runtimes
-      Debugging and diagnostics
-    Knowledge and research · 99
-      Knowledge bases and cross-session memory
-      Deep research
-      Academia and math
-    Utilities and more · 94
-      Files and encodings
-      Format conversion
-    Integrations and sharing · 49
-      Chat import and sharing
-      Remote access
-      IM and external integrations
-```
+### 🖥️ Desktop & terminal
 
-To browse every project in a category, see [CATALOG.md](./CATALOG.md).
+- **Want a standalone desktop client** instead of a browser tab: [dsh-desktop](https://github.com/bruc3van/dsh-desktop) — Out-of-the-box: auto-reuse a running local instance or launch the bundled runtime with no Node.js/CLI install, plus remote connections, tray residency, and crash recovery.
+- **Want a Claude Code-style terminal UI**: [dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI) · [dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui) — Full-screen interactive terminals with a live status line, thought streaming, and context/TPS gauges; the tianshu build adds TDD and evidence-gate workflows.
 
-## 🎯 What do you want DSH to do?
+### 🧰 Interface workbenches
 
-Start from your problem, not from a category. Find the closest row — the answer is one click away:
+- **Want one install that covers common UI needs**: [dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui) — Task board, Git graph, side panel, remote mobile UI, desktop pet, live token stats, and a skin center in one collection.
+- **Want to see what is inside the context window**: [dsh-context](https://github.com/bowenliang123/dsh-context) — A Context tab in the Web UI showing what the model's context window is made of and how it evolves — helps time trimming and token control.
+- **Want to turn the sidebar into a workbench**: [DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) — File rendering/editing, terminal, Git, and subagents built in, with third-party tab extensions.
+- **Want to inspect and operate the current web page from your dev conversation**: [dsh-browser-bridge](https://github.com/ycp424c/dsh-browser-bridge) — Embeds the full DSH Web in a Chrome side panel; grant the current tab per prompt so DSH can read the DOM, styles, and console errors and interact with the page inside your existing conversation instead of a separate browser chat.
 
-| I want to… | Start here | Why |
-| --- | --- | --- |
-| Run DSH as a standalone desktop app, not a browser tab | [dsh-desktop](https://github.com/bruc3van/dsh-desktop) | dsh-desktop is the out-of-the-box option: auto-reuse a running local instance or launch the bundled runtime with no Node.js/CLI install, plus remote connections, tray residency, and crash recovery. |
-| Manage and discover plugins | [plugin-registry](https://github.com/vlln/plugin-registry) · [dsh-market](https://github.com/dsh-market/dsh-market) | plugin-registry manages repository plugins in a browser console with development guidance; dsh-market brings a browse/search/one-click-install market into the DSH conversation UI. |
-| Turn existing application code into agent-callable capabilities | [Code2Skill](https://github.com/leechen298/Code2Skill) | Generate Functions, MCP tools, workflow Skills, and offline tests from user-authorized frontend, backend, or full-stack source code, packaged as an installable DSH bundle. |
-| Track background tasks | [dsh-task-status](https://github.com/vlln/dsh-task-status) | Show task progress and a live output tail in the conversation view. |
-| See what is inside the context window | [dsh-context](https://github.com/bowenliang123/dsh-context) | A Context tab in the Web UI showing what the model's context window is made of and how it evolves — helps time trimming and token control. |
-| Wake an agent on a schedule or event | [dsh-loop](https://github.com/vlln/dsh-loop) · [dsh-sentinel](https://github.com/fuhefei/dsh-sentinel) | Cover scheduled runs plus file, command, HTTP, process, and webhook events. |
-| Keep requests from dying to network hiccups and timeouts without manually saying "continue" every time | [dsh-auto-continue](https://github.com/HsiangNianian/dsh-auto-continue) | Auto-sends a queued "continue" after non-human failures: error classification resumes only transient faults, adaptive backoff avoids hammering a broken upstream, and templated continue text keeps you in the loop — all configurable from the plugin settings card. |
-| Navigate and annotate long conversations | [dsh-navbar](https://github.com/vlln/dsh-navbar) · [dsh-annotation](https://github.com/omdsh-dev/dsh-annotation) | Jump between user-message nodes and attach Codex-style annotations. |
-| Reference workspace files with @ mentions | [dsh-at-file](https://github.com/omdsh-dev/dsh-at-file) | @-search workspace files in the composer and attach their contents to the prompt, no copy-paste needed. |
-| Render interactive UI in chat | [dsh-genui](https://github.com/omdsh-dev/dsh-genui) | Render charts, forms, quizzes, Mermaid diagrams, and 3D scenes inline. |
-| Let agents operate a real design canvas | [dsh-openpencil](https://github.com/ZSeven-W/dsh-openpencil) | Create, edit, preview, and validate interactive multi-page OpenPencil designs. |
-| Add visual understanding to DSH | [modlens](https://github.com/liustack/modlens) · [dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) · [dsh-luna-vision-bridge](https://github.com/ycp424c/dsh-luna-vision-bridge) | modlens turns images into structured OCR/layout/semantics evidence; dsh-vision-toolkit covers image Q&A, long-screenshot OCR, UI restoration, and pixel diffs — or bridge pure-text models to image input via a Luna transcription adapter. |
-| Let the agent search the web and X with citations | [modsearch](https://github.com/liustack/modsearch) · [anysearch-dsh](https://github.com/anysearch-team/anysearch-dsh) | modsearch searches and fetches from the web/X inline, returning cited structured evidence; anysearch-dsh adds the AnySearch provider and advanced search tools as a complementary backend. |
-| Inspect and operate the current web page from your dev conversation | [dsh-browser-bridge](https://github.com/ycp424c/dsh-browser-bridge) | Embeds the full DSH Web in a Chrome side panel; grant the current tab per prompt so DSH can read the DOM, styles, and console errors and interact with the page inside your existing conversation instead of a separate browser chat. |
-| Turn the sidebar into a workbench | [DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) | File rendering/editing, terminal, Git, and subagents built in, with third-party tab extensions. |
-| Work from a Claude Code-style terminal UI | [dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI) · [dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui) | Full-screen interactive terminals with a live status line, thought streaming, and context/TPS gauges; the tianshu build adds TDD and evidence-gate workflows. |
-| Add auditable cross-session memory | [dsh-memory-evolve](https://github.com/csyangwen/dsh-memory-evolve) · [dsh-mneme](https://github.com/modusensus/dsh-mneme) | Five-track memory with skill self-evolution, or an SQLite + editable Markdown memory mirror you can audit. |
-| Get notified when a turn finishes | [dsh-notification](https://github.com/omdsh-dev/dsh-notification) | Per-outcome notifications with keyword include/exclude rules so long tasks need no babysitting. |
-| Rewind conversation and workspace state | [dsh-turn-rewind](https://github.com/Anionex/dsh-turn-rewind) | Rewind to any earlier turn via a persistent Change Ledger, restoring both conversation and workspace state. |
-| Add a companion to the workspace | [whale-girl](https://github.com/vlln/whale-girl) | A draggable companion with feeding, play, and persistent progression. |
-| Migrate chat histories from other tools into DSH | [dsh-chat-import](https://github.com/Nwflower/dsh-chat-import) | Full-fidelity import from 13 sources (Claude Code/Codex/ChatGPT/Cursor/Gemini/Reasonix/opencode/ZCode/Grok Build/OpenClaw/Pi/Hermes/Kimi) into resumable DSH sessions, plus reverse export/sync back to Claude Code. |
-| Bring your Claude Code setup into DSH | [dsh-movein](https://github.com/sjh9714/dsh-movein) · [dsh-claude-migrator](https://github.com/huanghouchun/dsh-claude-migrator) | dsh-movein migrates skills, MCP servers, hooks, subagents, and permission rules with one command — dry-run by default, with a migration diff report for permission rules; dsh-claude-migrator auto-discovers `.claude/skills`, `.claude/rules`, `.mcp.json`, and `CLAUDE.md`, wakes skills per workspace, registers MCP servers as live connections, and ships a collapsible "CLAUDE Config Center" dashboard. CLAUDE.md needs no migration — DSH reads it natively. |
-| Change the skin / set a custom wallpaper | [dsh-skin](https://github.com/KinGao294/dsh-skin) · [dsh-deep-whale](https://github.com/Small-tailqwq/dsh-deep-whale) | dsh-skin switches --dsw-alias-* palettes and translucent wallpapers (Codex-style); dsh-deep-whale is the most popular whale-girl skin series (CC BY-NC-SA, non-commercial). |
-| Track token usage and costs | [dsh-web-billing](https://github.com/bpc-oss/dsh-web-billing) · [dsh-cost-meter](https://github.com/Han-1413141/dsh-cost-meter) | Auto-bill per message with official pricing (incl. peak/off-peak hours), keep a persistent cost ledger, show the account balance, and switch ¥/$ with the UI language. |
-| Drive Harness from an external agent | [dsh-harness-mcp-server](https://github.com/chushixixin/dsh-harness-mcp-server) | Runs an MCP server inside Harness so any MCP client (e.g. Hermes) can delegate coding tasks to Harness — a 'brain + arms' setup. |
-| Access your local Harness securely from another device | [dsh-remote](https://github.com/flymysql/dsh-remote) | Prints the exact commands for the live instance — SSH local forward, autossh keepalive, NAT-friendly reverse tunnel, and reverse-proxy access with --trusted-host — with one-click copy from the settings page. Respects the official safety design: no 0.0.0.0 hacks. |
+### 👀 Let the model see and search
 
-## 🚀 New to DSH plugins?
+- **Want to add visual understanding to DSH**: [modlens](https://github.com/liustack/modlens) · [dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) · [dsh-luna-vision-bridge](https://github.com/ycp424c/dsh-luna-vision-bridge) — modlens turns images into structured OCR/layout/semantics evidence; dsh-vision-toolkit covers image Q&A, long-screenshot OCR, UI restoration, and pixel diffs — or bridge pure-text models to image input via a Luna transcription adapter.
+- **Want the agent to search the web and X with citations**: [modsearch](https://github.com/liustack/modsearch) · [anysearch-dsh](https://github.com/anysearch-team/anysearch-dsh) — modsearch searches and fetches from the web/X inline, returning cited structured evidence; anysearch-dsh adds the AnySearch provider and advanced search tools as a complementary backend.
+
+### 🧠 Memory & unattended runs
+
+- **Want auditable cross-session memory**: [dsh-memory-evolve](https://github.com/csyangwen/dsh-memory-evolve) · [dsh-mneme](https://github.com/modusensus/dsh-mneme) — Five-track memory with skill self-evolution, or an SQLite + editable Markdown memory mirror you can audit.
+- **Want to wake an agent on a schedule or event**: [dsh-loop](https://github.com/vlln/dsh-loop) · [dsh-sentinel](https://github.com/fuhefei/dsh-sentinel) — Scheduled runs plus file, command, HTTP, process, and webhook events.
+- **Requests keep dying to network hiccups and timeouts**, and you do not want to say "continue" by hand every time: [dsh-auto-continue](https://github.com/HsiangNianian/dsh-auto-continue) — Auto-sends a queued "continue" after non-human failures: error classification resumes only transient faults, adaptive backoff avoids hammering a broken upstream, and templated continue text keeps you in the loop — all configurable from the plugin settings card.
+- **Want to rewind conversation and workspace state**: [dsh-turn-rewind](https://github.com/Anionex/dsh-turn-rewind) — Rewind to any earlier turn via a persistent Change Ledger, restoring both conversation and workspace state.
+- **Want a desktop notification when a turn finishes**: [dsh-notification](https://github.com/omdsh-dev/dsh-notification) — Per-outcome notifications with keyword include/exclude rules so long tasks need no babysitting.
+
+### ✍️ Conversation details
+
+- **Want to reference workspace files with @ mentions, like Codex**: [dsh-at-file](https://github.com/omdsh-dev/dsh-at-file) — @-search workspace files in the composer and attach their contents to the prompt, no copy-paste needed.
+- **Want to navigate and annotate long conversations**: [dsh-navbar](https://github.com/vlln/dsh-navbar) · [dsh-annotation](https://github.com/omdsh-dev/dsh-annotation) — Jump between user-message nodes and attach Codex-style annotations.
+- **Want to track background tasks**: [dsh-task-status](https://github.com/vlln/dsh-task-status) — Show task progress and a live output tail in the conversation view.
+- **Want a live outline for long conversations**: [dsh-outline](https://github.com/urzeye/dsh-outline) — A tree of user questions and Markdown headings (H1-H6) that updates live while streaming, with click-to-jump highlight, expand-depth control, search, and per-session favorites.
+
+### 🎨 Creation & fun
+
+- **Want interactive UI rendered in chat**: [dsh-genui](https://github.com/omdsh-dev/dsh-genui) — Charts, forms, quizzes, Mermaid diagrams, and 3D scenes rendered inline.
+- **Want agents to operate a real design canvas**: [dsh-openpencil](https://github.com/ZSeven-W/dsh-openpencil) — Create, edit, preview, and validate interactive multi-page OpenPencil designs.
+- **Want a companion in the workspace**: [whale-girl](https://github.com/vlln/whale-girl) — A draggable, feedable, playable desktop companion with persistent progression.
+- **Want to change the skin / set a custom wallpaper**: [dsh-skin](https://github.com/KinGao294/dsh-skin) · [dsh-deep-whale](https://github.com/Small-tailqwq/dsh-deep-whale) — dsh-skin switches --dsw-alias-* palettes and translucent wallpapers (Codex-style); dsh-deep-whale is the most popular whale-girl skin series (CC BY-NC-SA, non-commercial).
+
+### 🛠️ Development & workflows
+
+- **Want to turn existing application code into agent-callable capabilities**: [Code2Skill](https://github.com/leechen298/Code2Skill) — Generate Functions, MCP tools, workflow Skills, and offline tests from user-authorized frontend, backend, or full-stack source code, packaged as an installable DSH bundle.
+
+### 🔀 Migration & integrations
+
+- **Want to migrate chat histories from other tools into DSH**: [dsh-chat-import](https://github.com/Nwflower/dsh-chat-import) — Full-fidelity import from 13 sources (Claude Code/Codex/ChatGPT/Cursor/Gemini/Reasonix/opencode/ZCode/Grok Build/OpenClaw/Pi/Hermes/Kimi) into resumable DSH sessions, plus reverse export/sync back to Claude Code.
+- **Want to bring your Claude Code setup into DSH**: [dsh-movein](https://github.com/sjh9714/dsh-movein) · [dsh-claude-migrator](https://github.com/huanghouchun/dsh-claude-migrator) — dsh-movein migrates skills, MCP servers, hooks, subagents, and permission rules with one command — dry-run by default, with a migration diff report for permission rules; dsh-claude-migrator auto-discovers `.claude/skills`, `.claude/rules`, `.mcp.json`, and `CLAUDE.md`, wakes skills per workspace, registers MCP servers as live connections, and ships a collapsible "CLAUDE Config Center" dashboard. CLAUDE.md needs no migration — DSH reads it natively.
+
+### 🔌 Remote & external collaboration
+
+- **Want an external agent to drive Harness**: [dsh-harness-mcp-server](https://github.com/chushixixin/dsh-harness-mcp-server) — Runs an MCP server inside Harness so any MCP client (e.g. Hermes) can delegate coding tasks to Harness — a 'brain + arms' setup.
+- **Want to access your local Harness securely from another device**: [dsh-remote](https://github.com/flymysql/dsh-remote) — Prints the exact commands for the live instance — SSH local forward, autossh keepalive, NAT-friendly reverse tunnel, and reverse-proxy access with --trusted-host — with one-click copy from the settings page. Respects the official safety design: no 0.0.0.0 hacks.
+
+### 💰 Usage & billing
+
+- **Want to track token usage and costs**: [dsh-web-billing](https://github.com/bpc-oss/dsh-web-billing) · [dsh-cost-meter](https://github.com/Han-1413141/dsh-cost-meter) — Auto-bill per message with official pricing (incl. peak/off-peak hours), keep a persistent cost ledger, show the account balance, and switch ¥/$ with the UI language.
+
+### 🌱 Ecosystem entry points
+
+- **Want to manage and discover plugins**: [plugin-registry](https://github.com/vlln/plugin-registry) · [dsh-market](https://github.com/dsh-market/dsh-market) — plugin-registry manages repository plugins in a browser console with development guidance; dsh-market brings a browse/search/one-click-install market into the DSH conversation UI.
+
+### 🚀 Starter kits
 
 You do not need to install everything. Start with the kit closest to the problem you have today:
 
@@ -117,71 +102,34 @@ You do not need to install everything. Start with the kit closest to the problem
 | Creation & interfaces | Generative UI, real design canvas, visual understanding | [dsh-genui](https://github.com/omdsh-dev/dsh-genui) · [dsh-openpencil](https://github.com/ZSeven-W/dsh-openpencil) · [dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) |
 | Memory & long-running | Cross-session memory + auto-resume for unattended projects | [dsh-memory-evolve](https://github.com/csyangwen/dsh-memory-evolve) · [dsh-mneme](https://github.com/modusensus/dsh-mneme) · [dsh-auto-continue](https://github.com/HsiangNianian/dsh-auto-continue) |
 
-## ⭐ Editor's picks
-
-**These are not ranked by stars.** We prioritize projects that solve a clear problem, document themselves well, are still maintained, and are representative — so you will find 1.7k-star projects next to a 6-star one that has no substitute. Inclusion is not an endorsement of security or compatibility.
-
-### 🖥️ Desktop & terminal
-
-- **[dsh-desktop](https://github.com/bruc3van/dsh-desktop)** (⭐ 29) — Community-maintained unofficial desktop client that loads the official Web UI directly: auto-reuse a running local instance or one-click launch the bundled dsh runtime with no extra Node.js/CLI install; smart connect, remote instances, tray residency, and crash recovery. `desktop` `out-of-the-box` `smart-connect`
-- **[dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI)** (⭐ 1.2k) — Claude Code-style full-screen interactive terminal: pixel-whale header, live status line, thought streaming, double-Esc rewind, context progress bar, and a TPS gauge; npm one-line install. `terminal-tui` `fullscreen` `cli-first`
-- **[dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui)** (⭐ 153) — Adds TDD and "evidence gate" workflows on top of a terminal UI, upgrading one-shot multi-agent runs into a governable engineering process. `terminal-tui` `tdd` `evidence-gate`
-
-### 🧰 Interface workbenches
-
-- **[DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar)** (⭐ 1.1k) — The most popular sidebar enhancement: file rendering/editing, terminal, Git, and subagents built in, with third-party tab extensions that turn the sidebar into the main dev surface. `sidebar` `workbench` `extensible`
-- **[dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui)** (⭐ 2.5k) — All-in-one collection: task board, Git graph, side panel, remote mobile UI, desktop pet, live token stats, and a skin center — one install covering many common interface needs. `collection` `skin-center` `mobile`
-
-### 👀 Let the model see and search
-
-- **[modlens](https://github.com/liustack/modlens)** (⭐ 1.7k) — The most-starred vision plugin (MIT): paste an image and get structured JSON evidence with OCR, layout, and semantics, so text-only models can reliably see; ships with a Web UI. `vision` `ocr` `structured-evidence`
-- **[modsearch](https://github.com/liustack/modsearch)** (⭐ 104) — Lets DSH search the web and X inline, returning cited structured JSON evidence (search/fetch/cite) so text-only models can answer from evidence; pairs with modlens as "see" + "search". `search` `citations` `evidence`
-- **[dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit)** (⭐ 409) — Image Q&A, long-screenshot OCR, UI restoration, visual grounding, pixel diffs, and Artifacts — suited to frontend and visual work. `vision` `ocr` `ui-restore`
-
-### 🧠 Memory & unattended runs
-
-- **[dsh-memory-evolve](https://github.com/csyangwen/dsh-memory-evolve)** (⭐ 82) — Five-track long-term memory as a pure plugin: git-branch awareness, in-turn self-review, skill self-evolution with a skill manager, four-track todos, and session search — zero core changes, zero runtime deps, clean uninstall. `memory` `self-evolution` `zero-deps`
-- **[dsh-mneme](https://github.com/modusensus/dsh-mneme)** (⭐ 10) — SQLite plus a human-editable Markdown mirror, so memory is not a black box; autoDream dedupes/merges/adjudicates in the background and refines over time. Memory should not be the agent's decision alone. `memory-sovereignty` `cross-session` `autodream`
-- **[dsh-auto-continue](https://github.com/HsiangNianian/dsh-auto-continue)** (⭐ 15) — After a turn fails from a network hiccup, timeout, or host crash, it auto-sends "continue": error classification (skips permanent auth/balance errors), adaptive backoff, templated continue text, and browser notifications — unattended runs pick themselves back up. `auto-resume` `unattended` `error-classification`
-- **[dsh-sentinel](https://github.com/fuhefei/dsh-sentinel)** (⭐ 7) — Watches files, commands, HTTP, processes, or webhooks and wakes DSH when conditions are met — upgrading loops from scheduled to event-driven. `event-driven` `monitoring` `automation`
-
-### ✍️ Conversation details
-
-- **[dsh-at-file](https://github.com/omdsh-dev/dsh-at-file)** (⭐ 197) — @-search workspace files in the composer and attach contents to the prompt, no copy-paste; official bundle, zero core changes. `@file` `workspace` `input`
-- **[dsh-annotation](https://github.com/omdsh-dev/dsh-annotation)** (⭐ 50) — Select text, attach annotations, and send them with the message; replies can address each annotation — suited to review, code review, and precise feedback. `annotation` `precise-feedback` `zero-core-changes`
-- **[dsh-navbar](https://github.com/vlln/dsh-navbar)** (⭐ 23) — Jump to any user message node in long conversations. `long-conversations` `navigation`
-- **[dsh-task-status](https://github.com/vlln/dsh-task-status)** (⭐ 9) — Puts background-task progress and a live output tail back into the conversation view — great for builds, downloads, and long test runs. `background-tasks` `live-output` `observability`
-- **[dsh-notification](https://github.com/omdsh-dev/dsh-notification)** (⭐ 47) — Desktop notifications when a turn completes, per outcome (success/failure) with keyword include/exclude rules. `notifications` `unattended` `keyword-rules`
-- **[dsh-outline](https://github.com/urzeye/dsh-outline)** (⭐ 6) — Real-time outline panel for the conversation page: a tree of user questions and Markdown headings (H1-H6) that updates live while streaming, with click-to-jump highlight, expand-depth control, search, and per-session favorites. `outline` `navigation` `web-ui`
-
-### 🎨 Creation & fun
-
-- **[dsh-genui](https://github.com/omdsh-dev/dsh-genui)** (⭐ 97) — Renders charts, forms, quizzes, Mermaid, and 3D scenes inline, and feeds user interactions back to the model. `generative-ui` `interactive` `visualization`
-- **[DSH OpenPencil](https://github.com/ZSeven-W/dsh-openpencil)** (⭐ 74) — Connects DSH to OpenPencil so the agent understands canvas structure, nodes, and component relationships, then creates, edits, previews, and validates editable multi-page designs instead of returning a single image. `design-canvas` `multi-page` `editable`
-- **[whale-girl](https://github.com/vlln/whale-girl)** (⭐ 159) — A draggable, feedable, playable desktop companion for the DSH Web GUI — a little company for long agent sessions. `desktop-pet` `companion` `web-ui`
-
-### 🌱 Ecosystem entry points
-
-- **[plugin-registry](https://github.com/vlln/plugin-registry)** (⭐ 40) — Visual plugin management for regular users plus make-dsh-plugin guidance for developers. The right first stop in the ecosystem. `beginner-friendly` `plugin-management` `dev-guidance`
-
 ## 🏆 Community leaderboard
 
-Community popularity by stars, manually reviewed, from the 2026-08-15 snapshot. Repositories riding the `dsh-plugin` topic without being plugins, and editorially blacklisted repositories, are excluded — see [data/curated.json](./data/curated.json). Full ranking in [TOP100.md](./TOP100.md). Ranking reflects popularity only — not quality, compatibility, or security.
+Community popularity by stars, from the 2026-08-15 snapshot. Repositories riding the `dsh-plugin` topic without being plugins, and editorially blacklisted repositories, are excluded — see [data/curated.json](./data/curated.json). The home page shows the Top 20; the full Top 200 is in [TOP200.md](./TOP200.md). Ranking reflects popularity only — not quality, compatibility, or security.
 
 | # | Project | ⭐ Stars | License |
 | ---: | --- | ---: | --- |
-| 1 | [zhu1090093659/dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui) | 2468 | Apache-2.0 |
-| 2 | [liustack/modlens](https://github.com/liustack/modlens) | 1724 | MIT |
-| 3 | [ccch1mneyyy/dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI) | 1151 | MIT |
-| 4 | [omdsh-dev/DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) | 1056 | MIT |
-| 5 | [Small-tailqwq/dsh-deep-whale](https://github.com/Small-tailqwq/dsh-deep-whale) | 831 | — |
-| 6 | [Anionex/dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) | 409 | MIT |
-| 7 | [Nagi-ovo/dsh-ads](https://github.com/Nagi-ovo/dsh-ads) | 393 | BSD-3-Clause |
-| 8 | [morluto/rea](https://github.com/morluto/rea) | 327 | MIT |
-| 9 | [NanmiCoder/dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) | 309 | MIT |
-| 10 | [Electricitysheep/dsh-handbook](https://github.com/Electricitysheep/dsh-handbook) | 272 | — |
-| 11 | [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) | 215 | MIT |
-| 12 | [omdsh-dev/dsh-at-file](https://github.com/omdsh-dev/dsh-at-file) | 197 | MIT |
+| 1 | [zhu1090093659/dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui) | 1998 | Apache-2.0 |
+| 2 | [liustack/modlens](https://github.com/liustack/modlens) | 1342 | MIT |
+| 3 | [ccch1mneyyy/dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI) | 924 | MIT |
+| 4 | [omdsh-dev/DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) | 806 | MIT |
+| 5 | [Small-tailqwq/dsh-deep-whale](https://github.com/Small-tailqwq/dsh-deep-whale) | 612 | — |
+| 6 | [Nagi-ovo/dsh-ads](https://github.com/Nagi-ovo/dsh-ads) | 347 | BSD-3-Clause |
+| 7 | [Anionex/dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) | 342 | MIT |
+| 8 | [morluto/rea](https://github.com/morluto/rea) | 315 | MIT |
+| 9 | [NanmiCoder/dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) | 255 | MIT |
+| 10 | [Electricitysheep/dsh-handbook](https://github.com/Electricitysheep/dsh-handbook) | 214 | — |
+| 11 | [hust-open-atom-club/oh-dsh](https://github.com/hust-open-atom-club/oh-dsh) | 170 | MIT |
+| 12 | [omdsh-dev/dsh-at-file](https://github.com/omdsh-dev/dsh-at-file) | 140 | MIT |
+| 13 | [huiliyi37/dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui) | 136 | Apache-2.0 |
+| 14 | [vlln/whale-girl](https://github.com/vlln/whale-girl) | 132 | MIT |
+| 15 | [bruc3van/awesome-dsh-plugin](https://github.com/bruc3van/awesome-dsh-plugin) | 106 | MIT |
+| 16 | [Lum1104/dsh-browser](https://github.com/Lum1104/dsh-browser) | 96 | MIT |
+| 17 | [liustack/modsearch](https://github.com/liustack/modsearch) | 94 | MIT |
+| 18 | [Nagi-ovo/dsh-visualize](https://github.com/Nagi-ovo/dsh-visualize) | 85 | BSD-3-Clause |
+| 19 | [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) | 79 | — |
+| 20 | [omdsh-dev/dsh-genui](https://github.com/omdsh-dev/dsh-genui) | 78 | MIT |
+
+[See the full Star Top 200 →](./TOP200.md)
 
 ## 🆕 Recently joined
 
@@ -200,48 +148,77 @@ Manually screened recent projects, updated from time to time:
 
 ## 📣 Author showcase
 
-Self-submitted recommendations from plugin authors, following the [contributing rules](./CONTRIBUTING.md#作者自荐--self-promotion). **These entries are not editorially reviewed and carry no quality or security endorsement** — evaluate them yourself before installing (see Usage & safety below). At most 30 entries are kept — first in, first out; entries promoted to Editor's picks are removed from this section.
+Self-submitted recommendations from plugin authors, following the [contributing rules](./CONTRIBUTING.md#作者自荐--self-promotion). **These entries are not editorially reviewed and carry no quality or security endorsement** — evaluate them yourself before installing (see Usage & safety below). At most 30 entries are kept — first in, first out; entries promoted to the [Featured picks](#-featured-picks) above are removed from this section without using a slot. The home page shows only the **10 most recent entries**; the complete list lives in [SHOWCASE.md](./SHOWCASE.md).
 
-- **[dsh-skin-amis](https://github.com/wanzhiwei5/dsh-skin-amis)** ([@wanzhiwei5](https://github.com/wanzhiwei5) · 2026-08-14) — A Wuthering Waves Amis-inspired pink-white skin: sakura gradients, a cyber-neon dark mode, a bundled character wallpaper and translucent glass panels, with one-click light/dark switching.
-- **[dsh-plugin-hub](https://github.com/Noob-stupid/dsh-plugin-hub)** ([@Noob-stupid](https://github.com/Noob-stupid) · 2026-08-14) — Plugin manager panel: one-click enable/disable for installed plugins, plus a GitHub `dsh-plugin` marketplace with plugin details and one-click installs.
-- **[dsh-github-login](https://github.com/Noob-stupid/dsh-github-login)** ([@Noob-stupid](https://github.com/Noob-stupid) · 2026-08-14) — Visual GitHub login with zero terminal: device-code flow, token persisted and synced into gh CLI config so the CLI works right after login.
-- **[dsh-session-deeplink](https://github.com/R3alloc/dsh-session-deeplink)** ([@R3alloc](https://github.com/R3alloc) · 2026-08-14) — Gives every session a reusable `/?session=<id>` deep link: the address bar follows the active session, links can be bookmarked or shared and restore the session after a refresh; browser-only, no host service added.
-- **[dsh-vision-proxy](https://github.com/Flyvhidbwo/dsh-vision-proxy)** ([@Flyvhidbwo](https://github.com/Flyvhidbwo) · 2026-08-14) — Keep DeepSeek as the brain and auto-describe attached images via any OpenAI-compatible VLM; auto-detects local Ollama when no key is set. Note: the default configuration sends images to a third-party VLM endpoint — switch to a local endpoint if that matters to you.
-- **[dsh-memory-gate](https://github.com/GIT121995/dsh-memory-gate)** ([@GIT121995](https://github.com/GIT121995) · 2026-08-14) — Local long-term memory where retrieved ≠ injected: every memory must pass CBDC authority gating before entering context, with explainable use/verify/ignore decisions and a full audit trail; capped at 3 claims / 1,200 characters per turn, no extra model call.
-- **[dsh-lark-meeting-notifier](https://github.com/yeruizhi/dsh-lark-meeting-notifier)** ([@yeruizhi](https://github.com/yeruizhi) · 2026-08-14) — A Feishu/Lark meeting-reminder panel: today's and tomorrow's meetings with flashing alarms, nudging you when it's time to "go meet carbon-based lifeforms".
-- **[dsh-reverse-skill](https://github.com/dhicoc/dsh-reverse-skill)** ([@dhicoc](https://github.com/dhicoc) · 2026-08-14) — A pack of 85 SKILL.md files covering reverse engineering, authorized pentesting, and security research, routed on demand.
-- **[dsh-vision-router](https://github.com/ysr666/dsh-vision-router)** ([@ysr666](https://github.com/ysr666) · 2026-08-14) — Eyes for text-only DSH agents: a built-in keyless vision chain plus pixel-level tools (Q&A, grounding, crop, pixel diff, colors, OCR, SVG trace, cutout, screenshots) — no Python, one-command install, and image turns behave like ordinary tool-calling turns. Note: the default anonymous endpoint sends images to a third party — configure your own endpoint if that matters to you.
-- **[dsh-web-open](https://github.com/dawsondx/dsh-web-open)** ([@dawsondx](https://github.com/dawsondx) · 2026-08-14) — Zero manual steps during a cold `dsh web` boot (~25s measured on this machine): the moment the server is ready, the full URL is printed and the browser opens straight to the GUI — no watching the terminal, no copy-paste; cross-platform, zero runtime dependencies, fail-safe.
-- **[dsh-rigorquant](https://github.com/linxichen/dsh-rigorquant)** ([@linxichen](https://github.com/linxichen) · 2026-08-14) — An unattended empirical/computational mathematics research framework: walled multi-agent exploration, dual-track ground-truth derivation, counterexample-only adversarial audit, a four-part pre-implementation check battery, fixed-seed LLN conventions, and a jacobian/Lean escalation lane for proof-critical claims.
-- **[dsh-plugins](https://github.com/Ceelog/dsh-plugins)** ([@Ceelog](https://github.com/Ceelog) · 2026-08-15) — Two DSH Web plugins: run per-project prompts on schedules with durable history; add, edit, remove and enable or disable MCP servers from Settings, with hot reload on save. ⚠️ The repository has no license yet.
-- **[dsh-theme-plugin](https://github.com/BeiZi6/dsh-theme-plugin)** ([@BeiZi6](https://github.com/BeiZi6) · 2026-08-15) — Theme studio for the DSH Web GUI: five built-in presets (codex-warm, nord, solarized, graphite, stock) plus fully customizable light/dark palettes (accent, background, foreground, UI & code fonts, translucent sidebar, contrast), hot-swapped instantly via the official theme API and persisted in localStorage; official seams only, no patched files.
-- **[dsh-opencodego-usage](https://github.com/BeiZi6/dsh-opencodego-usage)** ([@BeiZi6](https://github.com/BeiZi6) · 2026-08-15) — OpenCodeGo quota monitor for the DSH Web GUI: a breathing indicator at the input's bottom-right (green/yellow/red by remaining share), a liquid-glass panel with rolling/weekly/monthly usage windows and reset times, auto-refreshing every 30 s; API key read automatically from DSH credentials (opencode-go provider) with a manual override.
-- **[dsh-git-status](https://github.com/Wongzexu/dsh-git-status)** ([@Wongzexu](https://github.com/Wongzexu) · 2026-08-15) — A DSH plugin **specialized in Git branch and status handling**: a Git status drawer on the right edge of the web UI with a commit DAG lane graph, uncommitted-changes/stash virtual rows and inline diffs, plus right-click branch/tag actions — switch, merge, rename, delete, create — and one-click fetch from all remotes; everyday Git operations without leaving the chat view.
-- **[dsh-permission-rules](https://github.com/PerryLink/dsh-permission-rules)** ([@PerryLink](https://github.com/PerryLink) · 2026-08-15) — Claude Code-style declarative permission rules: ordered allow/deny/ask YAML rules matched on the tools/pre-execute waterfall (tool names, arguments, workspace paths, agent identity), with full session-log audit, dry-run mode, and hot reload; pairs with dsh-auto-review for a rules-first, AI-backstop loop.
-- **[dsh-mcp-panel](https://github.com/PerryLink/dsh-mcp-panel)** ([@PerryLink](https://github.com/PerryLink) · 2026-08-15) — Read-only runtime management panel for the official DSH MCP client: connection status, registered tools, errors and reconnect counts via the /mcp command and a Settings tab, with connectivity probes and controlled enable/disable patch suggestions; sanitized display, never writes your config.
-- **[dsh-memento](https://github.com/PerryLink/dsh-memento)** ([@PerryLink](https://github.com/PerryLink) · 2026-08-15) — Bounded, layered, approval-gated, auditable cross-session memory: a typed ctx.memory service seam with a zero-dependency SQLite provider, a memory tool, and frozen snapshot injection; every write passes the approval gate and stays reconstructable from the session log.
-- **[dsh-checkpoint-rewind](https://github.com/PerryLink/dsh-checkpoint-rewind)** ([@PerryLink](https://github.com/PerryLink) · 2026-08-15) — Claude Code /rewind for DSH: git-first workspace snapshots before every mutating tool, turn-boundary session forks, and a one-shot /rewind command that restores files and forks the session back to a checkpoint; a read-only preview and guard checkpoints make rewinds reversible.
-- **[dsh-doublecheck](https://github.com/PerryLink/dsh-doublecheck)** ([@PerryLink](https://github.com/PerryLink) · 2026-08-15) — Engineering-discipline plugin: grills requirements before the first edit, enforces red/green test-evidence gates, runs an adversarial delivery review, and folds it all into a report with per-dimension verification; /doublecheck session command, en/zh.
 - **[mirage-dsh](https://github.com/strukto-ai/mirage)** ([@zechengz](https://github.com/zechengz) · 2026-08-15) — Swaps the filesystem and bash providers for a mirage virtual workspace: file tools and shell commands run over mounted resources (RAM, S3, Redis, Slack, Gmail, Notion, Postgres) instead of the host disk, with per-mount read/write/exec modes, per-command sandbox routing (monty, pyodide, quickjs in process; docker, e2b, daytona remote), and installed CLIs (git, gh, slack, linear, ntn, gws, or one you register) as head words in the virtual terminal. Published as `@struktoai/mirage-dsh`; plugin source in [typescript/packages/dsh](https://github.com/strukto-ai/mirage/tree/main/typescript/packages/dsh).
 - **[dsh-output-styles](https://github.com/PerryLink/dsh-output-styles)** ([@PerryLink](https://github.com/PerryLink) · 2026-08-15) — Claude Code outputStyles parity for DSH: a /style command switches the model's output style at runtime, persisted per session, with six built-in styles, custom Markdown/JSON style libraries with hot reload, a web picker, and five-language docs.
 - **[dsh-composer-history](https://github.com/PerryLink/dsh-composer-history)** ([@PerryLink](https://github.com/PerryLink) · 2026-08-15) — Terminal-style composer input history: edge-first arrow recall with exact draft/caret restore, browser-local persisted history, Ctrl+R reverse search, and sliding-context awareness — for dsh web users who write prompts all day.
 - **[dsh-config-sync](https://github.com/muyifc/dsh-config-sync)** ([@muyifc](https://github.com/muyifc) · 2026-08-15) — DSH config backup & migration: one-command export/restore of settings, API credentials, profile plugin patches and user agent presets, plus a password-encrypted single file (.dshsync, AES-256-GCM + PBKDF2); imports preview before writing, auto-back up overwritten files, and credential contents never enter the chat.
 - **[dsh-lark-link](https://github.com/amlyczz/dsh-lark-link)** ([@amlyczz](https://github.com/amlyczz) · 2026-08-15) — A high-reliability Feishu/Lark bidirectional bridge: scan a QR code to go live in 30 seconds, CardKit streaming cards, an at-least-once zero-loss outbound queue, one DSH agent per Feishu conversation, a self-healing connection, media in/out plus /doctor session-log archival, and it reuses the official DSH Web GUI.
-
 - **[dsh-tray](https://github.com/KAIbsb/dsh-tray)** ([@KAIbsb](https://github.com/KAIbsb) · 2026-08-15) — A Windows tray manager for DSH Web: one-click start/restart/stop, crash auto-restart, whale status icon, and autostart — pairs nicely with a browser app-mode window.
 - **[dsh-plugin-guide](https://github.com/PerryLink/dsh-plugin-guide)** ([@PerryLink](https://github.com/PerryLink) · 2026-08-15) — The DSH plugin-development knowledge base as an on-demand agent skill: official constraints, task workflows, API references, and community pitfalls, installed as a bundle.
 - **[dsh-auto-review](https://github.com/PerryLink/dsh-auto-review)** ([@PerryLink](https://github.com/PerryLink) · 2026-08-15) — Second-model AI auto-review on the approval answerer chain: a read-only reviewer subagent returns structured allow/deny verdicts with reasons and risk levels, fail-closed by default, with a full session-log audit trail; /auto-review command + Web review panel, npm-installable, pairs with dsh-permission-rules for a rules-first, AI-backstop loop.
 - **[dsh-lsp-actions](https://github.com/PerryLink/dsh-lsp-actions)** ([@PerryLink](https://github.com/PerryLink) · 2026-08-15) — The LSP action surface for DeepSeek Harness: diagnostics, formatting, completion, code actions, symbols, signature help, inlay hints, and rename tools backed by real language servers; writes go through write-intent and the sandbox policy, everything else is read-only.
 - **[dsh-doc-share](https://github.com/dawsondx/dsh-doc-share)** ([@dawsondx](https://github.com/dawsondx) · 2026-08-15) — Turns a DSH conversation into a formatted report with a cover, summary stats and per-turn chapters: turn-selector dialog (search / select-all / load older history), single-turn quick share, gen-UI rich components supported, and one-shot export to PNG / standalone HTML / PDF / Markdown.
+
+[See all 30 showcase entries →](./SHOWCASE.md)
+
+## 🗺️ Ecosystem at a glance
+
+As of 2026-08-15 the catalog lists **2,134** repositories. Here is the shape of it:
+
+```mermaid
+mindmap
+  root((DSH ecosystem 2134))
+    Agents automation workflows · 702
+      Scheduled loops and event wakeups
+      Multi-agent teamwork
+      Long-term memory and self-evolution
+      Approval budget and checkpoints
+    UI and experience · 420
+      Desktop clients and terminal TUI
+      Sidebar workbenches
+      Skins and desktop pets
+      Notifications and input
+    Web and browser · 328
+      Browser bridge and page control
+      Web search with citations
+      Archiving and web forensics
+    Design media and vision · 141
+      Image understanding and OCR
+      Design canvas and UI restoration
+    Ecosystem and resources · 138
+      Plugin markets and registries
+      Templates and scaffolds
+      Guides and handbooks
+    Developer tools · 126
+      Git and diff
+      Sandbox and runtimes
+      Debugging and diagnostics
+    Knowledge and research · 110
+      Knowledge bases and cross-session memory
+      Deep research
+      Academia and math
+    Utilities and more · 105
+      Files and encodings
+      Format conversion
+    Integrations and sharing · 64
+      Chat import and sharing
+      Remote access
+      IM and external integrations
+```
+
+To browse every project in a category, see [CATALOG.md](./CATALOG.md).
+
 ## 🔍 How this list is maintained
 
 - **Built for users, not crawlers:** the front page is organized around "what I want to get done", not hundreds of repo names.
-- **Layered: human picks + full index:** the front page carries only hand-screened recommendations; [CATALOG.md](./CATALOG.md) keeps the complete topic snapshot so nothing is lost.
-- **Automated data, human pages:** the catalog and raw snapshot refresh daily; front-page recommendations and the leaderboard are edited by hand against [data/repositories.json](./data/repositories.json), so polluted API data (star inflation, topic riders) never rewrites this page automatically.
-- **Riders removed:** repositories carrying the `dsh-plugin` topic without being DSH plugins (the platform itself, other agent tools, competing catalogs) and editorially blacklisted repositories are excluded from the catalog and leaderboard, with per-repo reasons recorded in [data/curated.json](./data/curated.json) — auditable and contestable at any time.
+- **Layered: human picks + full index:** the front page carries only hand-screened featured picks and the showcase preview; [CATALOG.md](./CATALOG.md) keeps the complete topic snapshot so nothing is lost.
+- **Automated data, human pages:** the catalog, raw snapshot, and Top 200 leaderboard refresh daily by script (board generator: [scripts/top.mjs](./scripts/top.mjs), switchable back to Top 100); the home-page featured picks, showcase, and recently-joined sections are edited by hand, so polluted API data (star inflation, topic riders) never rewrites recommendations automatically.
+- **Riders removed:** repositories carrying the `dsh-plugin` topic without being DSH plugins (the platform itself, other agent tools, competing catalogs) and editorially blacklisted repositories are excluded from the catalog and leaderboard, with per-repo reasons recorded in [data/curated.json](./data/curated.json) (the leaderboard additionally honors `leaderboard_exclusions` for repos that stay in the catalog but do not rank) — auditable and contestable at any time.
 - **Chinese by default, bilingual:** native readability for the main audience, with a dedicated English entry point.
 
-As of 2026-08-15, the catalog lists **2,151** repositories across **19** primary languages; **1,825** declare a license and **2,148** are neither archived nor disabled (the catalog refreshes daily — see [CATALOG.md](./CATALOG.md) for current numbers).
+As of 2026-08-15, the catalog lists **2,134** repositories across **18** primary languages; **1,811** declare a license and **2,131** are neither archived nor disabled (the catalog refreshes daily — see [CATALOG.md](./CATALOG.md) for current numbers).
 
 ## ⚠️ Usage & safety
 
@@ -252,8 +229,8 @@ Third-party plugins can read conversations, files, network traffic, or system re
 Spot a miss, a wrong category, or stale wording? Open an Issue or Pull Request:
 
 - **Get your plugin listed:** a public repo tagged `dsh-plugin` that is actually a DSH plugin enters the full catalog automatically on the next daily refresh — **no PR to this repo needed**. Topic riders are removed, with reasons recorded in [data/curated.json](./data/curated.json).
-- **Self-promote as an author:** if you own the plugin, add one entry to the [Author showcase](#-author-showcase) following the [contributing rules](./CONTRIBUTING.md#作者自荐--self-promotion) — no editorial review needed.
-- **Get on the front page:** scenario picks, editor's picks, and the leaderboard are hand-maintained — open an Issue telling us what problem it solves and for whom, or edit the corresponding Markdown directly with your reasoning.
+- **Self-promote as an author:** if you own the plugin, append one entry (Chinese and English) to [SHOWCASE.md](./SHOWCASE.md) following the [contributing rules](./CONTRIBUTING.md#作者自荐--self-promotion) and sync the home-page showcase preview to the 10 most recent entries — no editorial review needed.
+- **Get on the front page:** the featured picks and recently-joined sections are hand-maintained — open an Issue telling us what problem it solves and for whom, or edit the corresponding Markdown directly with your reasoning. The leaderboard [TOP200.md](./TOP200.md) is generated by script; to keep a repository out of the board, register it under `leaderboard_exclusions` in [data/curated.json](./data/curated.json) with a reason.
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for details.
 
