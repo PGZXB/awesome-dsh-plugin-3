@@ -218,6 +218,7 @@ mindmap
 - **[dsh-theme-plugin](https://github.com/BeiZi6/dsh-theme-plugin)**（[@BeiZi6](https://github.com/BeiZi6) · 2026-08-15）— DSH Web GUI 主题工作室：5 套内置预设（codex-warm / nord / solarized / graphite / stock）+ 完全可自定义的浅/深配色（强调色、背景、前景、UI 与代码字体、半透明侧栏、对比度），经官方主题接口即时热切换并持久化到 localStorage，纯官方接缝、无补丁文件。
 - **[dsh-opencodego-usage](https://github.com/BeiZi6/dsh-opencodego-usage)**（[@BeiZi6](https://github.com/BeiZi6) · 2026-08-15）— OpenCodeGo 剩余额度监视器：输入框右下角呼吸指示灯（按剩余额度绿/黄/红），液态玻璃面板显示滚动/周/月用量窗口与重置时间，每 30 秒自动刷新，API Key 自动读取 DSH 凭据（仅限 opencode-go 提供商），也可手动覆盖。
 - **[dsh-git-status](https://github.com/Wongzexu/dsh-git-status)**（[@Wongzexu](https://github.com/Wongzexu) · 2026-08-15）— **专精于 Git 分支与状态处理**的 DSH 插件：Web 右缘 Git 状态浮窗，commit DAG 泳道图 + 未提交改动/stash 虚拟行 + 行内详情 diff，右键分支/tag 一键切换、合并、重命名、删除、新建，头部一键拉取全部远程，日常 Git 操作无需离开聊天界面。
+- **[dsh-permission-rules](https://github.com/PerryLink/dsh-permission-rules)**（[@PerryLink](https://github.com/PerryLink) · 2026-08-15）— Claude Code 风格的声明式权限规则：在 tools/pre-execute 瀑布上按序匹配 allow/deny/ask YAML 规则（工具名、参数、工作区路径、agent 身份），带完整会话日志审计、干跑模式与热重载，可与 dsh-auto-review 组成「规则先行、AI 兜底」闭环。
 
 - **[dsh-tray](https://github.com/KAIbsb/dsh-tray)**（[@KAIbsb](https://github.com/KAIbsb) · 2026-08-15）— Windows 托盘管家:一键启动/重启/停止 DSH Web、崩溃自动拉起、状态鲸鱼图标与开机自启,配合浏览器 APP 模式窗口更顺手。
 ## 🔍 我们如何维护这个列表
