@@ -215,6 +215,7 @@ Self-submitted recommendations from plugin authors, following the [contributing 
 - **[dsh-web-open](https://github.com/dawsondx/dsh-web-open)** ([@dawsondx](https://github.com/dawsondx) · 2026-08-14) — Zero manual steps during a cold `dsh web` boot (~25s measured on this machine): the moment the server is ready, the full URL is printed and the browser opens straight to the GUI — no watching the terminal, no copy-paste; cross-platform, zero runtime dependencies, fail-safe.
 - **[dsh-rigorquant](https://github.com/linxichen/dsh-rigorquant)** ([@linxichen](https://github.com/linxichen) · 2026-08-14) — An unattended empirical/computational mathematics research framework: walled multi-agent exploration, dual-track ground-truth derivation, counterexample-only adversarial audit, a four-part pre-implementation check battery, fixed-seed LLN conventions, and a jacobian/Lean escalation lane for proof-critical claims.
 
+- **[dsh-tray](https://github.com/KAIbsb/dsh-tray)** ([@KAIbsb](https://github.com/KAIbsb) · 2026-08-15) — A Windows tray manager for DSH Web: one-click start/restart/stop, crash auto-restart, whale status icon, and autostart — pairs nicely with a browser app-mode window.
 ## 🔍 How this list is maintained
 
 - **Built for users, not crawlers:** the front page is organized around "what I want to get done", not hundreds of repo names.

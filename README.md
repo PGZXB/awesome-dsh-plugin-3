@@ -215,6 +215,7 @@ mindmap
 - **[dsh-web-open](https://github.com/dawsondx/dsh-web-open)**（[@dawsondx](https://github.com/dawsondx) · 2026-08-14）— `dsh web` 冷启动（实测本机约 25 秒）期间零手动操作：服务一就绪，完整链接自动打印、浏览器自动打开直达 GUI，不用盯终端、不用复制 URL；跨平台、零运行时依赖、故障安全。
 - **[dsh-rigorquant](https://github.com/linxichen/dsh-rigorquant)**（[@linxichen](https://github.com/linxichen) · 2026-08-14）— 无人值守实证/计算数学研究框架：隔离多智能体探索 + 双轨真值推导 + 仅反例淘汰的对抗审计；实现前跑四重校验（闭式解相等、精确不变量、解析界、统计强化），固定种子大数定律约定，jacobian/Lean 升级通道处理证明关键断言。
 
+- **[dsh-tray](https://github.com/KAIbsb/dsh-tray)**（[@KAIbsb](https://github.com/KAIbsb) · 2026-08-15）— Windows 托盘管家:一键启动/重启/停止 DSH Web、崩溃自动拉起、状态鲸鱼图标与开机自启,配合浏览器 APP 模式窗口更顺手。
 ## 🔍 我们如何维护这个列表
 
 - **面向使用者，而不是爬虫：** 从「我想完成什么」出发组织首页，而不是让你阅读几百行仓库名称。
