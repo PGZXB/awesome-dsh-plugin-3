@@ -227,6 +227,7 @@ mindmap
 - **[dsh-output-styles](https://github.com/PerryLink/dsh-output-styles)**（[@PerryLink](https://github.com/PerryLink) · 2026-08-15）— 对标 Claude Code outputStyles 的运行时输出风格切换：/style 命令即时生效、按会话持久化、六个内置风格 + 自定义 Markdown/JSON 风格库与热重载，附 Web 选择器与五语文档。
 - **[dsh-composer-history](https://github.com/PerryLink/dsh-composer-history)**（[@PerryLink](https://github.com/PerryLink) · 2026-08-15）— 作曲器终端风格输入历史：边缘优先方向键召回并精确还原草稿与光标、浏览器本地持久化历史、Ctrl+R 反向搜索与滑动上下文感知；适合每天都在 Web 输入框写提示词的 dsh 用户。
 - **[dsh-config-sync](https://github.com/muyifc/dsh-config-sync)**（[@muyifc](https://github.com/muyifc) · 2026-08-15）— DSH 配置备份与迁移：一键导出/恢复 API 设置、凭据、profile 插件补丁与用户 agent presets；支持口令加密单文件（.dshsync，AES-256-GCM + PBKDF2），导入前先预览、覆盖前自动备份，密钥内容永不进入对话。
+- **[dsh-lark-link](https://github.com/amlyczz/dsh-lark-link)**（[@amlyczz](https://github.com/amlyczz) · 2026-08-15）— High-reliability Feishu/Lark 双向桥接：扫码 30 秒上线、CardKit 流式卡片、at-least-once 零丢失出站队列、每飞书会话独立 DSH Agent、自愈长连接，媒体收发 + 会话日志 /doctor 归档，并复用官方 DSH Web GUI。
 
 - **[dsh-tray](https://github.com/KAIbsb/dsh-tray)**（[@KAIbsb](https://github.com/KAIbsb) · 2026-08-15）— Windows 托盘管家:一键启动/重启/停止 DSH Web、崩溃自动拉起、状态鲸鱼图标与开机自启,配合浏览器 APP 模式窗口更顺手。
 ## 🔍 我们如何维护这个列表
