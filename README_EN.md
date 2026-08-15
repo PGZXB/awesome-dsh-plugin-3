@@ -78,7 +78,7 @@ Start from your problem, not from a category. Find the closest row — the answe
 
 | I want to… | Start here | Why |
 | --- | --- | --- |
-| Run DSH as a standalone desktop app, not a browser tab | [dsh-desktop](https://github.com/bruc3van/dsh-desktop) · [deepseek-harness-desktop](https://github.com/anywhere-labs/deepseek-harness-desktop) | dsh-desktop is the out-of-the-box option: auto-reuse a running local instance or launch the bundled runtime with no Node.js/CLI install, plus remote connections, tray residency, and crash recovery; deepseek-harness-desktop is the ecosystem's most-starred desktop client (1.3k+ stars, macOS/Windows, service + window bundled). |
+| Run DSH as a standalone desktop app, not a browser tab | [dsh-desktop](https://github.com/bruc3van/dsh-desktop) | dsh-desktop is the out-of-the-box option: auto-reuse a running local instance or launch the bundled runtime with no Node.js/CLI install, plus remote connections, tray residency, and crash recovery. |
 | Manage and discover plugins | [plugin-registry](https://github.com/vlln/plugin-registry) · [dsh-market](https://github.com/dsh-market/dsh-market) | plugin-registry manages repository plugins in a browser console with development guidance; dsh-market brings a browse/search/one-click-install market into the DSH conversation UI. |
 | Turn existing application code into agent-callable capabilities | [Code2Skill](https://github.com/leechen298/Code2Skill) | Generate Functions, MCP tools, workflow Skills, and offline tests from user-authorized frontend, backend, or full-stack source code, packaged as an installable DSH bundle. |
 | Track background tasks | [dsh-task-status](https://github.com/vlln/dsh-task-status) | Show task progress and a live output tail in the conversation view. |
@@ -123,7 +123,6 @@ You do not need to install everything. Start with the kit closest to the problem
 ### 🖥️ Desktop & terminal
 
 - **[dsh-desktop](https://github.com/bruc3van/dsh-desktop)** (⭐ 20) — Community-maintained unofficial desktop client that loads the official Web UI directly: auto-reuse a running local instance or one-click launch the bundled dsh runtime with no extra Node.js/CLI install; smart connect, remote instances, tray residency, and crash recovery. `desktop` `out-of-the-box` `smart-connect`
-- **[deepseek-harness-desktop](https://github.com/anywhere-labs/deepseek-harness-desktop)** (⭐ 1.3k) — The ecosystem's most-starred desktop client: service startup and window integration, ready to use on macOS/Windows. `desktop` `cross-platform`
 - **[dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI)** (⭐ 835) — Claude Code-style full-screen interactive terminal: pixel-whale header, live status line, thought streaming, double-Esc rewind, context progress bar, and a TPS gauge; npm one-line install. `terminal-tui` `fullscreen` `cli-first`
 - **[dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui)** (⭐ 132) — Adds TDD and "evidence gate" workflows on top of a terminal UI, upgrading one-shot multi-agent runs into a governable engineering process. `terminal-tui` `tdd` `evidence-gate`
 
@@ -166,23 +165,22 @@ You do not need to install everything. Start with the kit closest to the problem
 
 ## 🏆 Community leaderboard
 
-Community popularity by stars, manually reviewed, from the 2026-08-14 snapshot (every project above pushed that day). Repositories riding the `dsh-plugin` topic without being plugins are excluded — see [data/curated.json](./data/curated.json). Full ranking in [TOP100.md](./TOP100.md). Ranking reflects popularity only — not quality, compatibility, or security.
+Community popularity by stars, manually reviewed, from the 2026-08-14 snapshot (every project above pushed that day). Repositories riding the `dsh-plugin` topic without being plugins, and editorially blacklisted repositories, are excluded — see [data/curated.json](./data/curated.json). Full ranking in [TOP100.md](./TOP100.md). Ranking reflects popularity only — not quality, compatibility, or security.
 
 | # | Project | ⭐ Stars | License |
 | ---: | --- | ---: | --- |
 | 1 | [zhu1090093659/dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui) | 1785 | Apache-2.0 |
-| 2 | [anywhere-labs/deepseek-harness-desktop](https://github.com/anywhere-labs/deepseek-harness-desktop) | 1266 | MIT |
-| 3 | [liustack/modlens](https://github.com/liustack/modlens) | 1208 | MIT |
-| 4 | [ccch1mneyyy/dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI) | 835 | MIT |
-| 5 | [omdsh-dev/DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) | 709 | MIT |
-| 6 | [Small-tailqwq/dsh-deep-whale](https://github.com/Small-tailqwq/dsh-deep-whale) | 538 | — |
-| 7 | [Nagi-ovo/dsh-ads](https://github.com/Nagi-ovo/dsh-ads) | 321 | — |
-| 8 | [Anionex/dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) | 308 | MIT |
-| 9 | [morluto/rea](https://github.com/morluto/rea) | 308 | MIT |
-| 10 | [NanmiCoder/dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) | 231 | MIT |
-| 11 | [Electricitysheep/dsh-handbook](https://github.com/Electricitysheep/dsh-handbook) | 181 | — |
-| 12 | [hust-open-atom-club/oh-dsh](https://github.com/hust-open-atom-club/oh-dsh) | 163 | MIT |
-| 13 | [huiliyi37/dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui) | 132 | Apache-2.0 |
+| 2 | [liustack/modlens](https://github.com/liustack/modlens) | 1208 | MIT |
+| 3 | [ccch1mneyyy/dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI) | 835 | MIT |
+| 4 | [omdsh-dev/DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) | 709 | MIT |
+| 5 | [Small-tailqwq/dsh-deep-whale](https://github.com/Small-tailqwq/dsh-deep-whale) | 538 | — |
+| 6 | [Nagi-ovo/dsh-ads](https://github.com/Nagi-ovo/dsh-ads) | 321 | — |
+| 7 | [Anionex/dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) | 308 | MIT |
+| 8 | [morluto/rea](https://github.com/morluto/rea) | 308 | MIT |
+| 9 | [NanmiCoder/dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) | 231 | MIT |
+| 10 | [Electricitysheep/dsh-handbook](https://github.com/Electricitysheep/dsh-handbook) | 181 | — |
+| 11 | [hust-open-atom-club/oh-dsh](https://github.com/hust-open-atom-club/oh-dsh) | 163 | MIT |
+| 12 | [huiliyi37/dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui) | 132 | Apache-2.0 |
 
 ## 🆕 Recently joined
 
@@ -236,10 +234,10 @@ Self-submitted recommendations from plugin authors, following the [contributing 
 - **Built for users, not crawlers:** the front page is organized around "what I want to get done", not hundreds of repo names.
 - **Layered: human picks + full index:** the front page carries only hand-screened recommendations; [CATALOG.md](./CATALOG.md) keeps the complete topic snapshot so nothing is lost.
 - **Automated data, human pages:** the catalog and raw snapshot refresh daily; front-page recommendations and the leaderboard are edited by hand against [data/repositories.json](./data/repositories.json), so polluted API data (star inflation, topic riders) never rewrites this page automatically.
-- **Riders removed:** repositories carrying the `dsh-plugin` topic without being DSH plugins (the platform itself, other agent tools, competing catalogs) are excluded from the catalog and leaderboard, with per-repo reasons recorded in [data/curated.json](./data/curated.json) — auditable and contestable at any time.
+- **Riders removed:** repositories carrying the `dsh-plugin` topic without being DSH plugins (the platform itself, other agent tools, competing catalogs) and editorially blacklisted repositories are excluded from the catalog and leaderboard, with per-repo reasons recorded in [data/curated.json](./data/curated.json) — auditable and contestable at any time.
 - **Chinese by default, bilingual:** native readability for the main audience, with a dedicated English entry point.
 
-As of 2026-08-14, the catalog lists **1,761** repositories across **17** primary languages; **1,486** declare a license and **1,758** are neither archived nor disabled (the catalog refreshes daily — see [CATALOG.md](./CATALOG.md) for current numbers).
+As of 2026-08-15, the catalog lists **2,151** repositories across **19** primary languages; **1,825** declare a license and **2,148** are neither archived nor disabled (the catalog refreshes daily — see [CATALOG.md](./CATALOG.md) for current numbers).
 
 ## ⚠️ Usage & safety
 

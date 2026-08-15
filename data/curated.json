@@ -136,6 +136,7 @@
     "AtlasCloudAI/atlas-cloud-skills": "Not a DSH plugin — Atlas Cloud skills aimed at Claude Code/Codex/Gemini CLI.",
     "Inference1/clarify-intent-and-establish-shared-understanding": "Not a DSH plugin — a generic agent intent-clarification skill.",
     "dqsjqian/Aria": "Not a DSH plugin — a C++20 MVVM framework riding the topic.",
-    "phoenixlucky/zerotoken-skill": "Not a DSH plugin — a generic token-discipline skill for Reasonix/Codex/OpenCode/Hermes."
+    "phoenixlucky/zerotoken-skill": "Not a DSH plugin — a generic token-discipline skill for Reasonix/Codex/OpenCode/Hermes.",
+    "anywhere-labs/deepseek-harness-desktop": "Blacklisted for editorial reasons — originally forked from the official deepseek-harness source, then detached the fork link; removed from recommendations, the leaderboard, and the catalog."
   }
 }

@@ -2,13 +2,13 @@
 
 [返回中文首页](./README.md) · [Back to English home](./README_EN.md) · [Star Top 100](./TOP100.md) · [JSON data](./data/repositories.json)
 
-本页自动收录 GitHub [`dsh-plugin` Topic](https://github.com/topics/dsh-plugin) 下已提供项目简介、且确实是 DSH 插件或 DSH 生态资源的公开仓库。122 个蹭 Topic 的非插件仓库（平台本体、其他 Agent 工具、同名目录站等）已剔除，清单与理由见 [data/curated.json](./data/curated.json)。本页是索引，不代表人工推荐、兼容性验证或安全背书。未填写简介的仓库暂不收录，补充简介后会在下次刷新时自动加入。
+本页自动收录 GitHub [`dsh-plugin` Topic](https://github.com/topics/dsh-plugin) 下已提供项目简介、且确实是 DSH 插件或 DSH 生态资源的公开仓库。123 个蹭 Topic 的非插件仓库（平台本体、其他 Agent 工具、同名目录站等）以及经编辑部拉黑的仓库已剔除，清单与理由见 [data/curated.json](./data/curated.json)。本页是索引，不代表人工推荐、兼容性验证或安全背书。未填写简介的仓库暂不收录，补充简介后会在下次刷新时自动加入。
 
-This page automatically lists public repositories under GitHub's [`dsh-plugin` topic](https://github.com/topics/dsh-plugin) that have a description set and are actually DSH plugins or DSH ecosystem resources. 122 repositories that ride the topic without being DSH plugins (the platform itself, other agent tools, competing catalogs) are excluded — see [data/curated.json](./data/curated.json) for the full list and reasons. It is an index, not a claim of editorial recommendation, compatibility, or security review. Repositories without a description are excluded until one is added; they will appear automatically on the next refresh.
+This page automatically lists public repositories under GitHub's [`dsh-plugin` topic](https://github.com/topics/dsh-plugin) that have a description set and are actually DSH plugins or DSH ecosystem resources. 123 repositories that ride the topic without being DSH plugins (the platform itself, other agent tools, competing catalogs), plus editorially blacklisted repositories, are excluded — see [data/curated.json](./data/curated.json) for the full list and reasons. It is an index, not a claim of editorial recommendation, compatibility, or security review. Repositories without a description are excluded until one is added; they will appear automatically on the next refresh.
 
-- Repositories: **2152**
+- Repositories: **2151**
 - Primary languages: **19**
-- Declared licenses: **1826**
+- Declared licenses: **1825**
 - Refreshed: **2026-08-15 UTC**
 
 ## 生态与资源 / Ecosystem & Resources (141)
@@ -730,11 +730,10 @@ This page automatically lists public repositories under GitHub's [`dsh-plugin` t
 | [zhuiyueya/dsh-visionary](https://github.com/zhuiyueya/dsh-visionary) | Give text-only DeepSeek models eyes — a DeepSeek Harness plugin that transparently converts chat images into OCR text + vision-model descriptions before they reach the LLM. Configure vision backends (GLM-4V, Qwen-VL, Gemini, Ollama…) right in the Models settings page; multi-backend fallback chain, double-layer caching, no config files. | JavaScript | 0 | MIT | 2026-08-14 |
 | [zimai233/dsh-image-search](https://github.com/zimai233/dsh-image-search) | Multi-engine reverse image search aggregator for DeepSeek Harness. Turn one public image URL into Google Lens / Baidu / Yandex / TinEye / SauceNAO / IQDB / Ascii2d search links. | JavaScript | 0 | MIT | 2026-08-14 |
 
-## 网页与浏览器 / Web & Browser (332)
+## 网页与浏览器 / Web & Browser (331)
 
 | Project | Description | Language | Stars | License | Updated |
 | --- | --- | --- | ---: | --- | --- |
-| [anywhere-labs/deepseek-harness-desktop](https://github.com/anywhere-labs/deepseek-harness-desktop) | 为 DeepSeek Harness (DSH) 生态打造的现代化桌面端体验 | TypeScript | 2214 | MIT | 2026-08-15 |
 | [liustack/modsearch](https://github.com/liustack/modsearch) | The web plugin for DeepSeek Harness, and the search bridge for every model without native web access. Ask the web or X, get structured JSON evidence. \| DeepSeek Harness 的 web 插件，为不能联网的模型补上搜索。问网页或 X，拿回结构化 JSON 证据（搜索、抓取、引用）。 | TypeScript | 94 | MIT | 2026-08-15 |
 | [Ruler4396/dsh-launcher](https://github.com/Ruler4396/dsh-launcher) | Lightweight Windows launcher for DeepSeek Harness: silent autostart at logon + a minimal WebView2 window instead of a full browser | C# | 78 | MIT | 2026-08-15 |
 | [omdsh-dev/dsh-open-in-vscode](https://github.com/omdsh-dev/dsh-open-in-vscode) | Open DeepSeek Harness workspace directories in VS Code directly from the web GUI. | JavaScript | 40 | MIT | 2026-08-14 |
