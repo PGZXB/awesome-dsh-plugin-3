@@ -230,6 +230,7 @@ Self-submitted recommendations from plugin authors, following the [contributing 
 - **[dsh-lark-link](https://github.com/amlyczz/dsh-lark-link)** ([@amlyczz](https://github.com/amlyczz) · 2026-08-15) — A high-reliability Feishu/Lark bidirectional bridge: scan a QR code to go live in 30 seconds, CardKit streaming cards, an at-least-once zero-loss outbound queue, one DSH agent per Feishu conversation, a self-healing connection, media in/out plus /doctor session-log archival, and it reuses the official DSH Web GUI.
 
 - **[dsh-tray](https://github.com/KAIbsb/dsh-tray)** ([@KAIbsb](https://github.com/KAIbsb) · 2026-08-15) — A Windows tray manager for DSH Web: one-click start/restart/stop, crash auto-restart, whale status icon, and autostart — pairs nicely with a browser app-mode window.
+- **[dsh-plugin-guide](https://github.com/PerryLink/dsh-plugin-guide)** ([@PerryLink](https://github.com/PerryLink) · 2026-08-15) — The DSH plugin-development knowledge base as an on-demand agent skill: official constraints, task workflows, API references, and community pitfalls, installed as a bundle.
 ## 🔍 How this list is maintained
 
 - **Built for users, not crawlers:** the front page is organized around "what I want to get done", not hundreds of repo names.
