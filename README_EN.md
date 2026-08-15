@@ -231,6 +231,7 @@ Self-submitted recommendations from plugin authors, following the [contributing 
 
 - **[dsh-tray](https://github.com/KAIbsb/dsh-tray)** ([@KAIbsb](https://github.com/KAIbsb) · 2026-08-15) — A Windows tray manager for DSH Web: one-click start/restart/stop, crash auto-restart, whale status icon, and autostart — pairs nicely with a browser app-mode window.
 - **[dsh-plugin-guide](https://github.com/PerryLink/dsh-plugin-guide)** ([@PerryLink](https://github.com/PerryLink) · 2026-08-15) — The DSH plugin-development knowledge base as an on-demand agent skill: official constraints, task workflows, API references, and community pitfalls, installed as a bundle.
+- **[dsh-doc-share](https://github.com/dawsondx/dsh-doc-share)** ([@dawsondx](https://github.com/dawsondx) · 2026-08-15) — Turns a DSH conversation into a formatted report with a cover, summary stats and per-turn chapters: turn-selector dialog (search / select-all / load older history), single-turn quick share, gen-UI rich components supported, and one-shot export to PNG / standalone HTML / PDF / Markdown.
 ## 🔍 How this list is maintained
 
 - **Built for users, not crawlers:** the front page is organized around "what I want to get done", not hundreds of repo names.

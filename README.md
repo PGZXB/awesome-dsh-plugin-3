@@ -231,6 +231,7 @@ mindmap
 
 - **[dsh-tray](https://github.com/KAIbsb/dsh-tray)**（[@KAIbsb](https://github.com/KAIbsb) · 2026-08-15）— Windows 托盘管家:一键启动/重启/停止 DSH Web、崩溃自动拉起、状态鲸鱼图标与开机自启,配合浏览器 APP 模式窗口更顺手。
 - **[dsh-plugin-guide](https://github.com/PerryLink/dsh-plugin-guide)**（[@PerryLink](https://github.com/PerryLink) · 2026-08-15）— DSH 插件开发知识库：官方约束、任务工作流、API 参考与社区踩坑，作为按需加载的智能体技能随 bundle 安装，开发插件时让 DSH 自己查。
+- **[dsh-doc-share](https://github.com/dawsondx/dsh-doc-share)**（[@dawsondx](https://github.com/dawsondx) · 2026-08-15）— 把 DSH 对话重排成带封面、摘要统计与章节排版的正式报告：轮次选择弹窗（搜索/全选/加载更早历史）、单轮快捷分享、兼容 gen-UI 富组件，一次生成 PNG / 单 HTML / PDF / Markdown 四种格式。
 ## 🔍 我们如何维护这个列表
 
 - **面向使用者，而不是爬虫：** 从「我想完成什么」出发组织首页，而不是让你阅读几百行仓库名称。
