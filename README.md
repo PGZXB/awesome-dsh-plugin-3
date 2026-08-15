@@ -224,6 +224,7 @@ mindmap
 - **[dsh-checkpoint-rewind](https://github.com/PerryLink/dsh-checkpoint-rewind)**（[@PerryLink](https://github.com/PerryLink) · 2026-08-15）— DSH 的 Claude Code /rewind 等价能力：每次变更型工具执行前捕获 git 优先的工作区快照，轮次边界 fork 会话，一条 /rewind 命令恢复文件并把会话回退到检查点；附 preview 只读预览与保护检查点，回退本身可撤销。
 - **[dsh-doublecheck](https://github.com/PerryLink/dsh-doublecheck)**（[@PerryLink](https://github.com/PerryLink) · 2026-08-15）— 工程纪律插件：动笔前审讯需求、红绿测试证据门、交付后对抗评审，并汇总交付报告与逐维度核对；/doublecheck 会话命令，en/zh 双语。
 - **[mirage-dsh](https://github.com/strukto-ai/mirage)**（[@zechengz](https://github.com/zechengz) · 2026-08-15）— 把 DSH 的文件系统与 bash 提供者换成 mirage 虚拟工作区：文件工具与 shell 命令作用于挂载的资源（RAM、S3、Redis、Slack、Gmail、Notion、Postgres）而非宿主磁盘，支持按挂载点设置读/写/执行模式、按命令选择沙箱（进程内 monty、pyodide、quickjs；远程 docker、e2b、daytona），并可在虚拟终端中安装 CLI（git、gh、slack、linear、ntn、gws，或自行注册的程序树）作为命令头词。npm 包名 `@struktoai/mirage-dsh`，插件源码在 [typescript/packages/dsh](https://github.com/strukto-ai/mirage/tree/main/typescript/packages/dsh)。
+- **[dsh-output-styles](https://github.com/PerryLink/dsh-output-styles)**（[@PerryLink](https://github.com/PerryLink) · 2026-08-15）— 对标 Claude Code outputStyles 的运行时输出风格切换：/style 命令即时生效、按会话持久化、六个内置风格 + 自定义 Markdown/JSON 风格库与热重载，附 Web 选择器与五语文档。
 
 - **[dsh-tray](https://github.com/KAIbsb/dsh-tray)**（[@KAIbsb](https://github.com/KAIbsb) · 2026-08-15）— Windows 托盘管家:一键启动/重启/停止 DSH Web、崩溃自动拉起、状态鲸鱼图标与开机自启,配合浏览器 APP 模式窗口更顺手。
 ## 🔍 我们如何维护这个列表
