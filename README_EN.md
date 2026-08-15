@@ -119,69 +119,69 @@ You do not need to install everything. Start with the kit closest to the problem
 
 ## ⭐ Editor's picks
 
-**These are not ranked by stars.** We prioritize projects that solve a clear problem, document themselves well, are still maintained, and are representative — so you will find 1.2k-star projects next to a 4-star one that has no substitute. Inclusion is not an endorsement of security or compatibility.
+**These are not ranked by stars.** We prioritize projects that solve a clear problem, document themselves well, are still maintained, and are representative — so you will find 1.7k-star projects next to a 6-star one that has no substitute. Inclusion is not an endorsement of security or compatibility.
 
 ### 🖥️ Desktop & terminal
 
-- **[dsh-desktop](https://github.com/bruc3van/dsh-desktop)** (⭐ 20) — Community-maintained unofficial desktop client that loads the official Web UI directly: auto-reuse a running local instance or one-click launch the bundled dsh runtime with no extra Node.js/CLI install; smart connect, remote instances, tray residency, and crash recovery. `desktop` `out-of-the-box` `smart-connect`
-- **[dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI)** (⭐ 835) — Claude Code-style full-screen interactive terminal: pixel-whale header, live status line, thought streaming, double-Esc rewind, context progress bar, and a TPS gauge; npm one-line install. `terminal-tui` `fullscreen` `cli-first`
-- **[dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui)** (⭐ 132) — Adds TDD and "evidence gate" workflows on top of a terminal UI, upgrading one-shot multi-agent runs into a governable engineering process. `terminal-tui` `tdd` `evidence-gate`
+- **[dsh-desktop](https://github.com/bruc3van/dsh-desktop)** (⭐ 29) — Community-maintained unofficial desktop client that loads the official Web UI directly: auto-reuse a running local instance or one-click launch the bundled dsh runtime with no extra Node.js/CLI install; smart connect, remote instances, tray residency, and crash recovery. `desktop` `out-of-the-box` `smart-connect`
+- **[dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI)** (⭐ 1.2k) — Claude Code-style full-screen interactive terminal: pixel-whale header, live status line, thought streaming, double-Esc rewind, context progress bar, and a TPS gauge; npm one-line install. `terminal-tui` `fullscreen` `cli-first`
+- **[dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui)** (⭐ 153) — Adds TDD and "evidence gate" workflows on top of a terminal UI, upgrading one-shot multi-agent runs into a governable engineering process. `terminal-tui` `tdd` `evidence-gate`
 
 ### 🧰 Interface workbenches
 
-- **[DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar)** (⭐ 709) — The most popular sidebar enhancement: file rendering/editing, terminal, Git, and subagents built in, with third-party tab extensions that turn the sidebar into the main dev surface. `sidebar` `workbench` `extensible`
-- **[dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui)** (⭐ 1.8k) — All-in-one collection: task board, Git graph, side panel, remote mobile UI, desktop pet, live token stats, and a skin center — one install covering many common interface needs. `collection` `skin-center` `mobile`
+- **[DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar)** (⭐ 1.1k) — The most popular sidebar enhancement: file rendering/editing, terminal, Git, and subagents built in, with third-party tab extensions that turn the sidebar into the main dev surface. `sidebar` `workbench` `extensible`
+- **[dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui)** (⭐ 2.5k) — All-in-one collection: task board, Git graph, side panel, remote mobile UI, desktop pet, live token stats, and a skin center — one install covering many common interface needs. `collection` `skin-center` `mobile`
 
 ### 👀 Let the model see and search
 
-- **[modlens](https://github.com/liustack/modlens)** (⭐ 1.2k) — The most-starred third-party plugin (MIT): paste an image and get structured JSON evidence with OCR, layout, and semantics, so text-only models can reliably see; ships with a Web UI. `vision` `ocr` `structured-evidence`
-- **[modsearch](https://github.com/liustack/modsearch)** (⭐ 86) — Lets DSH search the web and X inline, returning cited structured JSON evidence (search/fetch/cite) so text-only models can answer from evidence; pairs with modlens as "see" + "search". `search` `citations` `evidence`
-- **[dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit)** (⭐ 308) — Image Q&A, long-screenshot OCR, UI restoration, visual grounding, pixel diffs, and Artifacts — suited to frontend and visual work. `vision` `ocr` `ui-restore`
+- **[modlens](https://github.com/liustack/modlens)** (⭐ 1.7k) — The most-starred vision plugin (MIT): paste an image and get structured JSON evidence with OCR, layout, and semantics, so text-only models can reliably see; ships with a Web UI. `vision` `ocr` `structured-evidence`
+- **[modsearch](https://github.com/liustack/modsearch)** (⭐ 104) — Lets DSH search the web and X inline, returning cited structured JSON evidence (search/fetch/cite) so text-only models can answer from evidence; pairs with modlens as "see" + "search". `search` `citations` `evidence`
+- **[dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit)** (⭐ 409) — Image Q&A, long-screenshot OCR, UI restoration, visual grounding, pixel diffs, and Artifacts — suited to frontend and visual work. `vision` `ocr` `ui-restore`
 
 ### 🧠 Memory & unattended runs
 
-- **[dsh-memory-evolve](https://github.com/csyangwen/dsh-memory-evolve)** (⭐ 50) — Five-track long-term memory as a pure plugin: git-branch awareness, in-turn self-review, skill self-evolution with a skill manager, four-track todos, and session search — zero core changes, zero runtime deps, clean uninstall. `memory` `self-evolution` `zero-deps`
-- **[dsh-mneme](https://github.com/modusensus/dsh-mneme)** (⭐ 8) — SQLite plus a human-editable Markdown mirror, so memory is not a black box; autoDream dedupes/merges/adjudicates in the background and refines over time. Memory should not be the agent's decision alone. `memory-sovereignty` `cross-session` `autodream`
-- **[dsh-auto-continue](https://github.com/HsiangNianian/dsh-auto-continue)** (⭐ 10) — After a turn fails from a network hiccup, timeout, or host crash, it auto-sends "continue": error classification (skips permanent auth/balance errors), adaptive backoff, templated continue text, and browser notifications — unattended runs pick themselves back up. `auto-resume` `unattended` `error-classification`
-- **[dsh-sentinel](https://github.com/fuhefei/dsh-sentinel)** (⭐ 4) — Watches files, commands, HTTP, processes, or webhooks and wakes DSH when conditions are met — upgrading loops from scheduled to event-driven. `event-driven` `monitoring` `automation`
+- **[dsh-memory-evolve](https://github.com/csyangwen/dsh-memory-evolve)** (⭐ 82) — Five-track long-term memory as a pure plugin: git-branch awareness, in-turn self-review, skill self-evolution with a skill manager, four-track todos, and session search — zero core changes, zero runtime deps, clean uninstall. `memory` `self-evolution` `zero-deps`
+- **[dsh-mneme](https://github.com/modusensus/dsh-mneme)** (⭐ 10) — SQLite plus a human-editable Markdown mirror, so memory is not a black box; autoDream dedupes/merges/adjudicates in the background and refines over time. Memory should not be the agent's decision alone. `memory-sovereignty` `cross-session` `autodream`
+- **[dsh-auto-continue](https://github.com/HsiangNianian/dsh-auto-continue)** (⭐ 15) — After a turn fails from a network hiccup, timeout, or host crash, it auto-sends "continue": error classification (skips permanent auth/balance errors), adaptive backoff, templated continue text, and browser notifications — unattended runs pick themselves back up. `auto-resume` `unattended` `error-classification`
+- **[dsh-sentinel](https://github.com/fuhefei/dsh-sentinel)** (⭐ 7) — Watches files, commands, HTTP, processes, or webhooks and wakes DSH when conditions are met — upgrading loops from scheduled to event-driven. `event-driven` `monitoring` `automation`
 
 ### ✍️ Conversation details
 
-- **[dsh-at-file](https://github.com/omdsh-dev/dsh-at-file)** (⭐ 117) — @-search workspace files in the composer and attach contents to the prompt, no copy-paste; official bundle, zero core changes. `@file` `workspace` `input`
-- **[dsh-annotation](https://github.com/omdsh-dev/dsh-annotation)** (⭐ 39) — Select text, attach annotations, and send them with the message; replies can address each annotation — suited to review, code review, and precise feedback. `annotation` `precise-feedback` `zero-core-changes`
-- **[dsh-navbar](https://github.com/vlln/dsh-navbar)** (⭐ 15) — Jump to any user message node in long conversations. `long-conversations` `navigation`
-- **[dsh-task-status](https://github.com/vlln/dsh-task-status)** (⭐ 7) — Puts background-task progress and a live output tail back into the conversation view — great for builds, downloads, and long test runs. `background-tasks` `live-output` `observability`
-- **[dsh-notification](https://github.com/omdsh-dev/dsh-notification)** (⭐ 38) — Desktop notifications when a turn completes, per outcome (success/failure) with keyword include/exclude rules. `notifications` `unattended` `keyword-rules`
-- **[dsh-outline](https://github.com/urzeye/dsh-outline)** (⭐ 3) — Real-time outline panel for the conversation page: a tree of user questions and Markdown headings (H1-H6) that updates live while streaming, with click-to-jump highlight, expand-depth control, search, and per-session favorites. `outline` `navigation` `web-ui`
+- **[dsh-at-file](https://github.com/omdsh-dev/dsh-at-file)** (⭐ 197) — @-search workspace files in the composer and attach contents to the prompt, no copy-paste; official bundle, zero core changes. `@file` `workspace` `input`
+- **[dsh-annotation](https://github.com/omdsh-dev/dsh-annotation)** (⭐ 50) — Select text, attach annotations, and send them with the message; replies can address each annotation — suited to review, code review, and precise feedback. `annotation` `precise-feedback` `zero-core-changes`
+- **[dsh-navbar](https://github.com/vlln/dsh-navbar)** (⭐ 23) — Jump to any user message node in long conversations. `long-conversations` `navigation`
+- **[dsh-task-status](https://github.com/vlln/dsh-task-status)** (⭐ 9) — Puts background-task progress and a live output tail back into the conversation view — great for builds, downloads, and long test runs. `background-tasks` `live-output` `observability`
+- **[dsh-notification](https://github.com/omdsh-dev/dsh-notification)** (⭐ 47) — Desktop notifications when a turn completes, per outcome (success/failure) with keyword include/exclude rules. `notifications` `unattended` `keyword-rules`
+- **[dsh-outline](https://github.com/urzeye/dsh-outline)** (⭐ 6) — Real-time outline panel for the conversation page: a tree of user questions and Markdown headings (H1-H6) that updates live while streaming, with click-to-jump highlight, expand-depth control, search, and per-session favorites. `outline` `navigation` `web-ui`
 
 ### 🎨 Creation & fun
 
-- **[dsh-genui](https://github.com/omdsh-dev/dsh-genui)** (⭐ 72) — Renders charts, forms, quizzes, Mermaid, and 3D scenes inline, and feeds user interactions back to the model. `generative-ui` `interactive` `visualization`
-- **[DSH OpenPencil](https://github.com/ZSeven-W/dsh-openpencil)** (⭐ 65) — Connects DSH to OpenPencil so the agent understands canvas structure, nodes, and component relationships, then creates, edits, previews, and validates editable multi-page designs instead of returning a single image. `design-canvas` `multi-page` `editable`
-- **[whale-girl](https://github.com/vlln/whale-girl)** (⭐ 121) — A draggable, feedable, playable desktop companion for the DSH Web GUI — a little company for long agent sessions. `desktop-pet` `companion` `web-ui`
+- **[dsh-genui](https://github.com/omdsh-dev/dsh-genui)** (⭐ 97) — Renders charts, forms, quizzes, Mermaid, and 3D scenes inline, and feeds user interactions back to the model. `generative-ui` `interactive` `visualization`
+- **[DSH OpenPencil](https://github.com/ZSeven-W/dsh-openpencil)** (⭐ 74) — Connects DSH to OpenPencil so the agent understands canvas structure, nodes, and component relationships, then creates, edits, previews, and validates editable multi-page designs instead of returning a single image. `design-canvas` `multi-page` `editable`
+- **[whale-girl](https://github.com/vlln/whale-girl)** (⭐ 159) — A draggable, feedable, playable desktop companion for the DSH Web GUI — a little company for long agent sessions. `desktop-pet` `companion` `web-ui`
 
 ### 🌱 Ecosystem entry points
 
-- **[plugin-registry](https://github.com/vlln/plugin-registry)** (⭐ 34) — Visual plugin management for regular users plus make-dsh-plugin guidance for developers. The right first stop in the ecosystem. `beginner-friendly` `plugin-management` `dev-guidance`
+- **[plugin-registry](https://github.com/vlln/plugin-registry)** (⭐ 40) — Visual plugin management for regular users plus make-dsh-plugin guidance for developers. The right first stop in the ecosystem. `beginner-friendly` `plugin-management` `dev-guidance`
 
 ## 🏆 Community leaderboard
 
-Community popularity by stars, manually reviewed, from the 2026-08-14 snapshot (every project above pushed that day). Repositories riding the `dsh-plugin` topic without being plugins, and editorially blacklisted repositories, are excluded — see [data/curated.json](./data/curated.json). Full ranking in [TOP100.md](./TOP100.md). Ranking reflects popularity only — not quality, compatibility, or security.
+Community popularity by stars, manually reviewed, from the 2026-08-15 snapshot. Repositories riding the `dsh-plugin` topic without being plugins, and editorially blacklisted repositories, are excluded — see [data/curated.json](./data/curated.json). Full ranking in [TOP100.md](./TOP100.md). Ranking reflects popularity only — not quality, compatibility, or security.
 
 | # | Project | ⭐ Stars | License |
 | ---: | --- | ---: | --- |
-| 1 | [zhu1090093659/dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui) | 1785 | Apache-2.0 |
-| 2 | [liustack/modlens](https://github.com/liustack/modlens) | 1208 | MIT |
-| 3 | [ccch1mneyyy/dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI) | 835 | MIT |
-| 4 | [omdsh-dev/DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) | 709 | MIT |
-| 5 | [Small-tailqwq/dsh-deep-whale](https://github.com/Small-tailqwq/dsh-deep-whale) | 538 | — |
-| 6 | [Nagi-ovo/dsh-ads](https://github.com/Nagi-ovo/dsh-ads) | 321 | — |
-| 7 | [Anionex/dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) | 308 | MIT |
-| 8 | [morluto/rea](https://github.com/morluto/rea) | 308 | MIT |
-| 9 | [NanmiCoder/dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) | 231 | MIT |
-| 10 | [Electricitysheep/dsh-handbook](https://github.com/Electricitysheep/dsh-handbook) | 181 | — |
-| 11 | [hust-open-atom-club/oh-dsh](https://github.com/hust-open-atom-club/oh-dsh) | 163 | MIT |
-| 12 | [huiliyi37/dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui) | 132 | Apache-2.0 |
+| 1 | [zhu1090093659/dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui) | 2468 | Apache-2.0 |
+| 2 | [liustack/modlens](https://github.com/liustack/modlens) | 1724 | MIT |
+| 3 | [ccch1mneyyy/dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI) | 1151 | MIT |
+| 4 | [omdsh-dev/DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) | 1056 | MIT |
+| 5 | [Small-tailqwq/dsh-deep-whale](https://github.com/Small-tailqwq/dsh-deep-whale) | 831 | — |
+| 6 | [Anionex/dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) | 409 | MIT |
+| 7 | [Nagi-ovo/dsh-ads](https://github.com/Nagi-ovo/dsh-ads) | 393 | BSD-3-Clause |
+| 8 | [morluto/rea](https://github.com/morluto/rea) | 327 | MIT |
+| 9 | [NanmiCoder/dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) | 309 | MIT |
+| 10 | [Electricitysheep/dsh-handbook](https://github.com/Electricitysheep/dsh-handbook) | 272 | — |
+| 11 | [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) | 215 | MIT |
+| 12 | [omdsh-dev/dsh-at-file](https://github.com/omdsh-dev/dsh-at-file) | 197 | MIT |
 
 ## 🆕 Recently joined
 
