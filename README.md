@@ -206,7 +206,7 @@ mindmap
 - **[dsh-llm-ollama](https://github.com/NOirBRight/dsh-llm-ollama)**（[@NOirBRight](https://github.com/NOirBRight) · 2026-08-15）— Ollama Cloud 原生聊天适配器：注册 `ollama-cloud` LLM 路由，原生模型发现（上下文窗口、视觉、推理、工具调用），并接入 web 搜索/抓取 provider。
 - **[dsh-abyss](https://github.com/Zongwei9888/dsh-abyss)**（[@Zongwei9888](https://github.com/Zongwei9888) · 2026-08-15）— 深海事务所：把一次多 agent 运行画成看得见的事务所。每个 agent 一张卡片（厂商 / 模型 / 委派层级 / 令牌与花费 / 上下文水位），派活、私聊、汇报按会话日志原文实时演出；另有整棵会话树的成本与失败统计、考勤泳道、委派谱系，以及从 durable 日志回放任意历史案子并一键导出 Markdown 复盘。零运行时依赖，不改 dsh 代码，数据挂在产品同源的 `/abyss` 下。
 - **[dsh-mcp-lens](https://github.com/labmimors/dsh-mcp-lens)**（[@labmimors](https://github.com/labmimors) · 2026-08-15）— 把大型 MCP 工具目录保持为 `mcp_search` 和 `mcp_call` 两个模型可见接口，按需返回少量精确 schema，再以 `allowTools` / `denyTools` 同时约束搜索和调用；适合接入几十到上千个 MCP 工具的 DSH 用户，并附本地 schema 字节计算器与 CI 预算 Action。
-- **[dsh-movein](https://github.com/sjh9714/dsh-movein)**（[@sjh9714](https://github.com/sjh9714) · 2026-08-16）— 把整套 Claude Code 配置一条命令搬进 DSH：技能、MCP、hooks、子代理、权限规则（deny/ask 桥接 + 迁移差异报告），默认 dry run 先出搬家清单；v0.4 起 `--reverse` 把 DSH 里长出来的技能搬回去，双栖不二选。
+- **[dsh-movein](https://github.com/sjh9714/dsh-movein)**（[@sjh9714](https://github.com/sjh9714) · 2026-08-16）— 把整套 Claude Code 配置一条命令搬进 DSH：技能、斜杠命令、MCP、hooks、子代理、权限规则（deny/ask 桥接 + 迁移差异报告），默认 dry run 先出搬家清单；`--reverse` 把 DSH 里长出来的技能搬回去实现双栖，v0.5 新增 doctor 搬家体检（含检测会被 DSH 静默丢弃的技能 frontmatter）与写入前自动备份、一键回滚。
 - **[dsh-compressor](https://github.com/lifeodyssey/dsh-compressor)**（[@lifeodyssey](https://github.com/lifeodyssey) · 2026-08-16）— Headroom 的精简移植：压工具输出，至多少 20% 上下文，不动模型缓存。适合工具日志 / JSON / diff 把上下文撑满、又不想改已发给模型的前缀的人。
 
 [查看全部 30 条自荐 →](./SHOWCASE.md)
