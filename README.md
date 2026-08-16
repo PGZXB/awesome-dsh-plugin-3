@@ -78,7 +78,7 @@ mindmap
 
 ### 🖥️ 桌面与终端
 
-- **想要独立的桌面客户端**，而不是浏览器标签页：[dsh-desktop](https://github.com/bruc3van/dsh-desktop) —— 开箱即用：自动复用本机已运行的实例，或用内置运行时一键启动，无需安装 Node.js/CLI，支持远程连接、托盘常驻与异常恢复。
+- **想要独立的桌面客户端**，而不是浏览器标签页：[dsh-desktop](https://github.com/bruc3van/dsh-desktop) —— 安全是身份：窗口加载官方 Web UI 本体（非仿制版），小边界 + 逐层加固——窗口沙箱、导航锁定、更新链路防劫持、权限最小化，插件先审查、再安装（内置安全市场默认关闭、开启才联网）；长任务托盘常驻随点随开，智能模式自动复用本机已运行的实例、或用内置运行时一键启动（无需 Node.js/CLI），固定地址模式直连你自行维护的实例。
 - **想在终端里用 Claude Code 风格界面**：[dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI) · [dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui) —— 全屏交互终端：状态行、思考流展开、上下文/TPS 仪表；tianshu 版本还内置 TDD 与证据门工作流。
 
 ### 🧰 界面与工作台
@@ -136,6 +136,7 @@ mindmap
 ### 🌱 生态入口
 
 - **想更方便地管理和发现插件**：[plugin-registry](https://github.com/vlln/plugin-registry) · [dsh-market](https://github.com/dsh-market/dsh-market) —— plugin-registry 在浏览器面板中管理 repository 插件并提供开发引导；dsh-market 把插件市场做进 DSH 界面，浏览、搜索、一键安装。
+- **想先审查、再安装插件**：[dsh-desktop-safe-market](https://github.com/bruc3van/dsh-desktop-safe-market) —— 先审查再安装的 DSH 市场：目录来自本清单每日快照 + 人工精选，「安全安装」不执行任何命令——把安全审查提示词交给 Agent 实际读仓库代码，确认干净后由你决定是否用官方命令安装；市场默认关闭、开启才联网，插件自身没有任何执行安装的接口。
 
 ### 🚀 新手入门组合
 
@@ -143,7 +144,7 @@ mindmap
 
 | 套装 | 适合 | 组合 |
 | --- | --- | --- |
-| 日常体验 | 第一次装插件，先解决管理、状态和导航 | [plugin-registry](https://github.com/vlln/plugin-registry) · [dsh-task-status](https://github.com/vlln/dsh-task-status) · [dsh-navbar](https://github.com/vlln/dsh-navbar) |
+| 日常体验 | 第一次装插件，先解决审查安全，再看状态与导航 | [dsh-desktop-safe-market](https://github.com/bruc3van/dsh-desktop-safe-market) · [dsh-task-status](https://github.com/vlln/dsh-task-status) · [dsh-navbar](https://github.com/vlln/dsh-navbar) |
 | 自动化 | 定时循环 + 事件驱动唤醒，长时间无人值守任务 | [dsh-loop](https://github.com/vlln/dsh-loop) · [dsh-sentinel](https://github.com/fuhefei/dsh-sentinel) |
 | 视觉与搜索 | 让纯文本模型看得见、搜得到 | [modlens](https://github.com/liustack/modlens) · [modsearch](https://github.com/liustack/modsearch) · [dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) |
 | 创作与界面 | 生成式 UI、真实设计画布与视觉理解 | [dsh-genui](https://github.com/omdsh-dev/dsh-genui) · [dsh-openpencil](https://github.com/ZSeven-W/dsh-openpencil) · [dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) |
@@ -239,12 +240,12 @@ mindmap
 
 [![Star History Chart](https://api.star-history.com/svg?repos=bruc3van/awesome-dsh-plugin&type=Date)](https://star-history.com/#bruc3van/awesome-dsh-plugin&Date)
 
-## 🧭 相关项目
+## 🔗 相关项目
 
 **作者维护**
 
-- **[dsh-desktop](https://github.com/bruc3van/dsh-desktop)** — 让 Agent 安全常驻桌面的独立 DeepSeek Harness 客户端：官方 Web UI 原封不动，长任务常驻托盘，精选插件先审查、再安装。（其内置市场的目录数据即来自本仓库的 `market.json`。）
-- **[dsh-desktop-safe-market](https://github.com/bruc3van/dsh-desktop-safe-market)** — 先审查再安装的 DSH 市场（review-before-install DSH marketplace）。（消费本仓库 `market.json` 的下游市场，DSH 桌面端内置的「插件市场」即由它实现。）
+- **[dsh-desktop](https://github.com/bruc3van/dsh-desktop)** — 让 Agent 安全常驻桌面的独立 DeepSeek Harness 客户端：窗口加载官方 Web UI 本体，小边界 + 逐层加固（窗口沙箱、导航锁定、更新链路防劫持、权限最小化），长任务常驻托盘，精选插件先审查、再安装。（其内置市场的目录数据即来自本仓库的 [`market.json`](./data/market.json)。）
+- **[dsh-desktop-safe-market](https://github.com/bruc3van/dsh-desktop-safe-market)** — 先审查再安装的 DSH 市场（review-before-install DSH marketplace）。（消费本仓库 [`market.json`](./data/market.json) 的下游市场，DSH 桌面端内置的「插件市场」即由它实现。）
 
 **官方仓库**
 

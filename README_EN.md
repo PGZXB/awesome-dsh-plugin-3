@@ -78,7 +78,7 @@ To browse every project in a category, see [CATALOG.md](./CATALOG.md).
 
 ### 🖥️ Desktop & terminal
 
-- **Want a standalone desktop client** instead of a browser tab: [dsh-desktop](https://github.com/bruc3van/dsh-desktop) — Out-of-the-box: auto-reuse a running local instance or launch the bundled runtime with no Node.js/CLI install, plus remote connections, tray residency, and crash recovery.
+- **Want a standalone desktop client** instead of a browser tab: [dsh-desktop](https://github.com/bruc3van/dsh-desktop) — Security is the identity: the window loads the official Web UI itself (not a clone), hardened with a small boundary and layered defenses — window sandboxing, navigation locking, a hijack-proof update chain, and least privilege — and plugins are reviewed before install (the bundled security market is off by default and only goes online when enabled). Long-running tasks stay resident in the tray, Smart mode reuses a local instance you are already running or launches the bundled runtime with one click (no Node.js/CLI install), and Fixed-address mode connects to a Web UI instance you maintain yourself.
 - **Want a Claude Code-style terminal UI**: [dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI) · [dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui) — Full-screen interactive terminals with a live status line, thought streaming, and context/TPS gauges; the tianshu build adds TDD and evidence-gate workflows.
 
 ### 🧰 Interface workbenches
@@ -136,6 +136,7 @@ To browse every project in a category, see [CATALOG.md](./CATALOG.md).
 ### 🌱 Ecosystem entry points
 
 - **Want to manage and discover plugins**: [plugin-registry](https://github.com/vlln/plugin-registry) · [dsh-market](https://github.com/dsh-market/dsh-market) — plugin-registry manages repository plugins in a browser console with development guidance; dsh-market brings a browse/search/one-click-install market into the DSH conversation UI.
+- **Want to review before you install**: [dsh-desktop-safe-market](https://github.com/bruc3van/dsh-desktop-safe-market) — a review-before-install DSH marketplace: the feed comes from this list's daily snapshot plus human curation, and "Safe install" executes nothing — it hands a security-review prompt to the agent, which actually reads the plugin's code, and only after it comes back clean do you decide whether to run the official install command. Off by default — it goes online only once you enable it, and the plugin itself has no interface that can run an install.
 
 ### 🚀 Starter kits
 
@@ -143,7 +144,7 @@ You do not need to install everything. Start with the kit closest to the problem
 
 | Kit | For | Combination |
 | --- | --- | --- |
-| Everyday experience | First plugin install: management, status, navigation | [plugin-registry](https://github.com/vlln/plugin-registry) · [dsh-task-status](https://github.com/vlln/dsh-task-status) · [dsh-navbar](https://github.com/vlln/dsh-navbar) |
+| Everyday experience | First plugin install: review safety first, then status & navigation | [dsh-desktop-safe-market](https://github.com/bruc3van/dsh-desktop-safe-market) · [dsh-task-status](https://github.com/vlln/dsh-task-status) · [dsh-navbar](https://github.com/vlln/dsh-navbar) |
 | Automation | Scheduled loops + event-driven wakeups for unattended work | [dsh-loop](https://github.com/vlln/dsh-loop) · [dsh-sentinel](https://github.com/fuhefei/dsh-sentinel) |
 | Vision & search | Let a text-only model see and search | [modlens](https://github.com/liustack/modlens) · [modsearch](https://github.com/liustack/modsearch) · [dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) |
 | Creation & interfaces | Generative UI, real design canvas, visual understanding | [dsh-genui](https://github.com/omdsh-dev/dsh-genui) · [dsh-openpencil](https://github.com/ZSeven-W/dsh-openpencil) · [dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) |
@@ -239,12 +240,12 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for details.
 
 [![Star History Chart](https://api.star-history.com/svg?repos=bruc3van/awesome-dsh-plugin&type=Date)](https://star-history.com/#bruc3van/awesome-dsh-plugin&Date)
 
-## 🧭 Related projects
+## 🔗 Related projects
 
 **Maintained by the author**
 
-- **[dsh-desktop](https://github.com/bruc3van/dsh-desktop)** — a standalone DeepSeek Harness client that keeps an agent safely resident on your desktop: the official Web UI untouched, long-running tasks resident in the tray, curated plugins reviewed before they install. (Its bundled marketplace's catalog data comes from this repository's `market.json`.)
-- **[dsh-desktop-safe-market](https://github.com/bruc3van/dsh-desktop-safe-market)** — the review-before-install DSH marketplace. (The downstream market consuming this repository's `market.json`; it powers the Plugins marketplace bundled with the DSH desktop client.)
+- **[dsh-desktop](https://github.com/bruc3van/dsh-desktop)** — a standalone DeepSeek Harness client that keeps an agent safely resident on your desktop: the window loads the official Web UI itself, hardened with a small boundary and layered defenses (window sandbox, navigation lock, hijack-proof update chain, least privilege), long-running tasks resident in the tray, curated plugins reviewed before they install. (Its bundled marketplace's catalog data comes from this repository's [`market.json`](./data/market.json).)
+- **[dsh-desktop-safe-market](https://github.com/bruc3van/dsh-desktop-safe-market)** — the review-before-install DSH marketplace. (The downstream market consuming this repository's [`market.json`](./data/market.json); it powers the Plugins marketplace bundled with the DSH desktop client.)
 
 **Official repositories**
 
