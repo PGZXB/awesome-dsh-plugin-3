@@ -27,44 +27,44 @@
 
 ## 🗺️ 生态全景
 
-截至 2026-08-16 共收录 **2099** 个经核实的仓库。它们长这样：
+截至 2026-08-16 共收录 **3408** 个经核实的仓库。它们长这样：
 
 ```mermaid
 mindmap
-  root((DSH 插件生态 2099))
-    Agent 自动化与工作流 · 690
+  root((DSH 插件生态 3408))
+    Agent 自动化与工作流 · 1094
       定时循环与事件唤醒
       多 Agent 协作
       长期记忆与自我进化
       审批、预算与检查点
-    界面与体验 · 415
+    界面与体验 · 703
       桌面客户端与终端 TUI
       侧边栏工作台
       皮肤与桌面宠物
       通知与输入增强
-    网页与浏览器 · 324
+    网页与浏览器 · 572
       浏览器桥接与页面操作
       网页搜索与引用
       归档与网页取证
-    设计媒体与视觉 · 140
+    设计媒体与视觉 · 224
       图片理解与 OCR
       设计画布与 UI 还原
-    生态与资源 · 134
+    生态与资源 · 210
       插件市场与注册表
       开发模板与脚手架
       教程与手册
-    开发者工具 · 122
+    开发者工具 · 175
       Git 与 diff
       沙箱与运行时
       调试与诊断
-    知识与研究 · 110
+    知识与研究 · 173
       知识库与跨会话记忆
       深度研究
       学术与数学
-    实用工具与其他 · 102
+    实用工具与其他 · 162
       文件与编码
       格式转换
-    集成与分享 · 62
+    集成与分享 · 95
       会话导入与分享
       远程访问
       IM 与外部集成
@@ -160,21 +160,21 @@ mindmap
 | 3 | [omdsh-dev/DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) | 1302 | MIT |
 | 4 | [ccch1mneyyy/dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI) | 1291 | MIT |
 | 5 | [Small-tailqwq/dsh-deep-whale](https://github.com/Small-tailqwq/dsh-deep-whale) | 922 | — |
-| 6 | [Anionex/dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) | 440 | MIT |
-| 7 | [Nagi-ovo/dsh-ads](https://github.com/Nagi-ovo/dsh-ads) | 416 | BSD-3-Clause |
-| 8 | [NanmiCoder/dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) | 343 | MIT |
-| 9 | [morluto/rea](https://github.com/morluto/rea) | 330 | MIT |
-| 10 | [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) | 300 | MIT |
-| 11 | [Electricitysheep/dsh-handbook](https://github.com/Electricitysheep/dsh-handbook) | 294 | — |
-| 12 | [omdsh-dev/dsh-at-file](https://github.com/omdsh-dev/dsh-at-file) | 225 | MIT |
-| 13 | [hust-open-atom-club/oh-dsh](https://github.com/hust-open-atom-club/oh-dsh) | 196 | MIT |
-| 14 | [huiliyi37/dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui) | 173 | Apache-2.0 |
-| 15 | [vlln/whale-girl](https://github.com/vlln/whale-girl) | 173 | MIT |
-| 16 | [Lum1104/dsh-browser](https://github.com/Lum1104/dsh-browser) | 167 | MIT |
-| 17 | [ysr666/dsh-vision-router](https://github.com/ysr666/dsh-vision-router) | 155 | MIT |
-| 18 | [bruc3van/awesome-dsh-plugin](https://github.com/bruc3van/awesome-dsh-plugin) | 152 | MIT |
-| 19 | [Nagi-ovo/dsh-visualize](https://github.com/Nagi-ovo/dsh-visualize) | 126 | BSD-3-Clause |
-| 20 | [omdsh-dev/dsh-genui](https://github.com/omdsh-dev/dsh-genui) | 111 | MIT |
+| 6 | [ccch1mneyyy/working-activity](https://github.com/ccch1mneyyy/working-activity) | 644 | MIT |
+| 7 | [Anionex/dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) | 440 | MIT |
+| 8 | [Nagi-ovo/dsh-ads](https://github.com/Nagi-ovo/dsh-ads) | 416 | BSD-3-Clause |
+| 9 | [NanmiCoder/dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) | 343 | MIT |
+| 10 | [morluto/rea](https://github.com/morluto/rea) | 330 | MIT |
+| 11 | [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) | 300 | MIT |
+| 12 | [Electricitysheep/dsh-handbook](https://github.com/Electricitysheep/dsh-handbook) | 294 | — |
+| 13 | [omdsh-dev/dsh-at-file](https://github.com/omdsh-dev/dsh-at-file) | 225 | MIT |
+| 14 | [vibeinging/deepseek-harness-desktop-app](https://github.com/vibeinging/deepseek-harness-desktop-app) | 202 | MIT |
+| 15 | [hust-open-atom-club/oh-dsh](https://github.com/hust-open-atom-club/oh-dsh) | 196 | MIT |
+| 16 | [huiliyi37/dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui) | 173 | Apache-2.0 |
+| 17 | [vlln/whale-girl](https://github.com/vlln/whale-girl) | 173 | MIT |
+| 18 | [Lum1104/dsh-browser](https://github.com/Lum1104/dsh-browser) | 167 | MIT |
+| 19 | [ysr666/dsh-vision-router](https://github.com/ysr666/dsh-vision-router) | 155 | MIT |
+| 20 | [bruc3van/awesome-dsh-plugin](https://github.com/bruc3van/awesome-dsh-plugin) | 152 | MIT |
 
 [查看完整 Star Top 200 →](./TOP200.md)
 
@@ -218,7 +218,7 @@ mindmap
 - **剔除蹭热度条目：** 带 `dsh-plugin` Topic 但并非 DSH 插件的仓库（平台本体、其他 Agent 工具、同名目录站等）以及编辑部拉黑的仓库不计入目录与榜单，理由逐条记录在 [data/curated.json](./data/curated.json)（榜单另有 `leaderboard_exclusions`：保留在目录中、但不参与榜单排序的仓库），可随时复查与质疑。
 - **中文默认，中英双语：** 普通用户可以直接理解，英文读者也有独立入口。
 
-截至 2026-08-16，全量目录收录 **2099** 个仓库、**18** 种主要语言；其中 **1788** 个声明了许可证，**2094** 个未归档且未禁用（目录随人工审核合并更新，最新统计以 [CATALOG.md](./CATALOG.md) 为准）。
+截至 2026-08-16，全量目录收录 **3408** 个仓库、**22** 种主要语言；其中 **2939** 个声明了许可证，**3400** 个未归档且未禁用（目录随人工审核合并更新，最新统计以 [CATALOG.md](./CATALOG.md) 为准）。
 
 ## ⚠️ 使用与安全
 

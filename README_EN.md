@@ -27,44 +27,44 @@
 
 ## 🗺️ Ecosystem at a glance
 
-As of 2026-08-16 the catalog lists **2,099** verified repositories. Here is the shape of it:
+As of 2026-08-16 the catalog lists **3,408** verified repositories. Here is the shape of it:
 
 ```mermaid
 mindmap
-  root((DSH ecosystem 2099))
-    Agents automation workflows · 690
+  root((DSH ecosystem 3408))
+    Agents automation workflows · 1094
       Scheduled loops and event wakeups
       Multi-agent teamwork
       Long-term memory and self-evolution
       Approval budget and checkpoints
-    UI and experience · 415
+    UI and experience · 703
       Desktop clients and terminal TUI
       Sidebar workbenches
       Skins and desktop pets
       Notifications and input
-    Web and browser · 324
+    Web and browser · 572
       Browser bridge and page control
       Web search with citations
       Archiving and web forensics
-    Design media and vision · 140
+    Design media and vision · 224
       Image understanding and OCR
       Design canvas and UI restoration
-    Ecosystem and resources · 134
+    Ecosystem and resources · 210
       Plugin markets and registries
       Templates and scaffolds
       Guides and handbooks
-    Developer tools · 122
+    Developer tools · 175
       Git and diff
       Sandbox and runtimes
       Debugging and diagnostics
-    Knowledge and research · 110
+    Knowledge and research · 173
       Knowledge bases and cross-session memory
       Deep research
       Academia and math
-    Utilities and more · 102
+    Utilities and more · 162
       Files and encodings
       Format conversion
-    Integrations and sharing · 62
+    Integrations and sharing · 95
       Chat import and sharing
       Remote access
       IM and external integrations
@@ -160,21 +160,21 @@ Community popularity by stars, from the 2026-08-16 snapshot. Repositories riding
 | 3 | [omdsh-dev/DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) | 1302 | MIT |
 | 4 | [ccch1mneyyy/dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI) | 1291 | MIT |
 | 5 | [Small-tailqwq/dsh-deep-whale](https://github.com/Small-tailqwq/dsh-deep-whale) | 922 | — |
-| 6 | [Anionex/dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) | 440 | MIT |
-| 7 | [Nagi-ovo/dsh-ads](https://github.com/Nagi-ovo/dsh-ads) | 416 | BSD-3-Clause |
-| 8 | [NanmiCoder/dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) | 343 | MIT |
-| 9 | [morluto/rea](https://github.com/morluto/rea) | 330 | MIT |
-| 10 | [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) | 300 | MIT |
-| 11 | [Electricitysheep/dsh-handbook](https://github.com/Electricitysheep/dsh-handbook) | 294 | — |
-| 12 | [omdsh-dev/dsh-at-file](https://github.com/omdsh-dev/dsh-at-file) | 225 | MIT |
-| 13 | [hust-open-atom-club/oh-dsh](https://github.com/hust-open-atom-club/oh-dsh) | 196 | MIT |
-| 14 | [huiliyi37/dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui) | 173 | Apache-2.0 |
-| 15 | [vlln/whale-girl](https://github.com/vlln/whale-girl) | 173 | MIT |
-| 16 | [Lum1104/dsh-browser](https://github.com/Lum1104/dsh-browser) | 167 | MIT |
-| 17 | [ysr666/dsh-vision-router](https://github.com/ysr666/dsh-vision-router) | 155 | MIT |
-| 18 | [bruc3van/awesome-dsh-plugin](https://github.com/bruc3van/awesome-dsh-plugin) | 152 | MIT |
-| 19 | [Nagi-ovo/dsh-visualize](https://github.com/Nagi-ovo/dsh-visualize) | 126 | BSD-3-Clause |
-| 20 | [omdsh-dev/dsh-genui](https://github.com/omdsh-dev/dsh-genui) | 111 | MIT |
+| 6 | [ccch1mneyyy/working-activity](https://github.com/ccch1mneyyy/working-activity) | 644 | MIT |
+| 7 | [Anionex/dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) | 440 | MIT |
+| 8 | [Nagi-ovo/dsh-ads](https://github.com/Nagi-ovo/dsh-ads) | 416 | BSD-3-Clause |
+| 9 | [NanmiCoder/dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) | 343 | MIT |
+| 10 | [morluto/rea](https://github.com/morluto/rea) | 330 | MIT |
+| 11 | [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) | 300 | MIT |
+| 12 | [Electricitysheep/dsh-handbook](https://github.com/Electricitysheep/dsh-handbook) | 294 | — |
+| 13 | [omdsh-dev/dsh-at-file](https://github.com/omdsh-dev/dsh-at-file) | 225 | MIT |
+| 14 | [vibeinging/deepseek-harness-desktop-app](https://github.com/vibeinging/deepseek-harness-desktop-app) | 202 | MIT |
+| 15 | [hust-open-atom-club/oh-dsh](https://github.com/hust-open-atom-club/oh-dsh) | 196 | MIT |
+| 16 | [huiliyi37/dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui) | 173 | Apache-2.0 |
+| 17 | [vlln/whale-girl](https://github.com/vlln/whale-girl) | 173 | MIT |
+| 18 | [Lum1104/dsh-browser](https://github.com/Lum1104/dsh-browser) | 167 | MIT |
+| 19 | [ysr666/dsh-vision-router](https://github.com/ysr666/dsh-vision-router) | 155 | MIT |
+| 20 | [bruc3van/awesome-dsh-plugin](https://github.com/bruc3van/awesome-dsh-plugin) | 152 | MIT |
 
 [See the full Star Top 200 →](./TOP200.md)
 
@@ -218,7 +218,7 @@ Self-submitted recommendations from plugin authors, following the [contributing 
 - **Riders removed:** repositories carrying the `dsh-plugin` topic without being DSH plugins (the platform itself, other agent tools, competing catalogs) and editorially blacklisted repositories are excluded from the catalog and leaderboard, with per-repo reasons recorded in [data/curated.json](./data/curated.json) (the leaderboard additionally honors `leaderboard_exclusions` for repos that stay in the catalog but do not rank) — auditable and contestable at any time.
 - **Chinese by default, bilingual:** native readability for the main audience, with a dedicated English entry point.
 
-As of 2026-08-16, the catalog lists **2,099** repositories across **18** primary languages; **1,788** declare a license and **2,094** are neither archived nor disabled (the catalog updates after each human review merge — see [CATALOG.md](./CATALOG.md) for current numbers).
+As of 2026-08-16, the catalog lists **3,408** repositories across **22** primary languages; **2,939** declare a license and **3,400** are neither archived nor disabled (the catalog updates after each human review merge — see [CATALOG.md](./CATALOG.md) for current numbers).
 
 ## ⚠️ Usage & safety
 
