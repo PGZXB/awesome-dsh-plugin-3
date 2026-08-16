@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 
 // Generates data/market.json — the curated downstream-market file consumed by
-// dsh-desktop-safe-market. The contract lives in the downstream repo at
-// docs/market-json-spec.md; this script is its publishing half.
+// dsh-desktop-safe-market — and MARKET.md, its human-readable twin, so the
+// feed can be previewed on GitHub without installing the plugin. The contract
+// lives in the downstream repo at docs/market-json-spec.md; this script is its
+// publishing half.
 //
 // The file is a pure projection of data/repositories.json (the raw topic
 // snapshot) + data/curated.json (the editorial decisions): filter (description
@@ -28,6 +30,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 export const SCHEMA_VERSION = 1;
 export const MAX_ENTRIES = 300;
 export const MAX_FILE_BYTES = 500 * 1024;
+export const MARKDOWN_OUTPUT = 'MARKET.md';
 export const BREAKER_RATIO = 0.6;
 export const STALE_SNAPSHOT_MS = 26 * 60 * 60 * 1000;
 
@@ -291,9 +294,85 @@ export function buildMarket({ snapshot, curated, previous = null, now = new Date
   return { outcome: 'written', envelope: envelopeWith(entries), poolCount, warnings, trimmedCount };
 }
 
+// Same cell escaping as scripts/render.mjs: the wire text is already
+// whitespace-collapsed and length-capped, so pipes and newlines are the only
+// shapes that could break a table row.
+const mdCell = (value) => String(value ?? '').replaceAll('|', '\\|').replaceAll('\n', ' ');
+
+// MARKET.md — the readable twin of data/market.json. Bilingual, like
+// CATALOG.md / TOP200.md. Ranked by stars because that is the order the
+// consumer's "All plugins" view shows; the feed itself stays in deal order
+// (§4.4), and the consumer truncates it to its configured size — every row
+// here is published, the tail may not be shown in the app.
+export function renderMarketMarkdown(envelope) {
+  const labels = new Map();
+  const counts = new Map();
+  for (const entry of envelope.entries) {
+    labels.set(entry.category, `${entry.category_en} · ${entry.category_zh}`);
+    counts.set(entry.category, (counts.get(entry.category) ?? 0) + 1);
+  }
+  const categories = [...counts.keys()].sort(
+    (a, b) => counts.get(b) - counts.get(a) || codepointCompare(a, b),
+  );
+  const byStars = [...envelope.entries].sort(
+    (a, b) => b.stargazers_count - a.stargazers_count || codepointCompare(a.full_name, b.full_name),
+  );
+  const rows = byStars.map((entry, index) => {
+    const pushed = String(entry.pushed_at ?? '').slice(0, 10);
+    return `| ${index + 1} | [${mdCell(entry.full_name)}](https://github.com/${entry.full_name}) | ${mdCell(entry.description)} | ${mdCell(labels.get(entry.category))} | ${mdCell(entry.language)} | ${entry.stargazers_count} | ${mdCell(entry.license)} | ${mdCell(pushed)} |`;
+  });
+  return [
+    '# 下游市场文件预览 / Downstream market feed preview',
+    '',
+    '[返回中文首页](./README.md) · [Back to English home](./README_EN.md) · [完整目录 / Full catalog](./CATALOG.md) · [Star 榜单 / Star board](./TOP200.md) · [JSON data](./data/market.json)',
+    '',
+    '[data/market.json](./data/market.json) 的人类可读镜像——即 [dsh-desktop-safe-market](https://github.com/bruc3van/dsh-desktop-safe-market) 插件在桌面端渲染的同一份市场数据，由 `scripts/market.mjs` 随市场文件一同生成，供在 GitHub 上直接预览确认，无需安装插件；请勿手工编辑。下表按 Star 数排名，与插件「全部插件」视图一致；文件本身按类目均衡发牌顺序存储，插件默认仅展示其配置条数。',
+    '',
+    'The human-readable twin of [data/market.json](./data/market.json) — the same market data the [dsh-desktop-safe-market](https://github.com/bruc3van/dsh-desktop-safe-market) plugin renders in the desktop app, generated alongside the feed by `scripts/market.mjs` so it can be previewed on GitHub without installing anything. Do not edit by hand. The table ranks by stars, matching the plugin\u2019s "All plugins" view; the feed itself is stored in balanced deal order, and the plugin shows only its configured prefix by default.',
+    '',
+    `- 生成时间 / Feed generated: **${envelope.generated_at}**`,
+    `- 来源快照 / Source snapshot: **${envelope.source_fetched_at}**（${envelope.source_repo_count} 个仓库 / repositories scanned）`,
+    `- 过滤后候选池 / Candidate pool after filtering: **${envelope.pool_count}**`,
+    `- 发布条目 / Published entries: **${envelope.entries.length}**（上限 / cap: ${MAX_ENTRIES}）`,
+    '',
+    '## 分类 / Categories',
+    '',
+    '| Category | Entries |',
+    '| --- | ---: |',
+    ...categories.map((key) => `| ${mdCell(labels.get(key))} | ${counts.get(key)} |`),
+    '',
+    '## 全部插件（按 Star 排名）/ All plugins (ranked by stars)',
+    '',
+    '| # | Repository | Description | Category | Language | Stars | License | Updated |',
+    '| ---: | --- | --- | --- | --- | ---: | --- | --- |',
+    ...rows,
+  ].join('\n');
+}
+
 async function summaryBlock(title, body) {
   if (!process.env.GITHUB_STEP_SUMMARY) return;
   await appendFile(process.env.GITHUB_STEP_SUMMARY, `### ${title}\n\n${body}\n\n`);
+}
+
+// MARKET.md is a projection of the published feed, so it is rewritten whenever
+// the feed is — and self-healed even on an 'unchanged' run, so a stale or
+// hand-edited page cannot outlive the run that notices it. Aborted and
+// oversize runs touch nothing: the page must keep describing the feed that is
+// actually published, which is still yesterday's.
+async function syncMarkdown(envelope, rootDir) {
+  const page = `${renderMarketMarkdown(envelope)}\n`;
+  const target = resolve(rootDir, MARKDOWN_OUTPUT);
+  let current = null;
+  try {
+    current = await readFile(target, 'utf8');
+  } catch {
+    // First run — no page to compare against yet.
+  }
+  if (current === page) return;
+  await writeFile(target, page);
+  console.log(
+    `Wrote ${MARKDOWN_OUTPUT} — the readable twin of data/market.json (${envelope.entries.length} entries).`,
+  );
 }
 
 // The CLI body, exported so tests can run it against a scratch root and assert
@@ -338,6 +417,7 @@ export async function runMarket({ rootDir = root, argv = process.argv } = {}) {
     console.log(
       `market.json unchanged for snapshot ${snapshot.fetched_at} — keeping the previous file (${result.envelope.entries.length} entries, pool ${result.poolCount}).`,
     );
+    await syncMarkdown(result.envelope, rootDir);
     return 'unchanged';
   }
 
@@ -357,6 +437,7 @@ export async function runMarket({ rootDir = root, argv = process.argv } = {}) {
     `Wrote data/market.json — ${result.envelope.entries.length} entries dealt from a pool of ${result.poolCount} ` +
       `(source snapshot holds ${snapshot.total_count} repositories, fetched ${snapshot.fetched_at}), ${bytes} bytes.`,
   );
+  await syncMarkdown(result.envelope, rootDir);
 
   const warnings = [...result.warnings];
   if (result.trimmedCount > 0) {

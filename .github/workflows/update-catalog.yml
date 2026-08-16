@@ -31,8 +31,9 @@ jobs:
         run: node scripts/update.mjs
       # data/market.json (the downstream dsh-desktop-safe-market feed) IS a pure
       # projection of the snapshot + curation, so it is regenerated here and
-      # shipped with the same commit. Its generator carries the circuit breaker
-      # (a collapsed pool aborts the run and keeps yesterday's file).
+      # shipped with the same commit, together with MARKET.md (its preview
+      # page). Its generator carries the circuit breaker (a collapsed pool
+      # aborts the run and keeps yesterday's file).
       - name: Generate the downstream market file
         run: node scripts/market.mjs
       - name: Validate the downstream market file
@@ -41,7 +42,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/repositories.json data/review data/market.json
+          git add data/repositories.json data/review data/market.json MARKET.md
           if git diff --cached --quiet; then
             echo "Snapshot and review queue are already current."
             exit 0

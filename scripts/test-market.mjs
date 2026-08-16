@@ -18,6 +18,7 @@ import {
   filterPool,
   isSafeBranchName,
   MAX_FILE_BYTES,
+  renderMarketMarkdown,
   runMarket,
   SCHEMA_VERSION,
 } from './market.mjs';
@@ -373,4 +374,85 @@ test('the CLI never overwrites the previous file when the breaker fires', async 
   // Spec §6: yesterday's data must survive the aborted run bit for bit.
   const kept = JSON.parse(await readFile(resolve(dir, 'data/market.json'), 'utf8'));
   assert.deepEqual(kept, prev);
+});
+
+test('renderMarketMarkdown ranks by stars, links repos, and escapes cell hazards', () => {
+  const fallback = categoryFallback; // [key, zh, en]
+  const result = buildMarket({
+    snapshot: snapshot([
+      repo({ id: 1, full_name: 'o/low', name: 'low', description: 'plain text', stargazers_count: 10 }),
+      repo({ id: 2, full_name: 'o/high', name: 'high', description: 'pipe | tick ` new\nline', stargazers_count: 9000 }),
+    ]),
+    curated: curated(),
+    previous: null,
+    now: new Date('2026-08-16T01:30:00Z'),
+  });
+  assert.equal(result.outcome, 'written');
+  const page = renderMarketMarkdown(result.envelope);
+
+  // The preview ranks by stars (the consumer's All view), not deal order.
+  const highRow = page.indexOf('[o/high](https://github.com/o/high)');
+  const lowRow = page.indexOf('[o/low](https://github.com/o/low)');
+  assert.ok(highRow !== -1 && lowRow !== -1, 'both repos appear as links');
+  assert.ok(highRow < lowRow, 'the 9000-star repo ranks before the 10-star one');
+
+  // Table-cell hazards are escaped, never rendered as structure.
+  assert.ok(page.includes('pipe \\| tick ` new line'));
+  assert.ok(!page.includes('pipe | tick'));
+
+  // The category roll-up counts every published entry.
+  const rollup = page.split('\n').find((line) => line.startsWith(`| ${fallback[2]} · ${fallback[1]} |`));
+  assert.ok(rollup !== undefined, 'the category row exists in the roll-up');
+  assert.ok(rollup.endsWith('| 2 |'), 'both entries are counted once each');
+});
+
+test('runMarket writes MARKET.md beside market.json and leaves both untouched when the breaker fires', async () => {
+  const dir = await mkdtemp(resolve(tmpdir(), 'market-md-'));
+  await mkdir(resolve(dir, 'data'));
+  await writeFile(
+    resolve(dir, 'data/repositories.json'),
+    JSON.stringify(snapshot([
+      repo({ id: 1, full_name: 'o/one', stargazers_count: 3 }),
+      repo({ id: 2, full_name: 'o/two', stargazers_count: 5 }),
+    ])),
+  );
+  await writeFile(resolve(dir, 'data/curated.json'), JSON.stringify(curated()));
+
+  const first = await runMarket({ rootDir: dir, argv: ['node', 'market.mjs', '--from-snapshot'] });
+  assert.equal(first, 'written');
+  const json = await readFile(resolve(dir, 'data/market.json'), 'utf8');
+  const page = await readFile(resolve(dir, 'MARKET.md'), 'utf8');
+  assert.ok(page.includes('[o/two](https://github.com/o/two)'));
+  assert.ok(page.endsWith('\n'));
+
+  // Inflate the published pool so the next run's 2-entry pool trips the 60%
+  // breaker: the run aborts and both artifacts survive bit for bit.
+  const published = JSON.parse(json);
+  const inflated = { ...published, pool_count: 100 };
+  await writeFile(resolve(dir, 'data/market.json'), JSON.stringify(inflated));
+
+  const second = await runMarket({ rootDir: dir, argv: ['node', 'market.mjs', '--from-snapshot'] });
+  assert.equal(second, 'aborted');
+  assert.equal(await readFile(resolve(dir, 'data/market.json'), 'utf8'), JSON.stringify(inflated));
+  assert.equal(await readFile(resolve(dir, 'MARKET.md'), 'utf8'), page);
+});
+
+test('an unchanged run self-heals a stale MARKET.md without touching market.json', async () => {
+  const dir = await mkdtemp(resolve(tmpdir(), 'market-md-heal-'));
+  await mkdir(resolve(dir, 'data'));
+  await writeFile(
+    resolve(dir, 'data/repositories.json'),
+    JSON.stringify(snapshot([repo({ id: 1, full_name: 'o/one', stargazers_count: 3 })])),
+  );
+  await writeFile(resolve(dir, 'data/curated.json'), JSON.stringify(curated()));
+
+  assert.equal(await runMarket({ rootDir: dir, argv: ['node', 'market.mjs', '--from-snapshot'] }), 'written');
+  const frozenJson = await readFile(resolve(dir, 'data/market.json'), 'utf8');
+  const expectedPage = await readFile(resolve(dir, 'MARKET.md'), 'utf8');
+
+  await writeFile(resolve(dir, 'MARKET.md'), 'a stale hand edit\n');
+  const again = await runMarket({ rootDir: dir, argv: ['node', 'market.mjs', '--from-snapshot'] });
+  assert.equal(again, 'unchanged');
+  assert.equal(await readFile(resolve(dir, 'data/market.json'), 'utf8'), frozenJson);
+  assert.equal(await readFile(resolve(dir, 'MARKET.md'), 'utf8'), expectedPage);
 });
