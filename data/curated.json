@@ -157,6 +157,7 @@
     "imsai-sh/awesome-deepseek-harness-plugins": "Not a DSH plugin — a competing plugin-directory/marketplace site.",
     "AtlasCloudAI/mcp-server": "Not a DSH plugin — a generic MCP server for the Atlas Cloud API platform; rides the dsh-plugin topic.",
     "wangshunnn/oh-my-dsh": "Not a DSH plugin — a competing plugin index/curated list.",
-    "YYTbit/awesome-dsh-bridges": "Not a DSH plugin — a competing curated list/directory."
+    "YYTbit/awesome-dsh-bridges": "Not a DSH plugin — a competing curated list/directory.",
+    "morluto/internalcot": "Not a DSH plugin — an opt-in reasoning-workspace skill for Codex and Claude Code (npx internalcot@latest setup); zero DSH integration, rides the dsh-plugin topic."
   }
 }

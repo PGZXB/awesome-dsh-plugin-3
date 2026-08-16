@@ -1,4 +1,4 @@
-name: Update catalog
+name: Refresh snapshot and review queue
 
 on:
   schedule:
@@ -20,20 +20,23 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 22
-      - name: Refresh snapshot and catalog
+      # Raw data only: fetch the topic snapshot and refresh the review queue.
+      # CATALOG.md / TOP200.md are intentionally NOT regenerated here — they
+      # only change via scripts/merge.mjs after the maintainer has reviewed
+      # data/review/pending.md and recorded decisions in data/approved.json /
+      # data/curated.json. See data/review/README.md.
+      - name: Refresh snapshot and review queue
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/update.mjs
-      - name: Regenerate the star leaderboard
-        run: node scripts/top.mjs
       - name: Commit changes
         run: |
           if git diff --quiet; then
-            echo "Snapshot and catalog are already current."
+            echo "Snapshot and review queue are already current."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add CATALOG.md TOP200.md data/repositories.json
-          git commit -m "data: refresh dsh-plugin catalog"
+          git add data/repositories.json data/review
+          git commit -m "data: refresh dsh-plugin snapshot and review queue"
           git push
