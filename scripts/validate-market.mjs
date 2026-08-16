@@ -47,6 +47,9 @@ const excludedNames = new Set(Object.keys(curated.excluded_repos || {}).map((key
 const leaderboardNames = new Set(
   Object.keys(curated.leaderboard_exclusions || {}).map((key) => key.toLowerCase()),
 );
+const marketExcludedNames = new Set(
+  Object.keys(curated.market_exclusions || {}).map((key) => key.toLowerCase()),
+);
 const selfNames = new Set(SELF_EXCLUDED_REPOS.map((key) => key.toLowerCase()));
 const excludedIds = new Set(
   Object.keys(curated.excluded_repo_ids || {}).map(Number).filter((id) => Number.isInteger(id)),
@@ -133,6 +136,7 @@ for (const [index, row] of (Array.isArray(market?.entries) ? market.entries : []
   const lower = typeof row.full_name === 'string' ? row.full_name.toLowerCase() : '';
   if (excludedNames.has(lower)) errors.push(`${where}: "${row.full_name}" is in curated.json excluded_repos`);
   if (leaderboardNames.has(lower)) errors.push(`${where}: "${row.full_name}" is in curated.json leaderboard_exclusions`);
+  if (marketExcludedNames.has(lower)) errors.push(`${where}: "${row.full_name}" is in curated.json market_exclusions`);
   if (selfNames.has(lower)) errors.push(`${where}: "${row.full_name}" is on the publisher self-exclusion list`);
   if (excludedIds.has(row.id)) errors.push(`${where}: id ${row.id} is in curated.json excluded_repo_ids`);
   if (!Number.isInteger(row.stargazers_count) || row.stargazers_count < 0) {

@@ -109,6 +109,12 @@ export function filterPool(snapshot, curated) {
   const leaderboard = new Set(
     Object.keys(curated.leaderboard_exclusions || {}).map((key) => key.toLowerCase()),
   );
+  // Non-plugin forms (desktop shells, launchers, docs, Docker packaging, VS Code
+  // extensions, …) stay in the catalog and leaderboard but must not reach the
+  // downstream market — spec §4.2, editorial list in curated.json.
+  const marketExcluded = new Set(
+    Object.keys(curated.market_exclusions || {}).map((key) => key.toLowerCase()),
+  );
   const self = new Set(SELF_EXCLUDED_REPOS.map((key) => key.toLowerCase()));
   const excludedIds = new Set(
     Object.keys(curated.excluded_repo_ids || {}).map(Number).filter((id) => Number.isInteger(id)),
@@ -124,7 +130,7 @@ export function filterPool(snapshot, curated) {
     if (!repo.description || !String(repo.description).trim()) continue;
     if (repo.archived === true || repo.disabled === true) continue;
     const lower = String(repo.full_name).toLowerCase();
-    if (excluded.has(lower) || leaderboard.has(lower) || self.has(lower)) continue;
+    if (excluded.has(lower) || leaderboard.has(lower) || self.has(lower) || marketExcluded.has(lower)) continue;
     if (excludedIds.has(repo.id)) continue;
     const category = categoryForRepo(curated, repo);
     if (!category) continue; // unreachable with the fallback rule; defensive

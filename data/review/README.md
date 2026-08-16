@@ -10,7 +10,7 @@ This directory is the review stage of the "raw data → human verification → u
 | --- | --- | --- |
 | `data/repositories.json` | 脚本（`scripts/update.mjs`，每日） | 原始快照：`dsh-plugin` Topic 下的全部仓库，无过滤、无审核 |
 | `data/approved.json` | 维护者 / AI 审核 | 核实通过的仓库清单，`"owner/name": "YYYY-MM-DD"`。**用户可见页面的门控** |
-| `data/curated.json` | 维护者 / AI 审核 | 编辑部裁决：`excluded_repos`（剔除 + 理由）、`leaderboard_exclusions`（只进目录不进榜单）、`category_overrides`（分类） |
+| `data/curated.json` | 维护者 / AI 审核 | 编辑部裁决：`excluded_repos`（剔除 + 理由）、`leaderboard_exclusions`（只进目录不进榜单）、`market_exclusions`（可进目录/榜单、不进下游市场）、`category_overrides`（分类） |
 | `data/review/pending.json` / `pending.md` | 脚本（`scripts/update.mjs`，每日） | 待审核队列：新增到 Topic、带简介、尚未核实的仓库（自动生成，勿手改） |
 | `data/market.json` | 脚本（`scripts/market.mjs`，每日 cron 与 curation 合并后） | 下游市场（dsh-desktop-safe-market）消费的精选文件：快照 + curation 的纯投影，按类目均衡发牌、≤300 条、≤500 KB。**不受 `approved.json` 门控**（只按排除名单过滤），接口约定见下游 `docs/market-json-spec.md` |
 | `CATALOG.md`、`TOP200.md` | `scripts/merge.mjs`（仅审核合并时） | 用户可见页面；**脚本不会自动更新它们** |
@@ -22,11 +22,12 @@ This directory is the review stage of the "raw data → human verification → u
    - **通过** → 加入 `data/approved.json`（`"owner/name": "2026-08-16"` 这样的日期值）
    - **剔除** → 加入 `data/curated.json` 的 `excluded_repos`，理由写明（照抄现有条目风格）
    - **只进目录、不进榜单** → 同时加入 `approved.json` 与 `curated.json` 的 `leaderboard_exclusions`
+   - **非插件形态（桌面壳/启动器、Docker 部署、手册教程、VS Code 扩展等）**：可留在目录与榜单，但加入 `curated.json` 的 `market_exclusions` 以免进入下游市场文件
 3. **合并**：运行 `node scripts/merge.mjs`，重新生成 `CATALOG.md`、`TOP200.md` 与待审核队列，然后提交。
 
 ## AI 一句话审核 / One-line AI review
 
-对 AI 助手说：**「按 data/review/README.md 的约定，审核 data/review/pending.md 里的新仓库并合并」**——AI 应逐仓核实（README 是否真是 DSH 插件、是否有 `dsh plugin` 安装路径、是否蹭 Topic），更新 `approved.json` / `curated.json`，运行 `node scripts/merge.mjs`，并提交改动。
+对 AI 助手说：**「按 data/review/README.md 的约定，审核 data/review/pending.md 里的新仓库并合并」**——AI 应逐仓核实（README 是否真是 DSH 插件、是否有 `dsh plugin` 安装路径、是否蹭 Topic），更新 `approved.json` / `curated.json`（含 `market_exclusions`），运行 `node scripts/merge.mjs`，并提交改动。
 
 Tell the AI assistant: **"Review the new repositories in data/review/pending.md per the convention in data/review/README.md, then merge"** — it should verify each repository (real DSH plugin? `dsh plugin` install path? topic rider?), update `approved.json` / `curated.json`, run `node scripts/merge.mjs`, and commit.
 

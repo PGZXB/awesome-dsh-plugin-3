@@ -65,6 +65,12 @@ for (const fullName of Object.keys(curated.leaderboard_exclusions || {})) {
   }
 }
 
+for (const fullName of Object.keys(curated.market_exclusions || {})) {
+  if (!ownerRepoPattern.test(fullName)) {
+    errors.push(`market_exclusions key "${fullName}" is not a valid owner/repo reference`);
+  }
+}
+
 // data/approved.json is the maintainer's review gate: only approved repositories
 // appear on CATALOG.md / TOP200.md. It must parse, hold valid owner/repo keys,
 // and never overlap with excluded_repos (an excluded repository must not stay
