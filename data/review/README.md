@@ -41,7 +41,10 @@ node scripts/top.mjs                    # 单独重新生成 TOP200.md（同样�
 node scripts/market.mjs --from-snapshot # 重建 data/market.json（下游市场文件）
 node scripts/validate-market.mjs        # 校验 data/market.json（§8 全项检查）
 node --test scripts/test-market.mjs     # market 管线单测（含熔断）
-node scripts/validate-curated.mjs       # 校验 curated.json / approved.json / 自荐区
+node scripts/validate-curated.mjs       # 校验 curated.json / approved.json / 自荐区（实时 GitHub API，限流时自动降级为 warning）
+node scripts/validate-curated.mjs --from-snapshot  # 同上，但用本地 data/repositories.json 快照校验引用（无需 API，适合本地日常）
 ```
 
 注意：`data/review/pending.json` 里的 `first_seen` 会跨日保留（队列重写时继承），方便看到每个仓库等了多久。`pending.md` 末尾的「从快照消失的已核准仓库」列出已核准但已删除/改名的仓库，核实后从 `approved.json` 移除或改名。
+
+`validate-curated.mjs` 的引用检查有两种模式：默认走实时 GitHub API（CI 有 token，能发现改名/删除/私库），遇到 403/429/502/503/504 会自动重试并最终降级为 warning 而不中断；`--from-snapshot` 改用本地快照（存在性 + `dsh-plugin` topic 由快照保证，快照缺失的引用降级为 warning），本地无 token 或 API 不稳时推荐使用，最终以 CI 的实时检查为准。

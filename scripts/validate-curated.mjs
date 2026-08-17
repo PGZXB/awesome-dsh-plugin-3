@@ -11,6 +11,18 @@
 // intentionally not checked against the API: entries may be deleted or renamed,
 // and keeping them out of the catalog by name is still correct.
 //
+// Two reference-checking modes:
+//   - Live API (default): queries api.github.com/repos/* for every referenced
+//     repository (category overrides + showcase). Transient failures (rate
+//     limit 403/429, gateway 502/503/504) are retried with backoff and degrade
+//     to warnings only when GitHub itself stays unavailable; a real 404 still
+//     hard-fails. CI runs this mode with a token.
+//   - --from-snapshot: checks references against the stored data/repositories.json
+//     instead. The snapshot already proves existence, publicity, and the
+//     dsh-plugin topic, so a reference missing from it is only warned about
+//     (it may have been renamed/deleted after the last refresh, or added too
+//     recently). Suitable for local runs without a token.
+//
 // The author-showcase (self-promotion) lists are parsed straight from the
 // markdown. SHOWCASE.md carries the complete list for both languages (the
 // source of truth, capped at 30 entries, first in first out); README.md and
@@ -26,8 +38,10 @@ import { categoryKeys } from './categories.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const errors = [];
+const warnings = [];
 const validCategories = new Set(categoryKeys);
 const ownerRepoPattern = /^[\w.-]+\/[\w.-]+$/;
+const fromSnapshot = process.argv.includes('--from-snapshot');
 
 let curated;
 try {
@@ -201,32 +215,99 @@ const headers = {
 };
 if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
 
-await Promise.all([...referenced.keys()].map(async (fullName) => {
-  const label = referenced.get(fullName);
-  let response;
+// In --from-snapshot mode the live API is replaced by the stored topic snapshot
+// (data/repositories.json). The snapshot already proves existence, publicity,
+// and the dsh-plugin topic; only a rename / deletion that landed after the last
+// snapshot refresh is indistinguishable from a brand-new repository, so those
+// cases degrade to warnings instead of hard failures. CI keeps the live API
+// (it has a token and the freshest data); local runs can use the snapshot.
+if (fromSnapshot) {
+  let snapshot;
   try {
-    response = await fetch(`https://api.github.com/repos/${fullName}`, { headers });
+    snapshot = JSON.parse(await readFile(resolve(root, 'data/repositories.json'), 'utf8'));
   } catch (error) {
-    errors.push(`${fullName}: GitHub API request failed (${error.message})`);
-    return;
+    console.error(`--from-snapshot requires data/repositories.json — run "node scripts/update.mjs" first (${error.message})`);
+    process.exit(1);
   }
-  if (response.status === 404) {
-    errors.push(`${fullName}: repository not found — deleted, renamed, or not public`);
-    return;
+  const snapshotNames = new Map(
+    snapshot.repositories.map((repo) => [repo.full_name.toLowerCase(), repo]),
+  );
+  const label = (fullName) => referenced.get(fullName) ?? 'reference';
+  for (const fullName of referenced.keys()) {
+    const repo = snapshotNames.get(fullName.toLowerCase());
+    if (!repo) {
+      warnings.push(
+        `${fullName}: not present in the stored snapshot (${label(fullName)}) — deleted, renamed after the last refresh, or added too recently; verify against the live API`,
+      );
+      continue;
+    }
+    if (!(repo.topics || []).includes('dsh-plugin')) {
+      errors.push(`${fullName}: missing the "dsh-plugin" topic in the stored snapshot (${label(fullName)})`);
+    }
+    if (repo.archived || repo.disabled) {
+      warnings.push(`${fullName}: archived or disabled in the stored snapshot (${label(fullName)})`);
+    }
   }
-  if (!response.ok) {
-    errors.push(`${fullName}: GitHub API ${response.status} ${await response.text()}`);
-    return;
-  }
-  const repo = await response.json();
-  if (repo.private) errors.push(`${fullName}: repository is private`);
-  if (!(repo.topics || []).includes('dsh-plugin')) {
-    errors.push(`${fullName}: missing the "dsh-plugin" topic (${label})`);
-  }
-  if (repo.full_name.toLowerCase() !== fullName.toLowerCase()) {
-    errors.push(`${fullName}: repository was renamed to "${repo.full_name}" — update the reference`);
-  }
-}));
+} else {
+  // Live mode: retry transient API failures (rate limit / 504) with backoff, and
+  // degrade to warnings only when GitHub itself is unavailable — a repository
+  // that is really gone still hard-fails with 404.
+  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+  const fetchWithRetry = async (fullName) => {
+    for (let attempt = 0; ; attempt++) {
+      let response;
+      try {
+        response = await fetch(`https://api.github.com/repos/${fullName}`, { headers });
+      } catch (error) {
+        if (attempt < 2) {
+          await delay(1000 * 2 ** attempt);
+          continue;
+        }
+        throw error;
+      }
+      if (response.status === 403 || response.status === 429 || response.status === 502 || response.status === 503 || response.status === 504) {
+        const retryAfter = Number(response.headers.get('retry-after'));
+        const backoff = Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter * 1000 : 1000 * 2 ** attempt;
+        if (attempt < 2) {
+          await delay(backoff);
+          continue;
+        }
+      }
+      return response;
+    }
+  };
+
+  await Promise.all([...referenced.keys()].map(async (fullName) => {
+    const label = referenced.get(fullName);
+    let response;
+    try {
+      response = await fetchWithRetry(fullName);
+    } catch (error) {
+      warnings.push(`${fullName}: GitHub API unreachable (${error.message}) — skipped, re-run when the network/API recovers (${label})`);
+      return;
+    }
+    if (response.status === 404) {
+      errors.push(`${fullName}: repository not found — deleted, renamed, or not public`);
+      return;
+    }
+    if (response.status === 403 || response.status === 429 || response.status === 502 || response.status === 503 || response.status === 504) {
+      warnings.push(`${fullName}: GitHub API ${response.status} after retries — skipped, re-run when the rate limit recovers (${label})`);
+      return;
+    }
+    if (!response.ok) {
+      errors.push(`${fullName}: GitHub API ${response.status} ${await response.text()}`);
+      return;
+    }
+    const repo = await response.json();
+    if (repo.private) errors.push(`${fullName}: repository is private`);
+    if (!(repo.topics || []).includes('dsh-plugin')) {
+      errors.push(`${fullName}: missing the "dsh-plugin" topic (${label})`);
+    }
+    if (repo.full_name.toLowerCase() !== fullName.toLowerCase()) {
+      errors.push(`${fullName}: repository was renamed to "${repo.full_name}" — update the reference`);
+    }
+  }));
+}
 
 if (errors.length) {
   console.error(`validation failed with ${errors.length} problem(s):\n`);
@@ -234,4 +315,10 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`data/curated.json, data/approved.json, and the showcase sections are valid — ${overrideCount} category overrides, ${approvedNames.length} approved repositories, and ${showcaseCount} showcase repositories checked against the GitHub API.`);
+if (warnings.length) {
+  console.warn(`validation passed with ${warnings.length} warning(s):\n`);
+  for (const warning of warnings) console.warn(`  - ${warning}`);
+}
+
+const mode = fromSnapshot ? 'the stored snapshot' : 'the GitHub API';
+console.log(`data/curated.json, data/approved.json, and the showcase sections are valid — ${overrideCount} category overrides, ${approvedNames.length} approved repositories, and ${showcaseCount} showcase repositories checked against ${mode} (${errors.length} errors, ${warnings.length} warnings).`);

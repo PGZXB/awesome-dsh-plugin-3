@@ -28,7 +28,7 @@ Thank you for helping maintain Awesome DSH Plugin.
 - PR 标题必须为正常编码的 UTF-8 文本；出现乱码（如 `????`）的标题一律拒绝。
 - 改动方式：在 [SHOWCASE.md](./SHOWCASE.md) 的「作者自荐」与「Author showcase」两个列表**末尾各追加一行**（中英对应），并把两个 README 首页的自荐预览区同步为列表**末尾最近 10 条**；若列表已有 30 条，同时移除最旧的一条（先进先出）。不要改动其他人工维护内容，也不要提交生成文件。
 - 自荐区最多保留 30 条，区满后先进先出；条目被首页精选推荐收录后会从自荐区移除、不占名额。
-- 提交前本地自检：`node scripts/validate-curated.mjs`（会校验 SHOWCASE.md 与两个 README 自荐区格式和同步关系，并通过 GitHub API 确认仓库公开且带 Topic）。PR 上的 CI 还会自动核验**标题编码**与**自荐仓库的 Star 数（>10）**，请提交前自查。
+- 提交前本地自检：`node scripts/validate-curated.mjs`（会校验 SHOWCASE.md 与两个 README 自荐区格式和同步关系，并通过 GitHub API 确认仓库公开且带 Topic；无 token 或 API 限流时可用 `--from-snapshot` 改用本地快照校验）。PR 上的 CI 还会自动核验**标题编码**与**自荐仓库的 Star 数（>10）**，请提交前自查。
 
 The Author showcase is a self-submission lane for plugin owners: **no editorial review**, but the inclusion criteria above still apply. The complete list lives in [SHOWCASE.md](./SHOWCASE.md) (at most 30 entries); the two README home pages show only a preview of the **10 most recent** entries.
 
@@ -39,7 +39,7 @@ The Author showcase is a self-submission lane for plugin owners: **no editorial 
 - The PR title must be properly encoded UTF-8 text; garbled titles (e.g. `????`) are rejected outright.
 - How to change it: append exactly one line to the end of both the "作者自荐" and "Author showcase" lists in [SHOWCASE.md](./SHOWCASE.md) (Chinese and English), sync the home-page showcase previews in both READMEs to the **10 most recent entries** at the end of the list, and drop the oldest entry when the list already holds 30 (first in, first out). Do not touch other hand-maintained content or commit generated files.
 - At most 30 entries are kept — first in, first out; entries promoted to the home page's featured picks are removed from the showcase without using a slot.
-- Validate locally before submitting: `node scripts/validate-curated.mjs` (it checks the SHOWCASE.md and README showcase sections for format and sync, and confirms repositories are public and carry the topic through the GitHub API). CI on the PR additionally verifies the **title encoding** and the **self-promoted repository's star count (>10)** — check both before you submit.
+- Validate locally before submitting: `node scripts/validate-curated.mjs` (it checks the SHOWCASE.md and README showcase sections for format and sync, and confirms repositories are public and carry the topic through the GitHub API; without a token or under API rate limits, add `--from-snapshot` to validate references against the stored snapshot instead). CI on the PR additionally verifies the **title encoding** and the **self-promoted repository's star count (>10)** — check both before you submit.
 
 ## 推荐一个插件 / Recommending a plugin
 
