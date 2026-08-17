@@ -2,7 +2,7 @@ name: Refresh snapshot, review queue, and market file
 
 on:
   schedule:
-    - cron: '17 1 * * *'
+    - cron: '17 14 * * *'
   workflow_dispatch:
 
 permissions:
