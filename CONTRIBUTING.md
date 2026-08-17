@@ -24,18 +24,22 @@ Thank you for helping maintain Awesome DSH Plugin.
 - 仅限仓库作者或维护者本人提交；一个 PR 只推荐一个仓库。
 - PR 描述中必须附**自荐说明**：解决什么问题、适合谁（一两句即可，中文或英文任一；不使用无法核实的宣传语）。
 - 仓库须满足上方收录标准（公开、带 `dsh-plugin` Topic、已填写简介、是真实的 DSH 插件或生态资源）。
+- 自荐仓库的 Star 数必须**超过 10 个**（`stargazers_count > 10`）；Star 数不足的仓库暂不收录，请先在社区积累后重新提交。CI 会在每个 PR 上自动核验，不达标的 PR 将被拒绝。
+- PR 标题必须为正常编码的 UTF-8 文本；出现乱码（如 `????`）的标题一律拒绝。
 - 改动方式：在 [SHOWCASE.md](./SHOWCASE.md) 的「作者自荐」与「Author showcase」两个列表**末尾各追加一行**（中英对应），并把两个 README 首页的自荐预览区同步为列表**末尾最近 10 条**；若列表已有 30 条，同时移除最旧的一条（先进先出）。不要改动其他人工维护内容，也不要提交生成文件。
 - 自荐区最多保留 30 条，区满后先进先出；条目被首页精选推荐收录后会从自荐区移除、不占名额。
-- 提交前本地自检：`node scripts/validate-curated.mjs`（会校验 SHOWCASE.md 与两个 README 自荐区格式和同步关系，并通过 GitHub API 确认仓库公开且带 Topic）。
+- 提交前本地自检：`node scripts/validate-curated.mjs`（会校验 SHOWCASE.md 与两个 README 自荐区格式和同步关系，并通过 GitHub API 确认仓库公开且带 Topic）。PR 上的 CI 还会自动核验**标题编码**与**自荐仓库的 Star 数（>10）**，请提交前自查。
 
 The Author showcase is a self-submission lane for plugin owners: **no editorial review**, but the inclusion criteria above still apply. The complete list lives in [SHOWCASE.md](./SHOWCASE.md) (at most 30 entries); the two README home pages show only a preview of the **10 most recent** entries.
 
 - Only the repository owner or a maintainer may submit; one repository per pull request.
 - The PR description must include a short **self-recommendation**: what problem it solves and for whom (one or two sentences, Chinese or English; no unverifiable marketing claims).
 - The repository must meet the inclusion criteria above (public, `dsh-plugin` topic, description set, a real DSH plugin or ecosystem resource).
+- The self-promoted repository must have **more than 10 stars** (`stargazers_count > 10`); repositories below the threshold are not listed — resubmit after the community has grown. CI verifies this on every PR and rejects submissions that fall short.
+- The PR title must be properly encoded UTF-8 text; garbled titles (e.g. `????`) are rejected outright.
 - How to change it: append exactly one line to the end of both the "作者自荐" and "Author showcase" lists in [SHOWCASE.md](./SHOWCASE.md) (Chinese and English), sync the home-page showcase previews in both READMEs to the **10 most recent entries** at the end of the list, and drop the oldest entry when the list already holds 30 (first in, first out). Do not touch other hand-maintained content or commit generated files.
 - At most 30 entries are kept — first in, first out; entries promoted to the home page's featured picks are removed from the showcase without using a slot.
-- Validate locally before submitting: `node scripts/validate-curated.mjs` (it checks the SHOWCASE.md and README showcase sections for format and sync, and confirms repositories are public and carry the topic through the GitHub API).
+- Validate locally before submitting: `node scripts/validate-curated.mjs` (it checks the SHOWCASE.md and README showcase sections for format and sync, and confirms repositories are public and carry the topic through the GitHub API). CI on the PR additionally verifies the **title encoding** and the **self-promoted repository's star count (>10)** — check both before you submit.
 
 ## 推荐一个插件 / Recommending a plugin
 

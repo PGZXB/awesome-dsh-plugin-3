@@ -1,0 +1,34 @@
+name: Validate pull request
+
+# Checks every PR against the author-showcase submission rules:
+#  - the title must be proper UTF-8 text (garbled titles are rejected);
+#  - any author-showcase repository the PR adds or rewrites must be public,
+#    carry the `dsh-plugin` topic, and have more than 10 stars.
+# Existing showcase entries are grandfathered: only lines the PR introduces
+# are checked (see scripts/validate-pr.mjs).
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: validate-pr-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Validate PR title and author-showcase star threshold
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: node scripts/validate-pr.mjs
