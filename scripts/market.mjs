@@ -113,8 +113,9 @@ export function filterPool(snapshot, curated) {
     Object.keys(curated.leaderboard_exclusions || {}).map((key) => key.toLowerCase()),
   );
   // Non-plugin forms (desktop shells, launchers, docs, Docker packaging, VS Code
-  // extensions, …) stay in the catalog and leaderboard but must not reach the
-  // downstream market — spec §4.2, editorial list in curated.json.
+  // extensions, …) and competing plugin markets / directories / stores
+  // (market-in-market conflict) stay in the catalog and leaderboard but must
+  // not reach the downstream market — spec §4.2, editorial list in curated.json.
   const marketExcluded = new Set(
     Object.keys(curated.market_exclusions || {}).map((key) => key.toLowerCase()),
   );

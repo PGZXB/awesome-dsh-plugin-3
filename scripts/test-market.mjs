@@ -128,6 +128,36 @@ test('filterPool applies every exclusion rule', () => {
   );
 });
 
+test('filterPool drops market-class competitors listed in market_exclusions', () => {
+  const market = repo({
+    id: 1,
+    full_name: 'competitor/plugin-market',
+    name: 'plugin-market',
+    description: 'A plugin marketplace for DSH.',
+  });
+  const ordinary = repo({ id: 2, full_name: 'keep/me' });
+  const c = curated({
+    market_exclusions: {
+      'competitor/plugin-market':
+        'A competing DSH plugin market — market-in-market conflict; stays in the catalog and leaderboard, excluded from the downstream market.',
+    },
+  });
+  const { repos: kept } = filterPool(snapshot([market, ordinary]), c);
+  assert.deepEqual(
+    kept.map(({ repo: r }) => r.full_name),
+    ['keep/me'],
+  );
+  // The market-class entry must not reappear in the published feed either.
+  const result = buildMarket({
+    snapshot: snapshot([market, ordinary]),
+    curated: c,
+    previous: null,
+    now: new Date('2026-08-16T01:30:00Z'),
+  });
+  assert.equal(result.outcome, 'written');
+  assert.deepEqual(result.envelope.entries.map((entry) => entry.full_name), ['keep/me']);
+});
+
 test('filterPool reports unknown category_overrides values without dropping the repo', () => {
   const c = curated({ category_overrides: { 'a/agent-thing': 'no-such-category' } });
   const { repos, warnings } = filterPool(snapshot([repo({ full_name: 'a/agent-thing', name: 'agent-thing' })]), c);
