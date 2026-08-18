@@ -28,7 +28,7 @@ import { assignableCategories, categoryFallback, categoryRules } from './categor
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
 export const SCHEMA_VERSION = 1;
-export const MAX_ENTRIES = 300;
+export const MAX_ENTRIES = 600;
 export const MAX_FILE_BYTES = 500 * 1024;
 export const MARKDOWN_OUTPUT = 'MARKET.md';
 export const BREAKER_RATIO = 0.6;
@@ -250,12 +250,12 @@ export function buildMarket({ snapshot, curated, previous = null, now = new Date
     entries: list,
   });
 
-  // The artifact cap (§2, ≤500 KB) wins over the deal cap (300): when the full
+  // The artifact cap (§2, ≤500 KB) wins over the deal cap (600): when the full
   // deal does not fit, publish the largest prefix of it that does. A prefix
   // keeps every structural property the consumer relies on — the §5 star-order
   // invariant and the category balance — and the consumer's default truncation
-  // (marketSize 200) is untouched. 300 is the deal's upper bound, and the
-  // published entry count may legally be anywhere in 1–300. The budget is
+  // (marketSize 200) is untouched. 600 is the deal's upper bound, and the
+  // published entry count may legally be anywhere in 1–600. The budget is
   // injectable so the trim path stays testable at a smaller size.
   const fits = (list) => Buffer.byteLength(`${JSON.stringify(envelopeWith(list))}\n`, 'utf8') <= maxBytes;
   let entries = dealt;
