@@ -27,44 +27,44 @@
 
 ## 🗺️ 生态全景
 
-截至 2026-08-17 共收录 **4798** 个经核实的仓库。它们长这样：
+截至 2026-08-18 共收录 **6068** 个经核实的仓库。它们长这样：
 
 ```mermaid
 mindmap
-  root((DSH 插件生态 4798))
-    Agent 自动化与工作流 · 1547
+  root((DSH 插件生态 6068))
+    Agent 自动化与工作流 · 1959
       定时循环与事件唤醒
       多 Agent 协作
       长期记忆与自我进化
       审批、预算与检查点
-    界面与体验 · 986
+    界面与体验 · 1236
       桌面客户端与终端 TUI
       侧边栏工作台
       皮肤与桌面宠物
       通知与输入增强
-    网页与浏览器 · 804
+    网页与浏览器 · 1018
       浏览器桥接与页面操作
       网页搜索与引用
       归档与网页取证
-    设计媒体与视觉 · 304
+    设计媒体与视觉 · 367
       图片理解与 OCR
       设计画布与 UI 还原
-    生态与资源 · 262
+    生态与资源 · 342
       插件市场与注册表
       开发模板与脚手架
       教程与手册
-    开发者工具 · 252
+    开发者工具 · 306
       Git 与 diff
       沙箱与运行时
       调试与诊断
-    知识与研究 · 250
+    知识与研究 · 315
       知识库与跨会话记忆
       深度研究
       学术与数学
-    实用工具与其他 · 236
+    实用工具与其他 · 317
       文件与编码
       格式转换
-    集成与分享 · 157
+    集成与分享 · 208
       会话导入与分享
       远程访问
       IM 与外部集成
@@ -204,30 +204,30 @@ mindmap
 
 ## 🏆 社区热度榜
 
-按 Star 排序的社区热度参考，数据取自 2026-08-17 快照；蹭 `dsh-plugin` Topic 的非插件仓库与编辑部拉黑的仓库均已剔除，新仓库先进入[待审核队列](./data/review/pending.md)、经人工核实（[data/approved.json](./data/approved.json)）后才进入榜单，剔除清单见 [data/curated.json](./data/curated.json)。首页展示前 20 名，完整 Top 200 见 [TOP200.md](./TOP200.md)。排名反映受欢迎程度，不代表质量、兼容性或安全背书。
+按 Star 排序的社区热度参考，数据取自 2026-08-18 快照；蹭 `dsh-plugin` Topic 的非插件仓库与编辑部拉黑的仓库均已剔除，新仓库先进入[待审核队列](./data/review/pending.md)、经人工核实（[data/approved.json](./data/approved.json)）后才进入榜单，剔除清单见 [data/curated.json](./data/curated.json)。首页展示前 20 名，完整 Top 200 见 [TOP200.md](./TOP200.md)。排名反映受欢迎程度，不代表质量、兼容性或安全背书。
 
 | # | 项目 | ⭐ Stars | License |
 | ---: | --- | ---: | --- |
-| 1 | [zhu1090093659/dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui) | 3552 | Apache-2.0 |
-| 2 | [liustack/modlens](https://github.com/liustack/modlens) | 2437 | MIT |
-| 3 | [omdsh-dev/DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) | 1683 | MIT |
-| 4 | [ccch1mneyyy/dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI) | 1593 | MIT |
-| 5 | [Small-tailqwq/dsh-deep-whale](https://github.com/Small-tailqwq/dsh-deep-whale) | 1109 | — |
-| 6 | [ccch1mneyyy/working-activity](https://github.com/ccch1mneyyy/working-activity) | 646 | MIT |
-| 7 | [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) | 613 | MIT |
-| 8 | [Anionex/dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) | 542 | MIT |
-| 9 | [Nagi-ovo/dsh-ads](https://github.com/Nagi-ovo/dsh-ads) | 464 | BSD-3-Clause |
-| 10 | [ysr666/dsh-vision-router](https://github.com/ysr666/dsh-vision-router) | 460 | MIT |
-| 11 | [NanmiCoder/dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) | 427 | MIT |
-| 12 | [Electricitysheep/dsh-handbook](https://github.com/Electricitysheep/dsh-handbook) | 380 | — |
-| 13 | [morluto/rea](https://github.com/morluto/rea) | 336 | MIT |
-| 14 | [hairyf/deepseek-harness-desktop](https://github.com/hairyf/deepseek-harness-desktop) | 302 | NOASSERTION |
-| 15 | [omdsh-dev/dsh-at-file](https://github.com/omdsh-dev/dsh-at-file) | 275 | MIT |
-| 16 | [hust-open-atom-club/oh-dsh](https://github.com/hust-open-atom-club/oh-dsh) | 219 | MIT |
-| 17 | [vibeinging/deepseek-harness-desktop-app](https://github.com/vibeinging/deepseek-harness-desktop-app) | 216 | MIT |
-| 18 | [Lum1104/dsh-browser](https://github.com/Lum1104/dsh-browser) | 210 | MIT |
-| 19 | [vlln/whale-girl](https://github.com/vlln/whale-girl) | 199 | MIT |
-| 20 | [huiliyi37/dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui) | 194 | Apache-2.0 |
+| 1 | [zhu1090093659/dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui) | 4511 | Apache-2.0 |
+| 2 | [liustack/modlens](https://github.com/liustack/modlens) | 3057 | MIT |
+| 3 | [omdsh-dev/DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) | 2138 | MIT |
+| 4 | [ccch1mneyyy/dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI) | 1947 | MIT |
+| 5 | [Small-tailqwq/dsh-deep-whale](https://github.com/Small-tailqwq/dsh-deep-whale) | 1349 | — |
+| 6 | [Tencent/BrowserSkill](https://github.com/Tencent/BrowserSkill) | 1141 | MIT |
+| 7 | [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) | 1000 | MIT |
+| 8 | [Anil-matcha/awesome-dsh-plugin](https://github.com/Anil-matcha/awesome-dsh-plugin) | 938 | — |
+| 9 | [toby-bridges/api-relay-audit](https://github.com/toby-bridges/api-relay-audit) | 791 | AGPL-3.0 |
+| 10 | [ysr666/dsh-vision-router](https://github.com/ysr666/dsh-vision-router) | 734 | MIT |
+| 11 | [Anionex/dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) | 691 | MIT |
+| 12 | [ccch1mneyyy/working-activity](https://github.com/ccch1mneyyy/working-activity) | 653 | MIT |
+| 13 | [NanmiCoder/dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) | 541 | MIT |
+| 14 | [hairyf/deepseek-harness-desktop](https://github.com/hairyf/deepseek-harness-desktop) | 522 | NOASSERTION |
+| 15 | [Nagi-ovo/dsh-ads](https://github.com/Nagi-ovo/dsh-ads) | 497 | BSD-3-Clause |
+| 16 | [Electricitysheep/dsh-handbook](https://github.com/Electricitysheep/dsh-handbook) | 490 | — |
+| 17 | [syncable-dev/memtrace-public](https://github.com/syncable-dev/memtrace-public) | 455 | NOASSERTION |
+| 18 | [vibeinging/deepseek-harness-desktop-app](https://github.com/vibeinging/deepseek-harness-desktop-app) | 394 | MIT |
+| 19 | [ZJU-LLMs/OpenStory](https://github.com/ZJU-LLMs/OpenStory) | 377 | Apache-2.0 |
+| 20 | [omdsh-dev/dsh-at-file](https://github.com/omdsh-dev/dsh-at-file) | 370 | MIT |
 
 [查看完整 Star Top 200 →](./TOP200.md)
 
@@ -272,7 +272,7 @@ mindmap
 - **下游市场文件：** [data/market.json](./data/market.json) 是给下游市场（如 DSH 桌面端插件市场）消费的精选小文件——在快照与 curation 之上过滤、清洗并按类目均衡发牌（≤300 条、≤500 KB），每日快照刷新与 curation 合并后自动重建；字段与生成规则见下游的[发布规范](https://github.com/bruc3van/dsh-desktop-safe-market/blob/master/docs/market-json-spec.md)。同一时序下同步生成根目录 [MARKET.md](./MARKET.md)——这份文件的只读可视化（按 Star 数排名），可在 GitHub 上直接预览市场内容，无需安装下游插件。
 - **中文默认，中英双语：** 普通用户可以直接理解，英文读者也有独立入口。
 
-截至 2026-08-17，全量目录收录 **4798** 个仓库、**23** 种主要语言；其中 **4104** 个声明了许可证，**4787** 个未归档且未禁用（目录随人工审核合并更新，最新统计以 [CATALOG.md](./CATALOG.md) 为准）。
+截至 2026-08-18，全量目录收录 **6068** 个仓库、**26** 种主要语言；其中 **5209** 个声明了许可证，**6055** 个未归档且未禁用（目录随人工审核合并更新，最新统计以 [CATALOG.md](./CATALOG.md) 为准）。
 
 ## ⚠️ 使用与安全
 
