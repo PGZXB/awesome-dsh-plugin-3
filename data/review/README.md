@@ -24,13 +24,13 @@ This directory is the review stage of the "raw data → human verification → u
    - **只进目录、不进榜单** → 同时加入 `approved.json` 与 `curated.json` 的 `leaderboard_exclusions`
    - **非插件形态（桌面壳/启动器、Docker 部署、手册教程、VS Code 扩展等）**：可留在目录与榜单，但加入 `curated.json` 的 `market_exclusions` 以免进入下游市场文件
    - **market 类竞品（插件市场 / 商店 / 目录 / registry / 插件中心等，包括内置插件市场的桌面端）**：可留在目录与榜单，但必须加入 `curated.json` 的 `market_exclusions`，避免下游市场文件出现市场套市场冲突
-3. **合并**：运行 `node scripts/merge.mjs`，重新生成 `CATALOG.md`、`TOP200.md` 与待审核队列，然后提交。
+3. **合并**：运行 `node scripts/merge.mjs`，重新生成 `CATALOG.md`、`TOP200.md` 与待审核队列；随后运行 `node scripts/readme-stats.mjs`，把输出的生态全景、热度榜 Top 20 与目录统计同步刷新到 `README.md` / `README_EN.md` 首页（这些区块是人工维护的，但数字必须与合并结果一致）；最后提交推送。
 
 ## AI 一句话审核 / One-line AI review
 
-对 AI 助手说：**「按 data/review/README.md 的约定，审核 data/review/pending.md 里的新仓库并合并」**——AI 应逐仓核实（README 是否真是 DSH 插件、是否有 `dsh plugin` 安装路径、是否蹭 Topic），更新 `approved.json` / `curated.json`（含 `market_exclusions`），运行 `node scripts/merge.mjs`，并提交改动。
+对 AI 助手说：**「按 data/review/README.md 的约定，审核 data/review/pending.md 里的新仓库并合并」**——AI 应逐仓核实（README 是否真是 DSH 插件、是否有 `dsh plugin` 安装路径、是否蹭 Topic），更新 `approved.json` / `curated.json`（含 `market_exclusions`），运行 `node scripts/merge.mjs` 与 `node scripts/readme-stats.mjs`（同步刷新 README 首页的生态全景、热度榜 Top 20、目录统计），并提交推送全部改动。
 
-Tell the AI assistant: **"Review the new repositories in data/review/pending.md per the convention in data/review/README.md, then merge"** — it should verify each repository (real DSH plugin? `dsh plugin` install path? topic rider?), update `approved.json` / `curated.json`, run `node scripts/merge.mjs`, and commit.
+Tell the AI assistant: **"Review the new repositories in data/review/pending.md per the convention in data/review/README.md, then merge"** — it should verify each repository (real DSH plugin? `dsh plugin` install path? topic rider?), update `approved.json` / `curated.json`, run `node scripts/merge.mjs` and `node scripts/readme-stats.mjs` (to refresh the home-page ecosystem overview, leaderboard Top 20, and catalog stats), and commit & push everything.
 
 ## 命令速查 / Commands
 
@@ -40,6 +40,7 @@ node scripts/update.mjs --from-snapshot # 仅用现有快照刷新待审核队�
 node scripts/merge.mjs                  # 审核合并：重新生成 CATALOG.md / TOP200.md / 队列
 node scripts/top.mjs                    # 单独重新生成 TOP200.md（同样受 approved 门控）
 node scripts/market.mjs --from-snapshot # 重建 data/market.json（下游市场文件）
+node scripts/readme-stats.mjs        # 输出 README 首页生态全景/热度榜 Top 20/目录统计（合并后同步刷新首页用）
 node scripts/validate-market.mjs        # 校验 data/market.json（§8 全项检查）
 node --test scripts/test-market.mjs     # market 管线单测（含熔断）
 node scripts/validate-curated.mjs       # 校验 curated.json / approved.json / 自荐区（实时 GitHub API，限流时自动降级为 warning）
