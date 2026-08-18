@@ -2,15 +2,15 @@
 
 [返回中文首页](./README.md) · [Back to English home](./README_EN.md) · [Star Top 200](./TOP200.md) · [作者自荐 / Author showcase](./SHOWCASE.md) · [JSON data](./data/repositories.json)
 
-本页自动收录 GitHub [`dsh-plugin` Topic](https://github.com/topics/dsh-plugin) 下已提供项目简介、并经维护者核实（[data/approved.json](./data/approved.json)）的公开仓库。253 个蹭 Topic 的非插件仓库（平台本体、其他 Agent 工具、同名目录站等）以及经编辑部拉黑的仓库已剔除，清单与理由见 [data/curated.json](./data/curated.json)。新增仓库先进入[待审核队列](./data/review/pending.md)，经人工核实后才会收录。本页是索引，不代表人工推荐、兼容性验证或安全背书。
+本页自动收录 GitHub [`dsh-plugin` Topic](https://github.com/topics/dsh-plugin) 下已提供项目简介、并经维护者核实（[data/approved.json](./data/approved.json)）的公开仓库。256 个蹭 Topic 的非插件仓库（平台本体、其他 Agent 工具、同名目录站等）以及经编辑部拉黑的仓库已剔除，清单与理由见 [data/curated.json](./data/curated.json)。新增仓库先进入[待审核队列](./data/review/pending.md)，经人工核实后才会收录。本页是索引，不代表人工推荐、兼容性验证或安全背书。
 
-This page automatically lists public repositories under GitHub's [`dsh-plugin` topic](https://github.com/topics/dsh-plugin) that have a description set and have been verified by the maintainer ([data/approved.json](./data/approved.json)). 253 repositories that ride the topic without being DSH plugins (the platform itself, other agent tools, competing catalogs), plus editorially blacklisted repositories, are excluded — see [data/curated.json](./data/curated.json) for the full list and reasons. New repositories enter the [review queue](./data/review/pending.md) first and appear here only after human verification. It is an index, not a claim of editorial recommendation, compatibility, or security review.
+This page automatically lists public repositories under GitHub's [`dsh-plugin` topic](https://github.com/topics/dsh-plugin) that have a description set and have been verified by the maintainer ([data/approved.json](./data/approved.json)). 256 repositories that ride the topic without being DSH plugins (the platform itself, other agent tools, competing catalogs), plus editorially blacklisted repositories, are excluded — see [data/curated.json](./data/curated.json) for the full list and reasons. New repositories enter the [review queue](./data/review/pending.md) first and appear here only after human verification. It is an index, not a claim of editorial recommendation, compatibility, or security review.
 
-- Repositories: **4798**
+- Repositories: **4804**
 - Primary languages: **23**
-- Declared licenses: **4104**
+- Declared licenses: **4109**
 - Refreshed: **2026-08-17 UTC**
-- 最近人工复核 / Last review merge: **2026-08-17**
+- 最近人工复核 / Last review merge: **2026-08-18**
 
 ## 生态与资源 / Ecosystem & Resources (262)
 
@@ -279,7 +279,7 @@ This page automatically lists public repositories under GitHub's [`dsh-plugin` t
 | [zoahdev/dsh-plugin-doctor-action](https://github.com/zoahdev/dsh-plugin-doctor-action) | GitHub Action: pre-publish health checks for DeepSeek Harness plugins (powered by dsh-plugin-doctor). | — | 0 | MIT | 2026-08-16 |
 | [zoahdev/dsh-poison-guard-action](https://github.com/zoahdev/dsh-poison-guard-action) | GitHub Action: supply-chain poison scan for DeepSeek Harness plugins (AST + deobfuscation) | JavaScript | 0 | MIT | 2026-08-16 |
 
-## 界面与体验 / UI & Experience (986)
+## 界面与体验 / UI & Experience (988)
 
 | Project | Description | Language | Stars | License | Updated |
 | --- | --- | --- | ---: | --- | --- |
@@ -946,6 +946,7 @@ This page automatically lists public repositories under GitHub's [`dsh-plugin` t
 | [Argonaut790/dsh-everything-search](https://github.com/Argonaut790/dsh-everything-search) | Instant filename search for DSH agents backed by voidtools Everything (es.exe): everything_search / everything_status tools in milliseconds, never a slow recursive walk. | JavaScript | 0 | Apache-2.0 | 2026-08-15 |
 | [ArvenWang/dsh-plugin-quota](https://github.com/ArvenWang/dsh-plugin-quota) | DeepSeek account quota (balance) and session token usage for the DeepSeek Harness web UI | JavaScript | 0 | MIT | 2026-08-16 |
 | [ashuai/dsh-ui-wrapper](https://github.com/ashuai/dsh-ui-wrapper) | DSH — Minimal Shell for the dsh Web UI | Rust | 0 | Apache-2.0 | 2026-08-17 |
+| [AsILAnn/ds-whale-send-button](https://github.com/AsILAnn/ds-whale-send-button) | jinyu | JavaScript | 0 | MIT | 2026-08-15 |
 | [Asuta/dsh-client-ui-settings-model-advanced](https://github.com/Asuta/dsh-client-ui-settings-model-advanced) | DSH web plugin: schema-driven advanced model settings page (settings.section 'model-advanced') | TypeScript | 0 | — | 2026-08-16 |
 | [ayahunter/dsh-trail](https://github.com/ayahunter/dsh-trail) | DeepSeek Harness Web 轨迹页签的新手友好视图插件（out-of-tree bundle）：把事件流变成人人能看懂的故事线 | TypeScript | 0 | MIT | 2026-08-16 |
 | [BaihaWhite/attach-plus](https://github.com/BaihaWhite/attach-plus) | DSH web-ui plugin: '/' command-button glyph + '+' attach button with separated image/document/other uploads | JavaScript | 0 | MIT | 2026-08-16 |
@@ -1023,6 +1024,7 @@ This page automatically lists public repositories under GitHub's [`dsh-plugin` t
 | [gydmsg/dsh-plugin](https://github.com/gydmsg/dsh-plugin) | Out-of-tree plugin collection for DeepSeek Harness (DSH) Web UI — Space workspace file explorer (browse / Markdown preview / download / delete, server-enforced security) + Windows desktop notifications (question & answer-completion toasts). Zero-invasive dual-face plugins, hot-pluggable into any DSH profile. | JavaScript | 0 | MIT | 2026-08-15 |
 | [hanwuji1/dsh-web-launcher](https://github.com/hanwuji1/dsh-web-launcher) | 🐋 One-click desktop launcher for the DeepSeek Harness Web UI — a whale-icon app that boots dsh web and opens your browser. Zero friction, zero typing. | JavaScript | 0 | MIT | 2026-08-15 |
 | [Henn4617/dsh-pixel-pet](https://github.com/Henn4617/dsh-pixel-pet) | 像素风小狗桌宠：观测 DSH agent 任务进度的动态 Cordis 插件（空闲吐舌 / 任务中刨地 / 完成时犬吠） | JavaScript | 0 | MIT | 2026-08-15 |
+| [HQ1995/deepseek-code](https://github.com/HQ1995/deepseek-code) | The grok-build terminal UI driving the DeepSeek Harness. | TypeScript | 0 | MIT | 2026-08-17 |
 | [HtO404/dsh-chime](https://github.com/HtO404/dsh-chime) | Task-completion notification chime for the DSH web GUI: beeps when an agent turn finishes, even in background tabs. 10 preset sounds + custom import + volume. | JavaScript | 0 | Apache-2.0 | 2026-08-15 |
 | [HTUP1/dsh-plugin-manager](https://github.com/HTUP1/dsh-plugin-manager) | DeepSeek Harness 插件管理 —— 在设置面板查看已安装插件，支持停用/启用与卸载（中英双语） | JavaScript | 0 | MIT | 2026-08-15 |
 | [HTUP1/whale-desktop-pet-v2](https://github.com/HTUP1/whale-desktop-pet-v2) | 鲸鱼桌宠 v2 —— 会喷水、吃小鱼、绕圈圈的 DeepSeek Harness 网页桌宠插件（含独立演示版） | JavaScript | 0 | MIT | 2026-08-15 |
@@ -3062,7 +3064,7 @@ This page automatically lists public repositories under GitHub's [`dsh-plugin` t
 | [ZicanC/dsh-git](https://github.com/ZicanC/dsh-git) | dsh-git lets you manage conversations with an agent the way you use Git. | TypeScript | 0 | MIT | 2026-08-16 |
 | [zoahdev/dsh-poison-guard](https://github.com/zoahdev/dsh-poison-guard) | Pre-install supply-chain poison scanner for DeepSeek Harness plugins: AST (JS-X-Ray) + deobfuscation + regex. Catches obfuscated exfiltration, eval, hidden shell commands. | JavaScript | 0 | MIT | 2026-08-16 |
 
-## Agent、自动化与工作流 / Agents, Automation & Workflows (1547)
+## Agent、自动化与工作流 / Agents, Automation & Workflows (1549)
 
 | Project | Description | Language | Stars | License | Updated |
 | --- | --- | --- | ---: | --- | --- |
@@ -4021,6 +4023,7 @@ This page automatically lists public repositories under GitHub's [`dsh-plugin` t
 | [BiggerMax/dsh-danmaku](https://github.com/BiggerMax/dsh-danmaku) | DeepSeek Harness plugin: display trajectory output as danmaku on the conversation page | TypeScript | 0 | MIT | 2026-08-16 |
 | [bilbillm/dsh-conversation-minimap](https://github.com/bilbillm/dsh-conversation-minimap) | Codex-style conversation minimap plugin for DeepSeek Harness | TypeScript | 0 | MIT | 2026-08-15 |
 | [BLueMooneer/dsh-tracelens](https://github.com/BLueMooneer/dsh-tracelens) | DSH TraceLens 是基于 DeepSeek Harness 的可视化执行探索器。将当前已加载的 Session 转换成交互式地图，集中呈现用户输入、模型回复、工具调用、系统活动、错误以及每次模型调用的 Token 用量 | TypeScript | 0 | MIT | 2026-08-15 |
+| [bmai-BH6BHG/dsk.net](https://github.com/bmai-BH6BHG/dsk.net) | 将 DeepSeek harness 装入 net 框架 | TypeScript | 0 | MIT | 2026-08-16 |
 | [bobostudio/dsh-session-lens](https://github.com/bobostudio/dsh-session-lens) | DeepSeek Harness plugin: one-click session analytics + privacy-safe single-file HTML export · DSH 会话洞察与脱敏分享插件 | TypeScript | 0 | MIT | 2026-08-16 |
 | [Bryan-cmf/dsh-cross-search](https://github.com/Bryan-cmf/dsh-cross-search) | DSH-Plugin: multi-engine cross-validated search - parallel Brave/Tavily/DDG/Wikipedia, URL dedupe, confidence tiers. | TypeScript | 0 | MIT | 2026-08-15 |
 | [Bryan-cmf/dsh-infra-observability](https://github.com/Bryan-cmf/dsh-infra-observability) | DSH-Plugin: structural observability layer - real tool/skill usage recording (tools/result), skill-catalog audit, watchdog. No model self-reporting. | TypeScript | 0 | MIT | 2026-08-15 |
@@ -4110,6 +4113,7 @@ This page automatically lists public repositories under GitHub's [`dsh-plugin` t
 | [Eridani075/deepseek-harness-antigravity-oauth](https://github.com/Eridani075/deepseek-harness-antigravity-oauth) | Google Antigravity OAuth Gemini provider for DeepSeek Harness | TypeScript | 0 | MIT | 2026-08-15 |
 | [EtbyStudio/dsh-commands](https://github.com/EtbyStudio/dsh-commands) | File-based slash commands for DeepSeek Harness — auto-discovered from Markdown files, with hot reload | TypeScript | 0 | MIT | 2026-08-15 |
 | [EvilIrving/dsh-context-proxy](https://github.com/EvilIrving/dsh-context-proxy) | On-demand context retrieval for DeepSeek Harness: context_query / context_slice / context_grep tools. | TypeScript | 0 | MIT | 2026-08-14 |
+| [existyay/Polaris](https://github.com/existyay/Polaris) | 北极星 | JavaScript | 0 | MIT | 2026-08-15 |
 | [fengs2021/dsh-feishu-bridge](https://github.com/fengs2021/dsh-feishu-bridge) | DSH 飞书机器人桥接插件：飞书消息进 DSH 会话，流式交互卡片实时回复（思维链/正文/工具链分区，打字机效果） | JavaScript | 0 | MIT | 2026-08-15 |
 | [fengs2021/dsh-file-bridge](https://github.com/fengs2021/dsh-file-bridge) | DSH 文件收发桥：📎附件按钮上传（图片原生预览条/文件链接）+ send_files 工具下发 + /dsh-files 静态服务 + 反引号路径一键调起侧边栏 explorer | JavaScript | 0 | MIT | 2026-08-16 |
 | [fgm-builds/dashr](https://github.com/fgm-builds/dashr) | dsh RLM mode, IPython unified tool-calling interface, context is variables, prompt is variables, in dsh Everything is Plugin ecosystem. | TypeScript | 0 | MIT | 2026-08-16 |
@@ -4614,7 +4618,7 @@ This page automatically lists public repositories under GitHub's [`dsh-plugin` t
 | [Zydr114/dsh-markdown-enhance](https://github.com/Zydr114/dsh-markdown-enhance) | A dsh(deepseek-harness) plugin to enhance markdown rendering. | JavaScript | 0 | — | 2026-08-16 |
 | [zzy2210/y1n-agent-flow](https://github.com/zzy2210/y1n-agent-flow) | y1n-flow · 多模型编排开发流 \| A multi-model orchestrated dev workflow for DeepSeek Harness:主代理编排、子代理执行,plan document 为唯一事实源,内置编码验证闭环 / lead agent orchestrates, sub-agents execute, one plan doc as source of truth, built-in review loop | JavaScript | 0 | — | 2026-08-14 |
 
-## 实用工具与其他 / Utilities & Other (236)
+## 实用工具与其他 / Utilities & Other (238)
 
 | Project | Description | Language | Stars | License | Updated |
 | --- | --- | --- | ---: | --- | --- |
@@ -4752,6 +4756,7 @@ This page automatically lists public repositories under GitHub's [`dsh-plugin` t
 | [studyzy/dsh-suggest-prompt](https://github.com/studyzy/dsh-suggest-prompt) | dsh-plugin suggest next prompt | TypeScript | 1 | MIT | 2026-08-13 |
 | [TiChuXiXi/dsh-command-md](https://github.com/TiChuXiXi/dsh-command-md) | File-driven slash commands for DSH: markdown command files become /commands, opencode-style | JavaScript | 1 | MIT | 2026-08-16 |
 | [Victor-770/dsh-commandcode-provider](https://github.com/Victor-770/dsh-commandcode-provider) | dsh LLM provider plugin for Command Code — every plan incl. Go, uses your Studio API key over /alpha/generate | TypeScript | 1 | MIT | 2026-08-15 |
+| [wc772/dsh-minimal](https://github.com/wc772/dsh-minimal) | DSH最小化版本可用 | JavaScript | 1 | MIT | 2026-08-16 |
 | [weigre/interaction-doc](https://github.com/weigre/interaction-doc) | interaction-doc · 交互文档协作开发 — 把模糊需求/PRD 交互式量产出可交付的闭环交互文档 | — | 1 | MIT | 2026-08-14 |
 | [WhiseNT/dsh-blackjack](https://github.com/WhiseNT/dsh-blackjack) | 谁不想coding的时候急头白脸的和大肥鱼来一场紧张刺激的21点呢 | TypeScript | 1 | MIT | 2026-08-15 |
 | [william-jin-cmu/dsh-artifact](https://github.com/william-jin-cmu/dsh-artifact) | dsh 插件：文件交付协议——send_artifact 工具经 tool/result meta 携带结构化描述子，任意客户端可渲染 | TypeScript | 1 | BSD-3-Clause | 2026-08-13 |
@@ -4760,6 +4765,7 @@ This page automatically lists public repositories under GitHub's [`dsh-plugin` t
 | [xxiaoxiong/dsh-kubernetes](https://github.com/xxiaoxiong/dsh-kubernetes) | dsh-kubernetes | TypeScript | 1 | MIT | 2026-08-16 |
 | [yancf666/dsh-usage-panel](https://github.com/yancf666/dsh-usage-panel) | A polished DSH observability panel for token usage, cache efficiency, provider balances, searchable events, and exports. | JavaScript | 1 | MIT | 2026-08-15 |
 | [zdjmrq/dsh-text-open-source](https://github.com/zdjmrq/dsh-text-open-source) | DSH 插件「文字开源」枢纽:不存代码,只存可复刻插件的文字描述/提示词,与各 dsh-* 插件仓库双向链接 | — | 1 | MIT | 2026-08-16 |
+| [30degreesnorthlatitude/-](https://github.com/30degreesnorthlatitude/-) | 对于命令的描述以及其他地方进行了一些汉化 | — | 0 | — | 2026-08-15 |
 | [a1140314368/dsh-auto-mode](https://github.com/a1140314368/dsh-auto-mode) | DSH auto-mode: LLM-based safety interceptor (allow/deny/ask) for dangerous tool calls, as a selectable permission preset | JavaScript | 0 | MIT | 2026-08-14 |
 | [AllenCX/dsh-quant-workspace](https://github.com/AllenCX/dsh-quant-workspace) | DSH plugin bridging a local low-frequent-quant engine: single-ticker signal card, backtest, review (read-only). | Python | 0 | MIT | 2026-08-14 |
 | [Amouren7/dsh-model-switch](https://github.com/Amouren7/dsh-model-switch) | DSH Cordis 插件 — 按任务类型自动切换模型（设计/复查→deepseek-v4-pro，日常执行→deepseek-v4-flash） | JavaScript | 0 | — | 2026-08-14 |

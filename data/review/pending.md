@@ -4,9 +4,9 @@
 >
 > Repositories newly added to the `dsh-plugin` topic that the maintainer has not verified yet. Refreshed daily by `scripts/update.mjs`; review-only, not a user-facing page.
 
-- 生成时间 / Generated: **2026-08-17**
+- 生成时间 / Generated: **2026-08-18**
 - 快照日期 / Snapshot date: **2026-08-17 (UTC)**
-- 待审核 / Pending: **9**
+- 待审核 / Pending: **0**
 - 从快照消失的已核准仓库 / Approved repositories missing from the snapshot: **4**
 
 审核决定记到数据文件后运行 `node scripts/merge.mjs` 生效：
@@ -27,15 +27,7 @@ See [data/review/README.md](./README.md) for the full convention.
 
 | # | Project | Stars | Created | First seen | Description |
 | ---: | --- | ---: | --- | --- | --- |
-| 1 | [zbbsdsb/WAM-Framework](https://github.com/zbbsdsb/WAM-Framework) | 2 | 2026-08-06 | 2026-08-16 | Wait a minute |
-| 2 | [wc772/dsh-minimal](https://github.com/wc772/dsh-minimal) | 1 | 2026-08-16 | 2026-08-17 | DSH最小化版本可用 |
-| 3 | [30degreesnorthlatitude/-](https://github.com/30degreesnorthlatitude/-) | 0 | 2026-08-15 | 2026-08-16 | 对于命令的描述以及其他地方进行了一些汉化 |
-| 4 | [AsILAnn/ds-whale-send-button](https://github.com/AsILAnn/ds-whale-send-button) | 0 | 2026-08-15 | 2026-08-16 | jinyu |
-| 5 | [bmai-BH6BHG/dsk.net](https://github.com/bmai-BH6BHG/dsk.net) | 0 | 2026-08-16 | 2026-08-17 | 将 DeepSeek harness 装入 net 框架 |
-| 6 | [existyay/Polaris](https://github.com/existyay/Polaris) | 0 | 2026-08-15 | 2026-08-16 | 北极星 |
-| 7 | [HQ1995/deepseek-code](https://github.com/HQ1995/deepseek-code) | 0 | 2026-08-15 | 2026-08-17 | The grok-build terminal UI driving the DeepSeek Harness. |
-| 8 | [KeepLost/harniverse](https://github.com/KeepLost/harniverse) | 0 | 2026-08-14 | 2026-08-17 | General Pluggable Coding Agent based on DeepSeek-Harness for my personal taste |
-| 9 | [uckkk/dsh-visual-hierarchy](https://github.com/uckkk/dsh-visual-hierarchy) | 0 | 2026-08-16 | 2026-08-17 | 视觉层级构建参考 |
+
 
 ## 从快照消失的已核准仓库 / Approved repositories missing from the snapshot
 
