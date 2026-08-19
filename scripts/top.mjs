@@ -9,9 +9,8 @@
 // scripts/merge.mjs after a review — the daily automation never regenerates
 // the board on its own.
 //
-// To shrink the board back to Top 100 later: run with TOP_N=100 (or change the
-// default below), rename TOP200.md to TOP100.md, and update the links in
-// README.md, README_EN.md, and the CATALOG header inside scripts/render.mjs.
+// The board size is controlled by TOP_N (default 200; run with TOP_N=100 for a
+// shorter board). TOP100.md is retired — the page stays TOP200.md.
 
 import { writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
