@@ -28,44 +28,44 @@
 ## 🗺️ Ecosystem at a glance
 
 <!-- dsh:panorama:start -->
-As of 2026-08-19 the catalog lists **6,065** verified repositories. Here is the shape of it:
+As of 2026-08-19 the catalog lists **6,390** verified repositories. Here is the shape of it:
 
 ```mermaid
 mindmap
-  root((DSH ecosystem 6065))
-    Agents automation workflows · 1960
+  root((DSH ecosystem 6390))
+    Agents automation workflows · 2049
       Scheduled loops and event wakeups
       Multi-agent teamwork
       Long-term memory and self-evolution
       Approval budget and checkpoints
-    UI and experience · 1234
+    UI and experience · 1324
       Desktop clients and terminal TUI
       Sidebar workbenches
       Skins and desktop pets
       Notifications and input
-    Web and browser · 1014
+    Web and browser · 1063
       Browser bridge and page control
       Web search with citations
       Archiving and web forensics
-    Design media and vision · 369
+    Design media and vision · 380
       Image understanding and OCR
       Design canvas and UI restoration
-    Ecosystem and resources · 343
+    Ecosystem and resources · 356
       Plugin markets and registries
       Templates and scaffolds
       Guides and handbooks
-    Utilities and more · 319
+    Utilities and more · 345
       Files and encodings
       Format conversion
-    Knowledge and research · 315
+    Knowledge and research · 333
       Knowledge bases and cross-session memory
       Deep research
       Academia and math
-    Developer tools · 303
+    Developer tools · 322
       Git and diff
       Sandbox and runtimes
       Debugging and diagnostics
-    Integrations and sharing · 208
+    Integrations and sharing · 218
       Chat import and sharing
       Remote access
       IM and external integrations
@@ -276,7 +276,7 @@ Self-submitted recommendations from plugin authors, following the [contributing 
 - **Downstream market file:** [data/market.json](./data/market.json) is the curated file downstream markets consume (e.g. the DSH desktop plugin market): the snapshot plus curation, filtered, cleaned, and dealt round-robin across categories (≤600 rows, ≤500 KB). It is rebuilt on every daily snapshot refresh and immediately after every curation merge; the field and generation rules live in the downstream [publishing spec](https://github.com/bruc3van/dsh-desktop-safe-market/blob/master/docs/market-json-spec.md). The same runs also publish [MARKET.md](./MARKET.md), a read-only star-ranked rendering of the file for previewing the market on GitHub without installing anything.
 - **Chinese by default, bilingual:** native readability for the main audience, with a dedicated English entry point.
 
-As of 2026-08-19, the catalog lists **6,065** repositories across **26** primary languages; **5,208** declare a license and **6,050** are neither archived nor disabled (the catalog updates after each human review merge — see [CATALOG.md](./CATALOG.md) for current numbers).
+As of 2026-08-19, the catalog lists **6,390** repositories across **26** primary languages; **5,486** declare a license and **6,374** are neither archived nor disabled (the catalog updates after each human review merge — see [CATALOG.md](./CATALOG.md) for current numbers).
 
 ## ⚠️ Usage & safety
 
