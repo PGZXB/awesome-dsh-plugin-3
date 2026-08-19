@@ -28,44 +28,44 @@
 ## 🗺️ Ecosystem at a glance
 
 <!-- dsh:panorama:start -->
-As of 2026-08-19 the catalog lists **4,726** verified repositories. Here is the shape of it:
+As of 2026-08-19 the catalog lists **6,065** verified repositories. Here is the shape of it:
 
 ```mermaid
 mindmap
-  root((DSH ecosystem 4726))
-    Agents automation workflows · 1525
+  root((DSH ecosystem 6065))
+    Agents automation workflows · 1960
       Scheduled loops and event wakeups
       Multi-agent teamwork
       Long-term memory and self-evolution
       Approval budget and checkpoints
-    UI and experience · 968
+    UI and experience · 1234
       Desktop clients and terminal TUI
       Sidebar workbenches
       Skins and desktop pets
       Notifications and input
-    Web and browser · 786
+    Web and browser · 1014
       Browser bridge and page control
       Web search with citations
       Archiving and web forensics
-    Design media and vision · 299
+    Design media and vision · 369
       Image understanding and OCR
       Design canvas and UI restoration
-    Ecosystem and resources · 264
+    Ecosystem and resources · 343
       Plugin markets and registries
       Templates and scaffolds
       Guides and handbooks
-    Developer tools · 249
-      Git and diff
-      Sandbox and runtimes
-      Debugging and diagnostics
-    Knowledge and research · 247
+    Utilities and more · 319
+      Files and encodings
+      Format conversion
+    Knowledge and research · 315
       Knowledge bases and cross-session memory
       Deep research
       Academia and math
-    Utilities and more · 232
-      Files and encodings
-      Format conversion
-    Integrations and sharing · 156
+    Developer tools · 303
+      Git and diff
+      Sandbox and runtimes
+      Debugging and diagnostics
+    Integrations and sharing · 208
       Chat import and sharing
       Remote access
       IM and external integrations
@@ -216,21 +216,21 @@ Community popularity by stars, from the 2026-08-19 snapshot. Repositories riding
 | 3 | [omdsh-dev/DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) | 2213 | MIT |
 | 4 | [ccch1mneyyy/dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI) | 2009 | MIT |
 | 5 | [Small-tailqwq/dsh-deep-whale](https://github.com/Small-tailqwq/dsh-deep-whale) | 1400 | — |
-| 6 | [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) | 1096 | MIT |
-| 7 | [ysr666/dsh-vision-router](https://github.com/ysr666/dsh-vision-router) | 773 | MIT |
-| 8 | [Anionex/dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) | 712 | MIT |
-| 9 | [ccch1mneyyy/working-activity](https://github.com/ccch1mneyyy/working-activity) | 653 | MIT |
-| 10 | [NanmiCoder/dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) | 571 | MIT |
-| 11 | [hairyf/deepseek-harness-desktop](https://github.com/hairyf/deepseek-harness-desktop) | 549 | MIT |
-| 12 | [Electricitysheep/dsh-handbook](https://github.com/Electricitysheep/dsh-handbook) | 506 | — |
-| 13 | [Nagi-ovo/dsh-ads](https://github.com/Nagi-ovo/dsh-ads) | 501 | BSD-3-Clause |
-| 14 | [vibeinging/deepseek-harness-desktop-app](https://github.com/vibeinging/deepseek-harness-desktop-app) | 487 | MIT |
-| 15 | [bowenliang123/dsh-context](https://github.com/bowenliang123/dsh-context) | 415 | Apache-2.0 |
-| 16 | [omdsh-dev/dsh-at-file](https://github.com/omdsh-dev/dsh-at-file) | 394 | MIT |
-| 17 | [morluto/rea](https://github.com/morluto/rea) | 351 | MIT |
-| 18 | [Lum1104/dsh-browser](https://github.com/Lum1104/dsh-browser) | 302 | MIT |
-| 19 | [fufankeji/deepseek-harness-studio](https://github.com/fufankeji/deepseek-harness-studio) | 299 | MIT |
-| 20 | [WYH66666666/DSH-Transparent-UI-Plugin](https://github.com/WYH66666666/DSH-Transparent-UI-Plugin) | 295 | MIT |
+| 6 | [Tencent/BrowserSkill](https://github.com/Tencent/BrowserSkill) | 1153 | MIT |
+| 7 | [dsh-market/dsh-market](https://github.com/dsh-market/dsh-market) | 1096 | MIT |
+| 8 | [Anil-matcha/awesome-dsh-plugin](https://github.com/Anil-matcha/awesome-dsh-plugin) | 942 | — |
+| 9 | [toby-bridges/api-relay-audit](https://github.com/toby-bridges/api-relay-audit) | 791 | AGPL-3.0 |
+| 10 | [ysr666/dsh-vision-router](https://github.com/ysr666/dsh-vision-router) | 773 | MIT |
+| 11 | [Anionex/dsh-vision-toolkit](https://github.com/Anionex/dsh-vision-toolkit) | 712 | MIT |
+| 12 | [ccch1mneyyy/working-activity](https://github.com/ccch1mneyyy/working-activity) | 653 | MIT |
+| 13 | [NanmiCoder/dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) | 571 | MIT |
+| 14 | [hairyf/deepseek-harness-desktop](https://github.com/hairyf/deepseek-harness-desktop) | 549 | MIT |
+| 15 | [Electricitysheep/dsh-handbook](https://github.com/Electricitysheep/dsh-handbook) | 506 | — |
+| 16 | [Nagi-ovo/dsh-ads](https://github.com/Nagi-ovo/dsh-ads) | 501 | BSD-3-Clause |
+| 17 | [vibeinging/deepseek-harness-desktop-app](https://github.com/vibeinging/deepseek-harness-desktop-app) | 487 | MIT |
+| 18 | [syncable-dev/memtrace-public](https://github.com/syncable-dev/memtrace-public) | 455 | NOASSERTION |
+| 19 | [bowenliang123/dsh-context](https://github.com/bowenliang123/dsh-context) | 415 | Apache-2.0 |
+| 20 | [omdsh-dev/dsh-at-file](https://github.com/omdsh-dev/dsh-at-file) | 394 | MIT |
 <!-- dsh:leaderboard:end -->
 
 [See the full Star Top 200 →](./TOP200.md)
@@ -254,7 +254,6 @@ Manually screened recent projects, updated from time to time:
 
 Self-submitted recommendations from plugin authors, following the [contributing rules](./CONTRIBUTING.md#作者自荐--self-promotion). **These entries are not editorially reviewed and carry no quality or security endorsement** — evaluate them yourself before installing (see Usage & safety below). At most 30 entries are kept — first in, first out; entries promoted to the [Featured picks](#-featured-picks) above are removed from this section without using a slot. The home page shows only the **10 most recent entries**; the complete list lives in [SHOWCASE.md](./SHOWCASE.md).
 
-- **[dsh-plugin-guide](https://github.com/PerryLink/dsh-plugin-guide)** ([@PerryLink](https://github.com/PerryLink) · 2026-08-15) — The DSH plugin-development knowledge base as an on-demand agent skill: official constraints, task workflows, API references, and community pitfalls, installed as a bundle.
 - **[dsh-auto-review](https://github.com/PerryLink/dsh-auto-review)** ([@PerryLink](https://github.com/PerryLink) · 2026-08-15) — Second-model AI auto-review on the approval answerer chain: a read-only reviewer subagent returns structured allow/deny verdicts with reasons and risk levels, fail-closed by default, with a full session-log audit trail; /auto-review command + Web review panel, npm-installable, pairs with dsh-permission-rules for a rules-first, AI-backstop loop.
 - **[dsh-lsp-actions](https://github.com/PerryLink/dsh-lsp-actions)** ([@PerryLink](https://github.com/PerryLink) · 2026-08-15) — The LSP action surface for DeepSeek Harness: diagnostics, formatting, completion, code actions, symbols, signature help, inlay hints, and rename tools backed by real language servers; writes go through write-intent and the sandbox policy, everything else is read-only.
 - **[dsh-doc-share](https://github.com/dawsondx/dsh-doc-share)** ([@dawsondx](https://github.com/dawsondx) · 2026-08-15) — Turns a DSH conversation into a formatted report with a cover, summary stats and per-turn chapters: turn-selector dialog (search / select-all / load older history), single-turn quick share, gen-UI rich components supported, and one-shot export to PNG / standalone HTML / PDF / Markdown.
@@ -264,6 +263,7 @@ Self-submitted recommendations from plugin authors, following the [contributing 
 - **[dsh-movein](https://github.com/sjh9714/dsh-movein)** ([@sjh9714](https://github.com/sjh9714) · 2026-08-16) — Moves a whole Claude Code setup into DSH in one command: skills, slash commands, MCP servers, hooks, subagents and permission rules (deny/ask bridge with a migration diff report), dry run by default; `--reverse` brings DSH-born skills back for dual boot, and v0.5 adds a doctor post-move health check (including the frontmatter shape DSH silently drops) plus automatic pre-write backups with one-command restore.
 - **[dsh-compressor](https://github.com/lifeodyssey/dsh-compressor)** ([@lifeodyssey](https://github.com/lifeodyssey) · 2026-08-16) — A slim port of Headroom: compresses tool output, cuts up to 20% of context, without touching the context cache. For long tool logs / JSON / diffs that bloat context.
 - **[dsh-smooth-stream](https://github.com/Laplace-bit/dsh-smooth-stream)** ([@Laplace-bit](https://github.com/Laplace-bit) · 2026-08-16) — Silky streaming reveal for the DSH Web UI: typewriter follows token arrival, Markdown renders while streaming, line breaks glide in, no flicker; follow stays with the user and prefers-reduced-motion is respected.
+- **[dsh-win32](https://github.com/sjh9714/dsh-win32)** ([@sjh9714](https://github.com/sjh9714) · 2026-08-18) — Gets the DSH Minimal-mode persistent shell running on Windows: supplies the win32 process inspector so `createProcessInspector()` stops throwing, and installs the preset and bundle in one command. A busybox-w32 sandbox variant keeps that persistent shell under the `workspace-write` restricted token, where MSYS/Git Bash dies at cygheap init on `NtSetInformationToken`. Full send/read round-trip and interrupt smoke tests run on windows-latest CI, and `doctor` names each known install trap.
 
 [See all 30 showcase entries →](./SHOWCASE.md)
 
@@ -273,10 +273,10 @@ Self-submitted recommendations from plugin authors, following the [contributing 
 - **Layered: human picks + full index:** the front page carries only hand-screened featured picks and the showcase preview; [CATALOG.md](./CATALOG.md) lists every verified repository; new repositories first enter the [review queue](./data/review/pending.md) and appear after verification and merge (convention: [data/review/README.md](./data/review/README.md)).
 - **Automated data, human pages:** the raw snapshot and the review queue refresh daily by script; the catalog and Top 200 leaderboard are regenerated only after a human review merge (generators: [scripts/merge.mjs](./scripts/merge.mjs), [scripts/top.mjs](./scripts/top.mjs), switchable back to Top 100); the home-page featured picks, showcase, and recently-joined sections are edited by hand, so polluted API data (star inflation, topic riders) never rewrites recommendations automatically.
 - **Riders removed:** repositories carrying the `dsh-plugin` topic without being DSH plugins (the platform itself, other agent tools, competing catalogs) and editorially blacklisted repositories are excluded from the catalog and leaderboard, with per-repo reasons recorded in [data/curated.json](./data/curated.json) (the leaderboard additionally honors `leaderboard_exclusions` for repos that stay in the catalog but do not rank) — auditable and contestable at any time.
-- **Downstream market file:** [data/market.json](./data/market.json) is the curated file downstream markets consume (e.g. the DSH desktop plugin market): the snapshot plus curation, filtered, cleaned, and dealt round-robin across categories (≤300 rows, ≤500 KB). It is rebuilt on every daily snapshot refresh and immediately after every curation merge; the field and generation rules live in the downstream [publishing spec](https://github.com/bruc3van/dsh-desktop-safe-market/blob/master/docs/market-json-spec.md). The same runs also publish [MARKET.md](./MARKET.md), a read-only star-ranked rendering of the file for previewing the market on GitHub without installing anything.
+- **Downstream market file:** [data/market.json](./data/market.json) is the curated file downstream markets consume (e.g. the DSH desktop plugin market): the snapshot plus curation, filtered, cleaned, and dealt round-robin across categories (≤600 rows, ≤500 KB). It is rebuilt on every daily snapshot refresh and immediately after every curation merge; the field and generation rules live in the downstream [publishing spec](https://github.com/bruc3van/dsh-desktop-safe-market/blob/master/docs/market-json-spec.md). The same runs also publish [MARKET.md](./MARKET.md), a read-only star-ranked rendering of the file for previewing the market on GitHub without installing anything.
 - **Chinese by default, bilingual:** native readability for the main audience, with a dedicated English entry point.
 
-As of 2026-08-17, the catalog lists **4,798** repositories across **23** primary languages; **4,104** declare a license and **4,787** are neither archived nor disabled (the catalog updates after each human review merge — see [CATALOG.md](./CATALOG.md) for current numbers).
+As of 2026-08-19, the catalog lists **6,065** repositories across **26** primary languages; **5,208** declare a license and **6,050** are neither archived nor disabled (the catalog updates after each human review merge — see [CATALOG.md](./CATALOG.md) for current numbers).
 
 ## ⚠️ Usage & safety
 
